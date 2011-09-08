@@ -25,6 +25,8 @@ $browser->visit('http://www.google.com/');
 
 Read about all the cool methods available to you in the **[API documentation](http://doc.beta.bas.fi/xi-test-selenium/api/html/)**.
 
+See the `tests/` directory of this project for ideas on how to set this up with PHPUnit or similar.
+
 ## Competitors ##
 
 The following libraries aim to do what we do.

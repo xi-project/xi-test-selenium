@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var SeleniumServer
