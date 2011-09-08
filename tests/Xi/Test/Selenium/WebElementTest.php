@@ -18,6 +18,14 @@ class WebElementTest extends TestCase
     /**
      * @test
      */
+    public function canGetTheTagNameOfTheElement()
+    {
+        $this->assertEquals('body', $this->body->getTagName());
+    }
+    
+    /**
+     * @test
+     */
     public function canGetTheTextOfTheElement()
     {
         $this->assertEquals('Lorem ipsum...', $this->browser->findElement('p#first-paragraph')->getText());
@@ -116,6 +124,40 @@ class WebElementTest extends TestCase
         $field = $this->body->findSubelement('#the-field');
         $field->fillIn("hellox" . Keys::BACKSPACE . Keys::SPACE . "there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
+    }
+    
+    /**
+     * @test
+     */
+    public function canBeClearedOfInput()
+    {
+        $field = $this->body->findSubelement('#the-field');
+        $field->fillIn("xoox");
+        $this->assertEquals('xoox', $field->getAttribute('value'));
+        $field->clear();
+        $this->assertEquals('', $field->getAttribute('value'));
+    }
+    
+    /**
+     * @test
+     */
+    public function canSeeIfItIsSelected()
+    {
+        $radio2 = $this->browser->findElement('#radio-2');
+        $checkbox2 = $this->browser->findElement('#checkbox-2');
+        $option2 = $this->browser->findElement('#option-2');
+        
+        $this->assertFalse($radio2->isSelected());
+        $this->assertFalse($checkbox2->isSelected());
+        $this->assertFalse($option2->isSelected());
+        
+        $radio2->click();
+        $checkbox2->click();
+        $option2->click();
+        
+        $this->assertTrue($radio2->isSelected());
+        $this->assertTrue($checkbox2->isSelected());
+        $this->assertTrue($option2->isSelected());
     }
     
 }

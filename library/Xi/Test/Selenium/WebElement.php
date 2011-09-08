@@ -25,6 +25,15 @@ class WebElement
         return $this->elementId;
     }
     
+    /*
+     * Returns the name of the tag of the element.
+     * @return string
+     */
+    public function getTagName()
+    {
+        return $this->elementGet('/name');
+    }
+    
     /**
      * Returns the text of the element.
      * @return string
@@ -63,6 +72,26 @@ class WebElement
             $text = array((string)$text);
         }
         $this->elementPost('/value', array('value' => $text));
+    }
+    
+    /**
+     * Clears a text(area) input field of all input.
+     */
+    public function clear()
+    {
+        $this->elementPost('/clear');
+    }
+    
+    /**
+     * Tells whether this element (option, checkbox or radio button) is selected.
+     * 
+     * To select an element (even an option), `click()` on it.
+     * 
+     * @return boolean
+     */
+    public function isSelected()
+    {
+        return $this->elementGet('/selected');
     }
     
     /**
