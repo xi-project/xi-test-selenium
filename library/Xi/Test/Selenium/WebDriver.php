@@ -108,6 +108,27 @@ class WebDriver
     }
     
     /**
+     * Takes a screenshot of the page.
+     * @param $pngFile A path to a PNG file to write the screenshot to.
+     */
+    public function screenshot($pngFile)
+    {
+        if (strtolower(pathinfo($pngFile, PATHINFO_EXTENSION)) !== 'png') {
+            throw new SeleniumException("Can only take PNG screenshots. This doesn't seem like a path to a PNG: $pngFile");
+        }
+        $base64Data = $this->sessionGet('/screenshot');
+        $f = fopen($pngFile, 'wb');
+        try {
+            stream_filter_append($f, 'convert.base64-decode');
+            fwrite($f, $base64Data);
+        } catch (Exception $e) {
+            fclose($f);
+            throw $e;
+        }
+        fclose($f);
+    }
+    
+    /**
      * Moves back one step on the browser history.
      */
     public function back()
