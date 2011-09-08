@@ -80,6 +80,7 @@ class WebDriver
     
     /**
      * Returns the (full) contents of the browser's URL bar.
+     * @return string
      */
     public function getUrl()
     {
@@ -88,10 +89,20 @@ class WebDriver
     
     /**
      * Returns the page title.
+     * @return string
      */
     public function getPageTitle()
     {
         return $this->sessionGet('/title');
+    }
+    
+    /**
+     * Returns the source code of the current page.
+     * @return string
+     */
+    public function getPageSourceCode()
+    {
+        return $this->sessionGet('/source');
     }
     
     /**

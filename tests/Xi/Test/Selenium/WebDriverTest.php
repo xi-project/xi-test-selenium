@@ -22,6 +22,18 @@ class WebDriverTest extends TestCase
     /**
      * @test
      */
+    public function canGetThePageSourceCode()
+    {
+        $source = $this->browser->getPageSourceCode();
+        
+        $this->assertTrue(strpos($source, '<title>') !== false);
+        $this->assertTrue(strpos($source, '<body>') !== false);
+        $this->assertTrue(strpos($source, '<!DOCTYPE html>') !== false);
+    }
+    
+    /**
+     * @test
+     */
     public function canMoveBackwardsAndForwardsInTheHistory()
     {
         $this->browser->visit($this->getTestFileUrl('index.html'));
