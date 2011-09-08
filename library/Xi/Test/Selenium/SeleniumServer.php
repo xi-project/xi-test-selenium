@@ -4,7 +4,16 @@ namespace Xi\Test\Selenium;
 /**
  * Manages a connection to a Selenium server.
  * 
- * Thanks to http://code.google.com/p/php-webdriver-bindings/ for inspiration.
+ * Most often the server will talk with `http://localhost:4444/wd/hub`,
+ * but a remote Selenium server can be used just the same.
+ * 
+ * This server class is not a presistent connection. Instead each call
+ * becomes a new CURL request. For this reason, this object doesn't need to
+ * be explicitly "closed".
+ * 
+ * 
+ * Thanks to http://code.google.com/p/php-webdriver-bindings/ for inspiration
+ * and for a point of reference for interfacing problems and curl usage.
  */
 class SeleniumServer
 {

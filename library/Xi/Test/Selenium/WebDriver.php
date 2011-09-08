@@ -17,6 +17,16 @@ class WebDriver
     
     protected $baseUrl;
     
+    /**
+     * Constructs a WebDriver to use a given server.
+     * 
+     * The options may include any capabilities that the session opening
+     * request of Selenium Server accepts. Most important of these are probably
+     * 'browserName' and 'javascriptEnabled'.
+     * 
+     * @param SeleniumServer $server
+     * @param array $options 
+     */
     public function __construct(SeleniumServer $server, array $options = array())
     {
         $this->server = $server;
@@ -25,9 +35,18 @@ class WebDriver
         $this->openSession();
     }
     
+    /**
+     * Attempts to close the session, if possible.
+     * 
+     * Note that this is not called on fatal error,
+     * and I'm afraid the garbage collection order when PHP exits might
+     * cause this to fail randomly.
+     */
     public function __destruct()
     {
         if ($this->server) {
+            echo "Warning: The Selenium session was not explicitly closed!\n";
+            echo "         Call closeSession() on your WebDriver instance.\n";
             try {
                 $this->closeSession();
             } catch (Exception $e) {
@@ -50,7 +69,9 @@ class WebDriver
     }
     
     /**
-     * Navigate to the given URL.
+     * Navigates to the given URL.
+     * 
+     * If the URL is relative, then the baseUrl (if any) is prepended.
      */
     public function visit($url)
     {
@@ -209,6 +230,10 @@ class WebDriver
         }
     }
     
+    /**
+     * You should call this when you're finished with the WebDriver
+     * or else a browser window is left open for a long time for no reason.
+     */
     public function closeSession()
     {
         $this->server->delete($this->sessionPath);
