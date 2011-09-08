@@ -5,6 +5,8 @@ namespace Xi\Test\Selenium;
  * A Selenium WebDriver session.
  * 
  * This is the interface a test-writer should use to interact with Selenium.
+ * 
+ * Subclass this and adding your own convenience methods is fully supported.
  */
 class WebDriver
 {
@@ -131,8 +133,7 @@ class WebDriver
     public function findElement($cssSelector)
     {
         $response = $this->sessionPost('/element', array('using' => 'css selector', 'value' => $cssSelector));
-        $elementId = $response['ELEMENT'];
-        return new WebElement($this->server, $this->sessionPath, $elementId);
+        return $this->createWebElement($response['ELEMENT']);
     }
     
     /**
@@ -159,10 +160,14 @@ class WebDriver
         $response = $this->sessionPost('/elements', array('using' => 'css selector', 'value' => $cssSelector));
         $result = array();
         foreach ($response as $responseElement) {
-            $elementId = $responseElement['ELEMENT'];
-            $result[] = new WebElement($this->server, $this->sessionPath, $elementId);
+            $result[] = $this->createWebElement($responseElement['ELEMENT']);
         }
         return $result;
+    }
+    
+    protected function createWebElement($elementId)
+    {
+        return new WebElement($this->server, $this->sessionPath, $elementId);
     }
     
     /**
@@ -203,7 +208,7 @@ class WebDriver
     {
         if (is_array($a)) {
             if (isset($a['ELEMENT'])) {
-                return new WebElement($this->server, $this->sessionPath, $a['ELEMENT']);
+                return $this->createWebElement($a['ELEMENT']);
             } else {
                 foreach ($a as $key => $value) {
                     $a[$key] = $this->webElementsFromResponse($value);

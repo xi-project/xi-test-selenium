@@ -95,7 +95,7 @@ class WebDriverTest extends TestCase
     /**
      * @test
      */
-    public function canEndUpFindingAnEmptySetOfElementsOnThePageByCssSelectors()
+    public function canEndUpFindingAnEmptySetOfElements()
     {
         $elements = $this->browser->findAllElements('body > .this-doesnt-exist');
         $this->assertEmpty($elements);
