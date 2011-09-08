@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class AlertTestCase extends TestCase
+class AlertTest extends TestCase
 {
     /**
      * @test
