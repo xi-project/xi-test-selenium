@@ -26,7 +26,7 @@ class WebElement
     /**
      * Returns the text of the element.
      */
-    public function text()
+    public function getText()
     {
         return $this->elementGet('/text');
     }

@@ -28,7 +28,7 @@ class JavaScriptExecutionTest extends TestCase
     {
         $para = $this->browser->findElement('#first-paragraph');
         $this->browser->runJavascript('$(arguments[0]).text("new text")', array($para));
-        $this->assertEquals("new text", $para->text());
+        $this->assertEquals("new text", $para->getText());
     }
     
     /**
@@ -39,6 +39,6 @@ class JavaScriptExecutionTest extends TestCase
         $result = $this->browser->runJavascript('return {yay: $("#first-paragraph").text("foo")[0]}');
         $this->assertTrue(isset($result['yay']));
         $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $result['yay']);
-        $this->assertEquals("foo", $result['yay']->text());
+        $this->assertEquals("foo", $result['yay']->getText());
     }
 }

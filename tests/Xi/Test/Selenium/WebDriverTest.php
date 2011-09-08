@@ -16,7 +16,7 @@ class WebDriverTest extends TestCase
      */
     public function canGetThePageTitle()
     {
-        $this->assertEquals('Test page for xi-test-selenium', $this->browser->getTitle());
+        $this->assertEquals('Test page for xi-test-selenium', $this->browser->getPageTitle());
     }
     
     /**
@@ -39,7 +39,7 @@ class WebDriverTest extends TestCase
     {
         $element = $this->browser->findElement('body ul > li');
         $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
-        $this->assertEquals('one', $element->text());
+        $this->assertEquals('one', $element->getText());
     }
     
     /**
@@ -76,7 +76,7 @@ class WebDriverTest extends TestCase
         $i = 0;
         foreach ($elements as $element) {
             $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
-            $this->assertEquals($expectedTexts[$i++], $element->text());
+            $this->assertEquals($expectedTexts[$i++], $element->getText());
         }
     }
     
