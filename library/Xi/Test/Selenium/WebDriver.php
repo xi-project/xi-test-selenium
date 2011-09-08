@@ -179,6 +179,43 @@ class WebDriver
     }
     
     /**
+     * Returns the alert/confirm/prompt text.
+     * @throws SeleniumException if there is no alert/confirm/prompt window.
+     */
+    public function getAlertText()
+    {
+        return $this->sessionGet('/alert_text');
+    }
+    
+    /**
+     * Accepts an alert/confirm/prompt by pressing OK/Yes.
+     * @throws SeleniumException if there is no alert/confirm/prompt window.
+     */
+    public function acceptAlert()
+    {
+        $this->sessionPost('/accept_alert');
+    }
+    
+    /**
+     * Dismisses an alert/confirm/prompt by pressing Cancel/No/[X].
+     * @throws SeleniumException if there is no alert/confirm/prompt window.
+     */
+    public function dismissAlert()
+    {
+        $this->sessionPost('/dismiss_alert');
+    }
+    
+    /**
+     * Writes to a JS prompt() and clicks 'Ok'.
+     * @throws SeleniumException if there is no prompt() to answer.
+     */
+    public function answerPrompt($answer)
+    {
+        $this->sessionPost('/alert_text', array('text' => $answer));
+        $this->sessionPost('/accept_alert');
+    }
+    
+    /**
      * Runs some JavaScript on the current page.
      * 
      * @param string $script JavaScript code.

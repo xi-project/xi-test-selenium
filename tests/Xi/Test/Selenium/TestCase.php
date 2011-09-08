@@ -49,6 +49,20 @@ class TestCase extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         //$this->browser->clearCookies(); // TODO
+        
+        // With the current (2.5.0) version of Selenium,
+        // dismissAlert fails very slowly so we won't do the following :(
+        // Hopefully this is fixed in later version of Selenium.
+        /*
+        try {
+            $this->browser->dismissAlert();
+        } catch (SeleniumException $e) {
+            if ($e->getCode() != SeleniumException::NoAlertOpenError) {
+                throw $e;
+            }
+        }
+        */
+        
         $this->browser->visit('about:blank');
     }
     
