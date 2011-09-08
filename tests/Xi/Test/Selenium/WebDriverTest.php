@@ -14,6 +14,14 @@ class WebDriverTest extends TestCase
     /**
      * @test
      */
+    public function canGetThePageTitle()
+    {
+        $this->assertEquals('Test page for xi-test-selenium', $this->browser->getTitle());
+    }
+    
+    /**
+     * @test
+     */
     public function canMoveBackwardsAndForwardsInTheHistory()
     {
         $this->browser->visit($this->getTestFileUrl('index.html'));

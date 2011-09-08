@@ -59,9 +59,4 @@ class TestCase extends \PHPUnit_Framework_TestCase
             self::$persistentBrowser = null;
         }
     }
-    
-    private static function setUpServer()
-    {
-        
-    }
 }

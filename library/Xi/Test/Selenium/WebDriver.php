@@ -58,11 +58,19 @@ class WebDriver
     }
     
     /**
-     * Returns the browser's current URL.
+     * Returns the (full) contents of the browser's URL bar.
      */
     public function getUrl()
     {
         return $this->sessionGet('/url');
+    }
+    
+    /**
+     * Returns the page title.
+     */
+    public function getPageTitle()
+    {
+        return $this->sessionGet('/title');
     }
     
     /**
