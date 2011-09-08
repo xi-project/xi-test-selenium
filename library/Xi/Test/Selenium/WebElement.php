@@ -69,6 +69,14 @@ class WebElement
     }
     
     /**
+     * Returns whether this element is hidden (e.g. by CSS `display: none` or similar).
+     */
+    public function isHidden()
+    {
+        return !$this->elementGet('/displayed');
+    }
+    
+    /**
      * Clicks on the element.
      */
     public function click()
