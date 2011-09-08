@@ -141,7 +141,7 @@ class WebElementTest extends TestCase
     /**
      * @test
      */
-    public function canSeeIfItIsSelected()
+    public function canSeeWhetherItIsSelected()
     {
         $radio2 = $this->browser->findElement('#radio-2');
         $checkbox2 = $this->browser->findElement('#checkbox-2');
@@ -158,6 +158,19 @@ class WebElementTest extends TestCase
         $this->assertTrue($radio2->isSelected());
         $this->assertTrue($checkbox2->isSelected());
         $this->assertTrue($option2->isSelected());
+    }
+    
+    /**
+     * @test
+     */
+    public function canSeeWhetherItIsEnabled()
+    {
+        $field1 = $this->browser->findElement('#the-field');
+        $field2 = $this->browser->findElement('#disabled-field');
+        $this->assertTrue($field1->isEnabled());
+        $this->assertFalse($field1->isDisabled());
+        $this->assertFalse($field2->isEnabled());
+        $this->assertTrue($field2->isDisabled());
     }
     
 }

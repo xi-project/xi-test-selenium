@@ -53,6 +53,22 @@ class WebElement
     }
     
     /**
+     * Returns whether this (form) element is enabled.
+     */
+    public function isEnabled()
+    {
+        return $this->elementGet('/enabled');
+    }
+    
+    /**
+     * Returns whether this (form) element is disabled.
+     */
+    public function isDisabled()
+    {
+        return !$this->isEnabled();
+    }
+    
+    /**
      * Clicks on the element.
      */
     public function click()
