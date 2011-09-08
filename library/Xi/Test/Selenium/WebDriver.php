@@ -216,6 +216,14 @@ class WebDriver
     }
     
     /**
+     * Deletes all cookies visible to the current page.
+     */
+    public function clearCookies()
+    {
+        $this->sessionDelete('/cookie');
+    }
+    
+    /**
      * Runs some JavaScript on the current page.
      * 
      * @param string $script JavaScript code.
