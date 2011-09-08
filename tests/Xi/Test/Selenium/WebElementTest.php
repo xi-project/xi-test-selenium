@@ -80,4 +80,42 @@ class WebElementTest extends TestCase
         $this->assertEmpty($elements);
     }
     
+    /**
+     * @test
+     */
+    public function canBeClickedOn()
+    {
+        $this->body->findSubelement('#the-button')->click();
+        $this->assertEquals('The button was clicked', $this->body->findSubelement('#the-result')->getText());
+    }
+    
+    /**
+     * @test
+     */
+    public function canGetAttributes()
+    {
+        $this->assertEquals('first-paragraph', $this->body->findSubelement('p')->getAttribute('id'));
+        $this->assertNull($this->body->getAttribute('foobar'));
+    }
+    
+    /**
+     * @test
+     */
+    public function canReceiveInput()
+    {
+        $field = $this->body->findSubelement('#the-field');
+        $field->fillIn("hello there");
+        $this->assertEquals('hello there', $field->getAttribute('value'));
+    }
+    
+    /**
+     * @test
+     */
+    public function canReceiveSpecialKeysAmongInput()
+    {
+        $field = $this->body->findSubelement('#the-field');
+        $field->fillIn("hellox" . Keys::BACKSPACE . Keys::SPACE . "there");
+        $this->assertEquals('hello there', $field->getAttribute('value'));
+    }
+    
 }

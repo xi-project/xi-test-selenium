@@ -35,6 +35,37 @@ class WebElement
     }
     
     /**
+     * Returns the value of an attribute of the element or null if there is no such attribute.
+     * @return string
+     */
+    public function getAttribute($attributeName)
+    {
+        return $this->elementGet('/attribute/' . $attributeName);
+    }
+    
+    /**
+     * Clicks on the element.
+     */
+    public function click()
+    {
+        $this->elementPost('/click');
+    }
+    
+    /**
+     * Types text to the element.
+     * 
+     * The text may contain special keyboard codes.
+     * See the constants in the Keys class.
+     */
+    public function fillIn($text)
+    {
+        if (!is_array($text)) {
+            $text = array((string)$text);
+        }
+        $this->elementPost('/value', array('value' => $text));
+    }
+    
+    /**
      * Finds a subelement of this element by a CSS selector.
      * 
      * @param string $cssSelector A CSS selector.
