@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class JavaScriptExecutionTest extends TestCase
+class JavaScriptExecutionTest extends LibraryTestCase
 {
     /**
      * @test

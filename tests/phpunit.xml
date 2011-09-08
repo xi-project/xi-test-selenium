@@ -2,7 +2,7 @@
 <phpunit bootstrap="bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="xi-selenium tests">
-            <directory>.</directory>
+            <file>Xi/Test/Selenium/LibraryTestSuite.php</file>
         </testsuite>
     </testsuites>
 </phpunit>

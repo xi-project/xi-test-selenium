@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class ScreenshotTest extends TestCase
+class ScreenshotTest extends LibraryTestCase
 {
     private $screenshotDir;
     

@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class WebDriverTest extends TestCase
+class WebDriverTest extends LibraryTestCase
 {
     /**
      * @test

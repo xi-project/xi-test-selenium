@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class WebElementTest extends TestCase
+class WebElementTest extends LibraryTestCase
 {
     /**
      * @var WebElement

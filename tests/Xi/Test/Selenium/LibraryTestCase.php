@@ -1,18 +1,8 @@
 <?php
 namespace Xi\Test\Selenium;
 
-abstract class TestCase extends \PHPUnit_Framework_TestCase
+abstract class LibraryTestCase extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var SeleniumServer
-     */
-    private static $seleniumServer;
-    
-    /**
-     * @var WebDriver
-     */
-    private static $persistentBrowser;
-    
     /**
      * @var WebDriver
      */
@@ -23,21 +13,15 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
      */
     protected $testFileBaseUrl;
     
-    public static function setUpBeforeClass()
+    public function setUpWebDriver(WebDriver $browser)
     {
-        if (!self::$seleniumServer) {
-            self::$seleniumServer = new SeleniumServer('http://localhost:4444/wd/hub');
-        }
-        if (!self::$persistentBrowser) {
-            self::$persistentBrowser = new WebDriver(self::$seleniumServer);
-        }
+        $this->browser = $browser;
     }
     
     public function setUp()
     {
         $this->testFileBaseUrl = 'file://' . PROJECT_ROOT . '/tests/testpages';
         
-        $this->browser = self::$persistentBrowser; // Creating new browsers is very slow
         $this->browser->visit($this->getTestFileUrl('index.html'));
     }
     
@@ -64,13 +48,5 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
         */
         
         $this->browser->visit('about:blank');
-    }
-    
-    public static function tearDownAfterClass()
-    {
-        if (self::$persistentBrowser) {
-            self::$persistentBrowser->closeSession();
-            self::$persistentBrowser = null;
-        }
     }
 }
