@@ -186,6 +186,20 @@ class WebDriver
         return $result;
     }
     
+    /**
+     * Finds an element that contains the given text.
+     * 
+     * @param string $text The text to search for.
+     * @return WebElement The element that contained the text as a substring.
+     * @throws SeleniumException when the text cannot be found
+     */
+    public function findElementWithText($text)
+    {
+        $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
+        $response = $this->sessionPost('/element', array('using' => 'xpath', 'value' => $expr));
+        return $this->createWebElement($response['ELEMENT']);
+    }
+    
     protected function createWebElement($elementId)
     {
         return new WebElement($this->server, $this->sessionPath, $elementId);

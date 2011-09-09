@@ -118,6 +118,8 @@ class WebElement
         return $this->elementGet('/selected');
     }
     
+    // FIXME: the finders here duplicate the ones in WebDriver. Refactor.
+    
     /**
      * Finds a subelement of this element by a CSS selector.
      * 
@@ -158,6 +160,20 @@ class WebElement
             $result[] = $this->createWebElement($responseElement['ELEMENT']);
         }
         return $result;
+    }
+    
+    /**
+     * Finds a subelement that contains the given text.
+     * 
+     * @param string $text The text to search for.
+     * @return WebElement The subelement that contained the text as a substring.
+     * @throws SeleniumException when the text cannot be found
+     */
+    public function findSubelementWithText($text)
+    {
+        $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
+        $response = $this->elementPost('/element', array('using' => 'xpath', 'value' => $expr));
+        return $this->createWebElement($response['ELEMENT']);
     }
     
     protected function createWebElement($elementId)

@@ -54,6 +54,31 @@ class WebElementTest extends LibraryTestCase
         $this->assertEquals(SeleniumException::NoSuchElement, $e->getCode());
     }
     
+    
+    /**
+     * @test
+     */
+    public function canFindSingleSubelementsOnThePageByPartialText()
+    {
+        $element = $this->body->findSubelementWithText('ipsum');
+        $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
+        $this->assertEquals('p', $element->getTagName());
+        $this->assertEquals('Lorem ipsum...', $element->getText());
+    }
+    
+    /**
+     * @test
+     */
+    public function throwsAnExceptionIfItCannotFindASubelementByPartialText()
+    {
+        try {
+            $this->body->findSubelementWithText('asdasdasd');
+        } catch (SeleniumException $e) {
+        }
+        $this->assertNotNull($e);
+        $this->assertEquals(SeleniumException::NoSuchElement, $e->getCode());
+    }
+    
     /**
      * @test
      */

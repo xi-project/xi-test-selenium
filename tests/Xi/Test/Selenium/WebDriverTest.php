@@ -47,7 +47,7 @@ class WebDriverTest extends LibraryTestCase
     /**
      * @test
      */
-    public function canFindSingleElementsOnThePageByCssSelectors()
+    public function canFindSingleElementsOnThePageByCssSelector()
     {
         $element = $this->browser->findElement('body ul > li');
         $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
@@ -57,7 +57,7 @@ class WebDriverTest extends LibraryTestCase
     /**
      * @test
      */
-    public function throwsAnExceptionIfItCannotFindAnElement()
+    public function throwsAnExceptionIfItCannotFindAnElementByCssSelector()
     {
         try {
             $this->browser->findElement('body > .this-doesnt-exist');
@@ -76,6 +76,30 @@ class WebDriverTest extends LibraryTestCase
         $element2 = $this->browser->tryFindElement('body > .this-doesnt-exist');
         $this->assertNotNull($element1);
         $this->assertNull($element2);
+    }
+    
+    /**
+     * @test
+     */
+    public function canFindSingleElementsOnThePageByPartialText()
+    {
+        $element = $this->browser->findElementWithText('ipsum');
+        $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
+        $this->assertEquals('p', $element->getTagName());
+        $this->assertEquals('Lorem ipsum...', $element->getText());
+    }
+    
+    /**
+     * @test
+     */
+    public function throwsAnExceptionIfItCannotFindAnElementByPartialText()
+    {
+        try {
+            $this->browser->findElementWithText('asdasdasd');
+        } catch (SeleniumException $e) {
+        }
+        $this->assertNotNull($e);
+        $this->assertEquals(SeleniumException::NoSuchElement, $e->getCode());
     }
     
     /**
