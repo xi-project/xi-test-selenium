@@ -13,7 +13,7 @@ abstract class HasWebElements // Would rather make this a trait
      * @return WebElement The matched element. Never null.
      * @throws SeleniumException if an error occurred or no element matched
      */
-    public function findElement($cssSelector)
+    public function find($cssSelector)
     {
         $response = $this->makeRelativePostRequest('/element', array('using' => 'css selector', 'value' => $cssSelector));
         return $this->createWebElement($response['ELEMENT']);
@@ -26,9 +26,9 @@ abstract class HasWebElements // Would rather make this a trait
      * @return WebElement The matched element, or null if not found.
      * @throws SeleniumException if an error occurred
      */
-    public function tryFindElement($cssSelector)
+    public function tryFind($cssSelector)
     {
-        $results = $this->findAllElements($cssSelector);
+        $results = $this->findAll($cssSelector);
         return (isset($results[0])) ? $results[0] : null;
     }
     
@@ -38,7 +38,7 @@ abstract class HasWebElements // Would rather make this a trait
      * @param string $cssSelector A CSS selector.
      * @return array<WebElement> The (possibly empty) set of matched elements.
      */
-    public function findAllElements($cssSelector)
+    public function findAll($cssSelector)
     {
         $response = $this->makeRelativePostRequest('/elements', array('using' => 'css selector', 'value' => $cssSelector));
         $result = array();
@@ -55,7 +55,7 @@ abstract class HasWebElements // Would rather make this a trait
      * @return WebElement The element that contained the text as a substring.
      * @throws SeleniumException when the text cannot be found
      */
-    public function findElementWithText($text)
+    public function findByText($text)
     {
         $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
         $response = $this->makeRelativePostRequest('/element', array('using' => 'xpath', 'value' => $expr));

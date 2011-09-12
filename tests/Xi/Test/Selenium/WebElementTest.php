@@ -12,7 +12,7 @@ class WebElementTest extends LibraryTestCase
     {
         parent::setUp();
         
-        $this->body = $this->browser->findElement('body');
+        $this->body = $this->browser->find('body');
     }
     
     /**
@@ -28,7 +28,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canGetTheTextOfTheElement()
     {
-        $this->assertEquals('Lorem ipsum...', $this->browser->findElement('p#first-paragraph')->getText());
+        $this->assertEquals('Lorem ipsum...', $this->browser->find('p#first-paragraph')->getText());
     }
     
     /**
@@ -36,8 +36,8 @@ class WebElementTest extends LibraryTestCase
      */
     public function canBeClickedOn()
     {
-        $this->body->findElement('#the-button')->click();
-        $this->assertEquals('The button was clicked', $this->body->findElement('#the-result')->getText());
+        $this->body->find('#the-button')->click();
+        $this->assertEquals('The button was clicked', $this->body->find('#the-result')->getText());
     }
     
     /**
@@ -45,7 +45,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canGetAttributes()
     {
-        $this->assertEquals('first-paragraph', $this->body->findElement('p')->getAttribute('id'));
+        $this->assertEquals('first-paragraph', $this->body->find('p')->getAttribute('id'));
         $this->assertNull($this->body->getAttribute('foobar'));
     }
     
@@ -54,7 +54,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canReceiveInput()
     {
-        $field = $this->body->findElement('#the-field');
+        $field = $this->body->find('#the-field');
         $field->fillIn("hello there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
     }
@@ -64,7 +64,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canReceiveSpecialKeysAmongInput()
     {
-        $field = $this->body->findElement('#the-field');
+        $field = $this->body->find('#the-field');
         $field->fillIn("hellox" . Keys::BACKSPACE . Keys::SPACE . "there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
     }
@@ -74,7 +74,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canBeClearedOfInput()
     {
-        $field = $this->body->findElement('#the-field');
+        $field = $this->body->find('#the-field');
         $field->fillIn("xoox");
         $this->assertEquals('xoox', $field->getAttribute('value'));
         $field->clear();
@@ -86,9 +86,9 @@ class WebElementTest extends LibraryTestCase
      */
     public function canTellWhetherItIsSelected()
     {
-        $radio2 = $this->browser->findElement('#radio-2');
-        $checkbox2 = $this->browser->findElement('#checkbox-2');
-        $option2 = $this->browser->findElement('#option-2');
+        $radio2 = $this->browser->find('#radio-2');
+        $checkbox2 = $this->browser->find('#checkbox-2');
+        $option2 = $this->browser->find('#option-2');
         
         $this->assertFalse($radio2->isSelected());
         $this->assertFalse($checkbox2->isSelected());
@@ -108,8 +108,8 @@ class WebElementTest extends LibraryTestCase
      */
     public function canTellWhetherItIsEnabled()
     {
-        $field1 = $this->browser->findElement('#the-field');
-        $field2 = $this->browser->findElement('#disabled-field');
+        $field1 = $this->browser->find('#the-field');
+        $field2 = $this->browser->find('#disabled-field');
         $this->assertTrue($field1->isEnabled());
         $this->assertFalse($field1->isDisabled());
         $this->assertFalse($field2->isEnabled());
@@ -121,8 +121,8 @@ class WebElementTest extends LibraryTestCase
      */
     public function canTellWhetherItIsHidden()
     {
-        $this->assertFalse($this->browser->findElement('#the-button')->isHidden());
-        $this->assertTrue($this->browser->findElement('#hidden-div')->isHidden());
+        $this->assertFalse($this->browser->find('#the-button')->isHidden());
+        $this->assertTrue($this->browser->find('#hidden-div')->isHidden());
     }
     
 }

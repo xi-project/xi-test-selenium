@@ -26,7 +26,7 @@ class JavaScriptExecutionTest extends LibraryTestCase
      */
     public function executedJavascriptCanTakeWebElementsAsParameters()
     {
-        $para = $this->browser->findElement('#first-paragraph');
+        $para = $this->browser->find('#first-paragraph');
         $this->browser->runJavascript('$(arguments[0]).text("new text")', array($para));
         $this->assertEquals("new text", $para->getText());
     }

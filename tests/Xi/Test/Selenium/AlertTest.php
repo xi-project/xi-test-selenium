@@ -20,7 +20,7 @@ class AlertTest extends LibraryTestCase
     {
         $this->browser->runJavascript('$("#the-result").text(confirm("press ok kthx") ? "yes" : "no")');
         $this->browser->acceptAlert();
-        $this->assertEquals('yes', $this->browser->findElement('#the-result')->getText());
+        $this->assertEquals('yes', $this->browser->find('#the-result')->getText());
     }
     
     /**
@@ -30,7 +30,7 @@ class AlertTest extends LibraryTestCase
     {
         $this->browser->runJavascript('$("#the-result").text(confirm("press cancel kthx") ? "yes" : "no")');
         $this->browser->dismissAlert();
-        $this->assertEquals('no', $this->browser->findElement('#the-result')->getText());
+        $this->assertEquals('no', $this->browser->find('#the-result')->getText());
     }
     
     /**
@@ -41,7 +41,7 @@ class AlertTest extends LibraryTestCase
         $this->browser->runJavascript('$("#the-result").text(prompt("plz type stuff"))');
         $this->browser->answerPrompt('xoox');
         sleep(3);
-        $this->assertEquals('xoox', $this->browser->findElement('#the-result')->getText());
+        $this->assertEquals('xoox', $this->browser->find('#the-result')->getText());
     }
     
     /**

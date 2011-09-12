@@ -50,7 +50,7 @@ class WebDriverTest extends LibraryTestCase
     public function canExecuteJavaScriptOnThePage() // Tested further in JavaScriptExecutionTest
     {
         $this->browser->runJavascript('$("body").append(\'<div id="new-hello">hello</div>\')');
-        $this->browser->findElement('div#new-hello');
+        $this->browser->find('div#new-hello');
     }
     
     /**
@@ -59,8 +59,8 @@ class WebDriverTest extends LibraryTestCase
     public function canRefreshThePage()
     {
         $this->browser->runJavascript('$("body").append(\'<div id="new-hello">hello</div>\')');
-        $this->browser->findElement('div#new-hello');
+        $this->browser->find('div#new-hello');
         $this->browser->refresh();
-        $this->assertNull($this->browser->tryFindElement('div#new-hello'));
+        $this->assertNull($this->browser->tryFind('div#new-hello'));
     }
 }

@@ -8,7 +8,7 @@ class ElementFinderTest extends LibraryTestCase
     protected function foreachContainer($func)
     {
         $func($this, $this->browser);
-        $func($this, $this->browser->findElement('body'));
+        $func($this, $this->browser->find('body'));
     }
     
     /**
@@ -17,7 +17,7 @@ class ElementFinderTest extends LibraryTestCase
     public function canFindSingleElementsOnThePageByCssSelector()
     {
         $this->foreachContainer(function($self, $container) {
-            $element = $container->findElement('body ul > li');
+            $element = $container->find('body ul > li');
             $self->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
             $self->assertEquals('one', $element->getText());
         });
@@ -30,7 +30,7 @@ class ElementFinderTest extends LibraryTestCase
     {
         $this->foreachContainer(function($self, $container) {
             try {
-                $container->findElement('body > .this-doesnt-exist');
+                $container->find('body > .this-doesnt-exist');
             } catch (SeleniumException $e) {
             }
             $self->assertNotNull($e);
@@ -44,8 +44,8 @@ class ElementFinderTest extends LibraryTestCase
     public function canAlternativelyFindSingleElementsWithoutThrowing()
     {
         $this->foreachContainer(function($self, $container) {
-            $element1 = $container->tryFindElement('p');
-            $element2 = $container->tryFindElement('.this-doesnt-exist');
+            $element1 = $container->tryFind('p');
+            $element2 = $container->tryFind('.this-doesnt-exist');
             $self->assertNotNull($element1);
             $self->assertNull($element2);
         });
@@ -57,7 +57,7 @@ class ElementFinderTest extends LibraryTestCase
     public function canFindSingleElementsOnThePageByPartialText()
     {
         $this->foreachContainer(function($self, $container) {
-            $element = $container->findElementWithText('ipsum');
+            $element = $container->findByText('ipsum');
             $self->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
             $self->assertEquals('p', $element->getTagName());
             $self->assertEquals('Lorem ipsum...', $element->getText());
@@ -71,7 +71,7 @@ class ElementFinderTest extends LibraryTestCase
     {
         $this->foreachContainer(function($self, $container) {
             try {
-                $container->findElementWithText('asdasdasd');
+                $container->findByText('asdasdasd');
             } catch (SeleniumException $e) {
             }
             $self->assertNotNull($e);
@@ -85,7 +85,7 @@ class ElementFinderTest extends LibraryTestCase
     public function canFindASetOfElementsOnThePageByCssSelectors()
     {
         $this->foreachContainer(function($self, $container) {
-            $elements = $container->findAllElements('body ul > li');
+            $elements = $container->findAll('body ul > li');
             $expectedTexts = array('one', 'two', 'three');
             $i = 0;
             foreach ($elements as $element) {
@@ -101,7 +101,7 @@ class ElementFinderTest extends LibraryTestCase
     public function canEndUpFindingAnEmptySetOfElements()
     {
         $this->foreachContainer(function($self, $container) {
-            $elements = $container->findAllElements('body > .this-doesnt-exist');
+            $elements = $container->findAll('body > .this-doesnt-exist');
             $self->assertEmpty($elements);
         });
     }
