@@ -8,7 +8,7 @@ namespace Xi\Test\Selenium;
  * 
  * Subclass this and adding your own convenience methods is fully supported.
  */
-class WebDriver
+class WebDriver extends HasWebElements
 {
     /**
      * @var SeleniumServer
@@ -142,62 +142,6 @@ class WebDriver
     public function forward()
     {
         $this->sessionPost('/forward');
-    }
-    
-    /**
-     * Finds an element by a CSS selector.
-     * 
-     * @param string $cssSelector A CSS selector.
-     * @return WebElement The matched element. Never null.
-     * @throws SeleniumException if an error occurred or no element matched
-     */
-    public function findElement($cssSelector)
-    {
-        $response = $this->sessionPost('/element', array('using' => 'css selector', 'value' => $cssSelector));
-        return $this->createWebElement($response['ELEMENT']);
-    }
-    
-    /**
-     * Tries to find an element by a CSS selector.
-     * 
-     * @param string $cssSelector A CSS selector.
-     * @return WebElement The matched element, or null if not found.
-     * @throws SeleniumException if an error occurred
-     */
-    public function tryFindElement($cssSelector)
-    {
-        $results = $this->findAllElements($cssSelector);
-        return (isset($results[0])) ? $results[0] : null;
-    }
-    
-    /**
-     * Finds a set of elements by a CSS selector.
-     * 
-     * @param string $cssSelector A CSS selector.
-     * @return array<WebElement> The (possibly empty) set of matched elements.
-     */
-    public function findAllElements($cssSelector)
-    {
-        $response = $this->sessionPost('/elements', array('using' => 'css selector', 'value' => $cssSelector));
-        $result = array();
-        foreach ($response as $responseElement) {
-            $result[] = $this->createWebElement($responseElement['ELEMENT']);
-        }
-        return $result;
-    }
-    
-    /**
-     * Finds an element that contains the given text.
-     * 
-     * @param string $text The text to search for.
-     * @return WebElement The element that contained the text as a substring.
-     * @throws SeleniumException when the text cannot be found
-     */
-    public function findElementWithText($text)
-    {
-        $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
-        $response = $this->sessionPost('/element', array('using' => 'xpath', 'value' => $expr));
-        return $this->createWebElement($response['ELEMENT']);
     }
     
     protected function createWebElement($elementId)
@@ -334,6 +278,11 @@ class WebDriver
     {
         $this->server->delete($this->sessionPath);
         $this->server = null;
+    }
+    
+    protected function makeRelativePostRequest($relPath, $params)
+    {
+        return $this->sessionPost($relPath, $params);
     }
     
     protected function sessionGet($path)

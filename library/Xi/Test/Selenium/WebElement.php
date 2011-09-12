@@ -1,7 +1,7 @@
 <?php
 namespace Xi\Test\Selenium;
 
-class WebElement
+class WebElement extends HasWebElements
 {
     protected $server;
     protected $sessionPath;
@@ -118,67 +118,14 @@ class WebElement
         return $this->elementGet('/selected');
     }
     
-    // FIXME: the finders here duplicate the ones in WebDriver. Refactor.
-    
-    /**
-     * Finds a subelement of this element by a CSS selector.
-     * 
-     * @param string $cssSelector A CSS selector.
-     * @return WebElement The matched element. Never null.
-     * @throws SeleniumException if an error occurred or no element matched
-     */
-    public function findSubelement($cssSelector)
-    {
-        $response = $this->elementPost('/element', array('using' => 'css selector', 'value' => $cssSelector));
-        return $this->createWebElement($response['ELEMENT']);
-    }
-    
-    /**
-     * Tries to find a subelement of this element by a CSS selector.
-     * 
-     * @param string $cssSelector A CSS selector.
-     * @return WebElement The matched element, or null if not found.
-     * @throws SeleniumException if an error occurred
-     */
-    public function tryFindSubelement($cssSelector)
-    {
-        $results = $this->findAllSubelements($cssSelector);
-        return (isset($results[0])) ? $results[0] : null;
-    }
-    
-    /**
-     * Finds a set of subelements of this element by a CSS selector.
-     * 
-     * @param string $cssSelector A CSS selector.
-     * @return array<WebElement> The (possibly empty) set of matched elements.
-     */
-    public function findAllSubelements($cssSelector)
-    {
-        $response = $this->elementPost('/elements', array('using' => 'css selector', 'value' => $cssSelector));
-        $result = array();
-        foreach ($response as $responseElement) {
-            $result[] = $this->createWebElement($responseElement['ELEMENT']);
-        }
-        return $result;
-    }
-    
-    /**
-     * Finds a subelement that contains the given text.
-     * 
-     * @param string $text The text to search for.
-     * @return WebElement The subelement that contained the text as a substring.
-     * @throws SeleniumException when the text cannot be found
-     */
-    public function findSubelementWithText($text)
-    {
-        $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
-        $response = $this->elementPost('/element', array('using' => 'xpath', 'value' => $expr));
-        return $this->createWebElement($response['ELEMENT']);
-    }
-    
     protected function createWebElement($elementId)
     {
         return new static($this->server, $this->sessionPath, $elementId);
+    }
+    
+    protected function makeRelativePostRequest($relPath, $params)
+    {
+        return $this->elementPost($relPath, $params);
     }
     
     protected function elementGet($path)

@@ -36,7 +36,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canFindSingleSubelementsByCssSelectors()
     {
-        $element = $this->body->findSubelement('ul > li');
+        $element = $this->body->findElement('ul > li');
         $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
         $this->assertEquals('one', $element->getText());
     }
@@ -47,7 +47,7 @@ class WebElementTest extends LibraryTestCase
     public function throwsAnExceptionIfItCannotFindASubelement()
     {
         try {
-            $this->body->findSubelement('.this-doesnt-exist');
+            $this->body->findElement('.this-doesnt-exist');
         } catch (SeleniumException $e) {
         }
         $this->assertNotNull($e);
@@ -60,7 +60,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canFindSingleSubelementsOnThePageByPartialText()
     {
-        $element = $this->body->findSubelementWithText('ipsum');
+        $element = $this->body->findElementWithText('ipsum');
         $this->assertInstanceOf('\Xi\Test\Selenium\WebElement', $element);
         $this->assertEquals('p', $element->getTagName());
         $this->assertEquals('Lorem ipsum...', $element->getText());
@@ -72,7 +72,7 @@ class WebElementTest extends LibraryTestCase
     public function throwsAnExceptionIfItCannotFindASubelementByPartialText()
     {
         try {
-            $this->body->findSubelementWithText('asdasdasd');
+            $this->body->findElementWithText('asdasdasd');
         } catch (SeleniumException $e) {
         }
         $this->assertNotNull($e);
@@ -84,8 +84,8 @@ class WebElementTest extends LibraryTestCase
      */
     public function canAlternativelyFindSingleSubelementsWithoutThrowing()
     {
-        $element1 = $this->body->tryFindSubelement('p');
-        $element2 = $this->body->tryFindSubelement('.this-doesnt-exist');
+        $element1 = $this->body->tryFindElement('p');
+        $element2 = $this->body->tryFindElement('.this-doesnt-exist');
         $this->assertNotNull($element1);
         $this->assertNull($element2);
     }
@@ -95,7 +95,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canFindASetOfSubelementsByCssSelectors()
     {
-        $elements = $this->body->findAllSubelements('ul > li');
+        $elements = $this->body->findAllElements('ul > li');
         $expectedTexts = array('one', 'two', 'three');
         $i = 0;
         foreach ($elements as $element) {
@@ -109,7 +109,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canEndUpFindingAnEmptySetOfSubelements()
     {
-        $elements = $this->body->findAllSubelements('body > .this-doesnt-exist');
+        $elements = $this->body->findAllElements('body > .this-doesnt-exist');
         $this->assertEmpty($elements);
     }
     
@@ -118,8 +118,8 @@ class WebElementTest extends LibraryTestCase
      */
     public function canBeClickedOn()
     {
-        $this->body->findSubelement('#the-button')->click();
-        $this->assertEquals('The button was clicked', $this->body->findSubelement('#the-result')->getText());
+        $this->body->findElement('#the-button')->click();
+        $this->assertEquals('The button was clicked', $this->body->findElement('#the-result')->getText());
     }
     
     /**
@@ -127,7 +127,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canGetAttributes()
     {
-        $this->assertEquals('first-paragraph', $this->body->findSubelement('p')->getAttribute('id'));
+        $this->assertEquals('first-paragraph', $this->body->findElement('p')->getAttribute('id'));
         $this->assertNull($this->body->getAttribute('foobar'));
     }
     
@@ -136,7 +136,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canReceiveInput()
     {
-        $field = $this->body->findSubelement('#the-field');
+        $field = $this->body->findElement('#the-field');
         $field->fillIn("hello there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
     }
@@ -146,7 +146,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canReceiveSpecialKeysAmongInput()
     {
-        $field = $this->body->findSubelement('#the-field');
+        $field = $this->body->findElement('#the-field');
         $field->fillIn("hellox" . Keys::BACKSPACE . Keys::SPACE . "there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
     }
@@ -156,7 +156,7 @@ class WebElementTest extends LibraryTestCase
      */
     public function canBeClearedOfInput()
     {
-        $field = $this->body->findSubelement('#the-field');
+        $field = $this->body->findElement('#the-field');
         $field->fillIn("xoox");
         $this->assertEquals('xoox', $field->getAttribute('value'));
         $field->clear();
