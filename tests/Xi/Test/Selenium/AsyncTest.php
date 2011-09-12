@@ -32,7 +32,7 @@ class AsyncTest extends LibraryTestCase
     public function throwsAnExceptionIfTheMatchingElementDoesntAppear()
     {
         $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
-        $this->browser->waitForElement('.asdasd', 2);
+        $this->browser->waitForElement('.asdasd', 'css', 2);
     }
     
     /**
@@ -58,6 +58,6 @@ class AsyncTest extends LibraryTestCase
     public function throwsAnExceptionIfThePartialTextDoesntAppear()
     {
         $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
-        $this->browser->waitForText('asdasd', 2);
+        $this->browser->waitForText('asdasd', 'css', 2);
     }
 }
