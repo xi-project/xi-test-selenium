@@ -15,7 +15,8 @@
         $(document).ready(function() {
             $('#simbutton').click(function() {
                 setTimeout(function() {
-                    $('#result').text('done');
+                    $('#result').text('do' + 'ne'); // avoid the 'script' tag being found ^_^
+                    $('#result').after('<div id="newdiv">this element was "downloaded"</div>');
                 }, 2000);
             });
         });

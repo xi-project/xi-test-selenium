@@ -15,6 +15,29 @@ class AsyncTest extends LibraryTestCase
     /**
      * @test
      */
+    public function canWaitForAnElementMatchedByCssToAppearAsynchronously()
+    {
+        $button = $this->browser->find('#simbutton');
+        
+        $button->click();
+        
+        $result = $this->browser->waitForElement("#newdiv");
+        $this->assertEquals('div', $result->getTagName());
+        $this->assertEquals('this element was "downloaded"', $result->getText());
+    }
+    
+    /**
+     * @test
+     */
+    public function throwsAnExceptionIfTheMatchingElementDoesntAppear()
+    {
+        $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
+        $this->browser->waitForElement('.asdasd', 2);
+    }
+    
+    /**
+     * @test
+     */
     public function canWaitForPartialTextToAppearAsynchronously()
     {
         $button = $this->browser->find('#simbutton');
@@ -25,7 +48,7 @@ class AsyncTest extends LibraryTestCase
         
         $resultAfter = $this->browser->waitForText('don'); // Partial text should suffice
         $this->assertEquals('done', $resultAfter->getText());
-        //$this->assertEquals('done', $resultBefore->getText());
+        $this->assertEquals('done', $resultBefore->getText());
         $this->assertEquals('done', $this->browser->find('#result')->getText());
     }
     

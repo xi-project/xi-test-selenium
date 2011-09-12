@@ -83,12 +83,60 @@ abstract class HasWebElements // Would rather make this a trait
     }
     
     /**
+     * Waits for a (sub)element appear.
+     * 
+     * @param string $cssSelector A CSS selector that matches the element to wait for.
+     * @param int|float $timeout The number of seconds to wait at most. Has a default value.
+     * @return WebElement The matched element. Never null.
+     * @throws SeleniumException if an error occurred or no element matched
+     */
+    public function waitForElement($cssMatcher, $timeout = null)
+    {
+        $self = $this;
+        return $this->pollForResult(function() use ($self, $cssMatcher) {
+            return $self->tryFind($cssMatcher);
+        }, $timeout, "No element matching `$cssMatcher` appeared in $timeout sec");
+    }
+    
+    /**
      * Waits for text to appear in a (sub)element.
      * 
      * @param string $text The text to wait for.
-     * @param int|float $timeout The number of seconds to wait at most.
+     * @param int|float $timeout The number of seconds to wait at most. Has a default value.
+     * @return WebElement The element that contained the text. Never null.
+     * @throws SeleniumException if an error occurred or the timeout elapsed.
      */
     public function waitForText($text, $timeout = null)
+    {
+        $self = $this;
+        return $this->pollForResult(function() use ($self, $text) {
+            try {
+                return $self->findByText($text);
+            } catch (SeleniumException $e) {
+                if (!$e->isDueToElementMissingOrInvisible()) {
+                    throw $e;
+                }
+            }
+            return null;
+        }, $timeout, "Element with text '$text' failed to appear in $timeout sec");
+    }
+    
+    /**
+     * Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed.
+     * 
+     * Throws a SeleniumException on timeout. Exceptions from $func pass through.
+     * 
+     * This is used internally to implement the `waitFor*` methods,
+     * but can also be used by client code.
+     * 
+     * @param callable $func A callback to invoke.
+     * @param int|float $timeout The number of seconds to try for.
+     * @param string $timeoutMsg The message of the SeleniumException to throw on timeout.
+     * @return The return value of `$func`
+     * @throws SeleniumException if `$func` only returns nulls and the timeout elapses.
+     * @throws Exception if `$func` throws it.
+     */
+    public function pollForResult($func, $timeout = null, $timeoutMsg = 'timeout')
     {
         $timeout = $timeout ?: $this->getDefaultWaitTimeout();
         $startTime = microtime(true);
@@ -97,20 +145,12 @@ abstract class HasWebElements // Would rather make this a trait
             $sleepTime = min(1.0, $timePassed / 10.0); // The longer it takes, the less we waste CPU, but never wait for over 1 sec
             usleep($sleepTime * 1000000);
             
-            try {
-                $element = $this->findByText($text);
-                // If we get the element too early, it won't have its properties populated.
-                // Probably a bug (seen 2011-09-12, firefox, linux)
-                if (strpos($element->getText(), $text) !== false) {
-                    return $element;
-                }
-            } catch (SeleniumException $e) {
-                if (!$e->isDueToElementMissingOrInvisible()) {
-                    throw $e;
-                }
+            $result = call_user_func($func);
+            if ($result !== null) {
+                return $result;
             }
         } while ($timePassed <= $timeout);
-        throw new SeleniumException("Element with text '$text' failed to appear in $timeout sec");
+        throw new SeleniumException($timeoutMsg, SeleniumException::Timeout);
     }
     
     protected abstract function makeRelativePostRequest($relPath, $params);
