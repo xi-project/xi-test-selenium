@@ -129,7 +129,7 @@ class WebDriver
     }
     
     /**
-     * Moves back one step on the browser history.
+     * Moves back one step in the browser history.
      */
     public function back()
     {
@@ -137,7 +137,7 @@ class WebDriver
     }
     
     /**
-     * Moves forward one step on the browser history.
+     * Moves forward one step in the browser history.
      */
     public function forward()
     {
@@ -174,7 +174,7 @@ class WebDriver
      * Finds a set of elements by a CSS selector.
      * 
      * @param string $cssSelector A CSS selector.
-     * @return array<WebElement> The (possibly) empty set of matched elements.
+     * @return array<WebElement> The (possibly empty) set of matched elements.
      */
     public function findAllElements($cssSelector)
     {

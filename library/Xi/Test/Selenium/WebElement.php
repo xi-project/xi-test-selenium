@@ -150,7 +150,7 @@ class WebElement
      * Finds a set of subelements of this element by a CSS selector.
      * 
      * @param string $cssSelector A CSS selector.
-     * @return array<WebElement> The (possibly) empty set of matched elements.
+     * @return array<WebElement> The (possibly empty) set of matched elements.
      */
     public function findAllSubelements($cssSelector)
     {
