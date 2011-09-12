@@ -6,7 +6,7 @@ abstract class LibraryTestCase extends \PHPUnit_Framework_TestCase
     /**
      * @var WebDriver
      */
-    protected $browser;
+    public $browser; // public for use in PHP 5.3 closures
     
     /**
      * @var string
