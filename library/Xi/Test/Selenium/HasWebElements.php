@@ -62,5 +62,25 @@ abstract class HasWebElements // Would rather make this a trait
         return $this->createWebElement($response['ELEMENT']);
     }
     
+    /**
+     * Finds an element pointed to by a label tag's for attribute.
+     * 
+     * @param string $labelText The text of the label whose element to search for.
+     * @return WebElement The element the label with the given text points to with its `for` attribute.
+     * @throws SeleniumException if the label cannot be found or it does not point to a valid element
+     */
+    public function findByLabel($labelText)
+    {
+        $element = $this->findByText($labelText);
+        if ($element->getTagName() != 'label') {
+            throw new SeleniumException("Tag with text '$labelText' was not a label but a " . $element->getTagName());
+        }
+        $for = $element->getAttribute('for');
+        if (empty($for)) {
+            throw new SeleniumException("Label with text '$labelText' has no for attribute");
+        }
+        return $this->find('#' . $for);
+    }
+    
     protected abstract function makeRelativePostRequest($relPath, $params);
 }

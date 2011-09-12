@@ -25,6 +25,15 @@ class WebElement extends HasWebElements
         return $this->elementId;
     }
     
+    /**
+     * Returns the HTML id of the element.
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->getAttribute('id');
+    }
+    
     /*
      * Returns the name of the tag of the element.
      * @return string
@@ -45,7 +54,7 @@ class WebElement extends HasWebElements
     
     /**
      * Returns the value of an attribute of the element or null if there is no such attribute.
-     * @return string
+     * @return string|null
      */
     public function getAttribute($attributeName)
     {

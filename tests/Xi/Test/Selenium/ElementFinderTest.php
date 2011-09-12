@@ -105,4 +105,17 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEmpty($elements);
         });
     }
+    
+    /**
+     * @test
+     */
+    public function canFindElementsByTheirPartialLabelTexts()
+    {
+        $this->foreachContainer(function($self, $container) {
+            $element = $container->findByLabel('Disabled fie'); // (partial text should suffice)
+            $self->assertNotNull($element);
+            $self->assertNotNull('input', $element->getTagName());
+            $self->assertNotNull('disabled-field', $element->getId());
+        });
+    }
 }
