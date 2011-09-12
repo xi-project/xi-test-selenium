@@ -118,4 +118,29 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertNotNull('disabled-field', $element->getId());
         });
     }
+    
+    /**
+     * @test
+     */
+    public function canFindSingleElementsByXPath()
+    {
+        $this->foreachContainer(function($self, $container) {
+            $result = $self->browser->find('//ul/li[1]', 'xpath');
+            $self->assertEquals('one', $result->getText());
+        });
+    }
+    
+    /**
+     * @test
+     */
+    public function canMultipleElementsByXPath()
+    {
+        $this->foreachContainer(function($self, $container) {
+            $result = $self->browser->findAll('//ul/li', 'xpath');
+            $self->assertEquals(3, count($result));
+            $self->assertEquals('one', $result[0]->getText());
+            $self->assertEquals('two', $result[1]->getText());
+            $self->assertEquals('three', $result[2]->getText());
+        });
+    }
 }

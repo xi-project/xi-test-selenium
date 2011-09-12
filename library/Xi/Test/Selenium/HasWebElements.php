@@ -7,40 +7,45 @@ namespace Xi\Test\Selenium;
 abstract class HasWebElements // Would rather make this a trait
 {
     /**
-     * Finds a (sub)element by a CSS selector.
+     * Finds a (sub)element by a CSS selector or XPath expression.
      * 
-     * @param string $cssSelector A CSS selector.
+     * @param string $matcher The matcher, format depending on $format.
+     * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @return WebElement The matched element. Never null.
      * @throws SeleniumException if an error occurred or no element matched
      */
-    public function find($cssSelector)
+    public function find($matcher, $format = 'css')
     {
-        $response = $this->makeRelativePostRequest('/element', array('using' => 'css selector', 'value' => $cssSelector));
+        $using = $this->seleniumFormat($format);
+        $response = $this->makeRelativePostRequest('/element', array('using' => $using, 'value' => $matcher));
         return $this->createWebElement($response['ELEMENT']);
     }
     
     /**
-     * Tries to find a (sub)element by a CSS selector.
+     * Tries to find a (sub)element by a CSS selector or XPath expression.
      * 
-     * @param string $cssSelector A CSS selector.
+     * @param string $matcher The matcher, format depending on $format.
+     * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @return WebElement The matched element, or null if not found.
      * @throws SeleniumException if an error occurred
      */
-    public function tryFind($cssSelector)
+    public function tryFind($matcher, $format = 'css')
     {
-        $results = $this->findAll($cssSelector);
+        $results = $this->findAll($matcher, $format);
         return (isset($results[0])) ? $results[0] : null;
     }
     
     /**
-     * Finds a set of (sub)elements by a CSS selector.
+     * Finds a set of (sub)elements by a CSS selector or XPath expression.
      * 
-     * @param string $cssSelector A CSS selector.
+     * @param string $matcher The matcher, format depending on $format.
+     * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @return array<WebElement> The (possibly empty) set of matched elements.
      */
-    public function findAll($cssSelector)
+    public function findAll($matcher, $format = 'css')
     {
-        $response = $this->makeRelativePostRequest('/elements', array('using' => 'css selector', 'value' => $cssSelector));
+        $using = $this->seleniumFormat($format);
+        $response = $this->makeRelativePostRequest('/elements', array('using' => $using, 'value' => $matcher));
         $result = array();
         foreach ($response as $responseElement) {
             $result[] = $this->createWebElement($responseElement['ELEMENT']);
@@ -85,17 +90,18 @@ abstract class HasWebElements // Would rather make this a trait
     /**
      * Waits for a (sub)element appear.
      * 
-     * @param string $cssSelector A CSS selector that matches the element to wait for.
+     * @param string $matcher The matcher, format depending on $format.
+     * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @param int|float $timeout The number of seconds to wait at most. Has a default value.
      * @return WebElement The matched element. Never null.
      * @throws SeleniumException if an error occurred or no element matched
      */
-    public function waitForElement($cssSelector, $timeout = null)
+    public function waitForElement($matcher, $timeout = null)
     {
         $self = $this;
-        return $this->pollForResult(function() use ($self, $cssSelector) {
-            return $self->tryFind($cssSelector);
-        }, $timeout, "No element matching `$cssSelector` appeared in $timeout sec");
+        return $this->pollForResult(function() use ($self, $matcher) {
+            return $self->tryFind($matcher);
+        }, $timeout, "No element matching `$matcher` appeared in $timeout sec");
     }
     
     /**
@@ -151,6 +157,15 @@ abstract class HasWebElements // Would rather make this a trait
             }
         } while ($timePassed <= $timeout);
         throw new SeleniumException($timeoutMsg, SeleniumException::Timeout);
+    }
+    
+    private function seleniumFormat($format)
+    {
+        switch ($format) {
+            case 'css': return 'css selector';
+            case 'xpath': return 'xpath';
+            default: return $format; // Selenium will throw an exception if it's wrong.
+        }
     }
     
     protected abstract function makeRelativePostRequest($relPath, $params);
