@@ -63,7 +63,7 @@ abstract class HasWebElements // Would rather make this a trait
     }
     
     /**
-     * Finds an element pointed to by a label tag's for attribute.
+     * Finds a (sub)element pointed to by a label tag's for attribute.
      * 
      * @param string $labelText The text of the label whose element to search for.
      * @return WebElement The element the label with the given text points to with its `for` attribute.
@@ -82,5 +82,45 @@ abstract class HasWebElements // Would rather make this a trait
         return $this->find('#' . $for);
     }
     
+    /**
+     * Waits for text to appear in a (sub)element.
+     * 
+     * @param string $text The text to wait for.
+     * @param int|float $timeout The number of seconds to wait at most.
+     */
+    public function waitForText($text, $timeout = null)
+    {
+        $timeout = $timeout ?: $this->getDefaultWaitTimeout();
+        $startTime = microtime(true);
+        do {
+            $timePassed = microtime(true) - $startTime;
+            $sleepTime = min(1.0, $timePassed / 10.0); // The longer it takes, the less we waste CPU, but never wait for over 1 sec
+            usleep($sleepTime * 1000000);
+            
+            try {
+                $element = $this->findByText($text);
+                // If we get the element too early, it won't have its properties populated.
+                // Probably a bug (seen 2011-09-12, firefox, linux)
+                if (strpos($element->getText(), $text) !== false) {
+                    return $element;
+                }
+            } catch (SeleniumException $e) {
+                if (!$e->isDueToElementMissingOrInvisible()) {
+                    throw $e;
+                }
+            }
+        } while ($timePassed <= $timeout);
+        throw new SeleniumException("Element with text '$text' failed to appear in $timeout sec");
+    }
+    
     protected abstract function makeRelativePostRequest($relPath, $params);
+    
+    /**
+     * Returns the number of seconds that `waitFor*` methods wait for.
+     * @return int|float
+     */
+    public function getDefaultWaitTimeout()
+    {
+        return 5;
+    }
 }

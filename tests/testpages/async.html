@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>xi-test-selenium async stuff test page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-1.6.3.min.js"></script>
+</head>
+<body>
+    <section>
+        <button id="simbutton">Simulate 2 sec download</button>
+        <div id="result"></div>
+        
+        <script type="text/javascript">
+        <!--
+        $(document).ready(function() {
+            $('#simbutton').click(function() {
+                setTimeout(function() {
+                    $('#result').text('done');
+                }, 2000);
+            });
+        });
+        //-->
+        </script>
+    </section>
+</body>
+</html>

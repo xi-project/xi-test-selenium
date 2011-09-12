@@ -44,6 +44,15 @@ class SeleniumException extends \Exception
         parent::__construct($message, $code, $previous);
     }
     
+    /**
+     * Returns whether the error code was NoSuchElement or ElementNotVisible
+     * @return boolean
+     */
+    public function isDueToElementMissingOrInvisible()
+    {
+        return in_array($this->getCode(), array(self::NoSuchElement, self::ElementNotVisible));
+    }
+    
     private static function getErrorCodes()
     {
         if (!self::$errorCodes) {
