@@ -96,7 +96,7 @@ abstract class HasWebElements // Would rather make this a trait
      * @return WebElement The matched element. Never null.
      * @throws SeleniumException if an error occurred or no element matched
      */
-    public function waitForElement($matcher, $format, $timeout = null)
+    public function waitForElement($matcher, $format = 'css', $timeout = null)
     {
         $self = $this;
         return $this->pollForResult(function() use ($self, $matcher, $format) {
