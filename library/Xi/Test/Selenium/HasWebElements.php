@@ -95,7 +95,7 @@ abstract class HasWebElements // Would rather make this a trait
         $self = $this;
         return $this->pollForResult(function() use ($self, $cssSelector) {
             return $self->tryFind($cssSelector);
-        }, $timeout, "No element matching `$cssMatcher` appeared in $timeout sec");
+        }, $timeout, "No element matching `$cssSelector` appeared in $timeout sec");
     }
     
     /**
