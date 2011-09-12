@@ -20,7 +20,11 @@ use \Xi\Test\Selenium\SeleniumServer,
 
 $server = new SeleniumServer('http://localhost:4444/wd/hub');
 $browser = new WebDriver($server);
-$browser->visit('http://www.google.com/');
+$browser->visit('/index');
+$browser->findByLabel('Username')->fillIn('john');
+$browser->findByLabel('Password')->fillIn('shepard');
+$browser->find('form#login button[type=submit]')->click();
+$browser->screenshot('after-login.png');
 ```
 
 Read about all the cool methods available to you in the **[API documentation](http://doc.beta.bas.fi/xi-test-selenium/api/html/)**.
