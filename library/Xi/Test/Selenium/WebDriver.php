@@ -265,11 +265,6 @@ class WebDriver extends HasWebElements
             'desiredCapabilities' => $this->options
         ));
         $this->sessionPath = rtrim($this->server->getLastRedirectLocation(), '/');
-        try {
-            //$this->server->get($this->sessionPath); // ????
-        } catch (Exception $e) {
-            echo "WARNING: " . $e->getMessage();
-        }
     }
     
     /**
