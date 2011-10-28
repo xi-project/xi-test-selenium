@@ -5,10 +5,10 @@ namespace Xi\Test\Selenium;
  * Manages a connection to a Selenium server.
  * 
  * Most often the server will talk with `http://localhost:4444/wd/hub`,
- * but a remote Selenium server can be used just the same.
+ * but a remote Selenium server can be used just as well.
  * 
- * This server class is not a presistent connection. Instead each call
- * becomes a new CURL request. For this reason, this object doesn't need to
+ * A SeleniumServer does not hold a presistent connection. Instead each call
+ * becomes a new CURL request. For this reason, the object doesn't need to
  * be explicitly "closed".
  * 
  * 

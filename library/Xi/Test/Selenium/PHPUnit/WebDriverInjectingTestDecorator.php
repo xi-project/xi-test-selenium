@@ -6,9 +6,8 @@ use Xi\Test\Selenium\SeleniumServer,
 /**
  * Injects a WebDriver into a test suite (or individual test) and properly disposes of it afterwards.
  * 
- * It does this by seeing if the target test implements WebDriverTest,
- * and if so, calls it with a WebDriver as a parameter. It does this recursively
- * if the test is also an IteratorAggregate.
+ * It calls setUpWebDriver() for any test implementing WebDriverTest.
+ * This is done recursively if the test is an IteratorAggregate (e.g. a PHPUnit test suite).
  */
 class WebDriverInjectingTestDecorator extends \PHPUnit_Extensions_TestDecorator
 {

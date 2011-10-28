@@ -2,7 +2,7 @@
 namespace Xi\Test\Selenium;
 
 /**
- * Provides finders for web elements.
+ * Provides finders of web elements for WebDriver and WebElement.
  */
 abstract class HasWebElements // Would rather make this a trait
 {
@@ -169,6 +169,8 @@ abstract class HasWebElements // Would rather make this a trait
     }
     
     protected abstract function makeRelativePostRequest($relPath, $params);
+    
+    protected abstract function createWebElement($elementId);
     
     /**
      * Returns the number of seconds that `waitFor*` methods wait for.

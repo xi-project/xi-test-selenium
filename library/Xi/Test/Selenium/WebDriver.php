@@ -4,9 +4,13 @@ namespace Xi\Test\Selenium;
 /**
  * A Selenium WebDriver session.
  * 
- * This is the interface a test-writer should use to interact with Selenium.
+ * Tests should call an instance of this to interact with Selenium.
+ * See WebDriverInjectingTestDecorator for a way to get a hold of
+ * one in your PHPUnit tests. Remeber to call closeSession() when done
+ * or a browser window will be left open.
  * 
- * Subclass this and adding your own convenience methods is fully supported.
+ * Subclassing this and adding your own convenience methods is fully supported.
+ * See also: WebElement.
  */
 class WebDriver extends HasWebElements
 {
@@ -58,13 +62,16 @@ class WebDriver extends HasWebElements
     }
     
     /**
-     * Sets the baseUrl to use for relative paths.
+     * Sets the URL prefix to use when calling visit() with a relative path.
      */
     public function setBaseUrl($baseUrl)
     {
         $this->baseUrl = rtrim($baseUrl, '/');
     }
     
+    /**
+     * Returns the URL prefix to use when calling visit() with a relative path.
+     */
     public final function getBaseUrl()
     {
         return $this->baseUrl;
@@ -142,11 +149,6 @@ class WebDriver extends HasWebElements
     public function forward()
     {
         $this->sessionPost('/forward');
-    }
-    
-    protected function createWebElement($elementId)
-    {
-        return new WebElement($this->server, $this->sessionPath, $elementId);
     }
     
     /**
@@ -272,7 +274,7 @@ class WebDriver extends HasWebElements
     
     /**
      * You should call this when you're finished with the WebDriver
-     * or else a browser window is left open for a long time for no reason.
+     * or else a browser window is left open until Selenium eventually times it out.
      */
     public function closeSession()
     {
@@ -283,6 +285,11 @@ class WebDriver extends HasWebElements
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->sessionPost($relPath, $params);
+    }
+    
+    protected function createWebElement($elementId)
+    {
+        return new WebElement($this->server, $this->sessionPath, $elementId);
     }
     
     protected function sessionGet($path)

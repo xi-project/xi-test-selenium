@@ -2,7 +2,7 @@
 namespace Xi\Test\Selenium;
 
 /**
- * Constants for special key codes.
+ * Constants for special key codes for use with WebElement::fillIn().
  * 
  * See http://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value
  * 

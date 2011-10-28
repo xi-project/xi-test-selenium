@@ -1,6 +1,14 @@
 <?php
 namespace Xi\Test\Selenium;
 
+/**
+ * A test suite for xi-test-selenium and an example of its integration with PHPUnit.
+ *
+ * This setup uses WebDriverInjectingTestDecorator to sinject a single WebDriver instance
+ * to all tests in the suite. The tests here inherit LibraryTestCase, which implements
+ * WebDriverTest and reset the browser in their tearDown(). This is considerably faster than
+ * starting a new Selenium session between each test case.
+ */
 class LibraryTestSuite
 {
     public static function suite()

@@ -1,6 +1,12 @@
 <?php
 namespace Xi\Test\Selenium;
 
+/**
+ * An element in the HTML document.
+ * 
+ * To use your own subclass, replace the protected createWebElement()
+ * in a subclass of WebDriver.
+ */
 class WebElement extends HasWebElements
 {
     protected $server;
