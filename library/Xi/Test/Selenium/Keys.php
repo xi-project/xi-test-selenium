@@ -13,7 +13,7 @@ class Keys
     const RELEASE_MODIFIERS = "\xEE\x80\x80";
     const BACKSPACE = "\xEE\x80\x83";
     const TAB = "\xEE\x80\x84";
-    const RETURN_ = "\xEE\x80\x866";
+    const RETURN_ = "\xEE\x80\x86";
     const ENTER = "\xEE\x80\x87";
     const SHIFT = "\xEE\x80\x88";
     const CONTROL = "\xEE\x80\x89";
