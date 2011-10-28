@@ -1,7 +1,8 @@
 <?php
 namespace Xi\Test\Selenium;
+use Xi\Test\Selenium\PHPUnit\WebDriverTest;
 
-abstract class LibraryTestCase extends \PHPUnit_Framework_TestCase
+abstract class LibraryTestCase extends \PHPUnit_Framework_TestCase implements WebDriverTest
 {
     /**
      * @var WebDriver
