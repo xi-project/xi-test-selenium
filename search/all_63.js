@@ -4,8 +4,8 @@ var searchData=
   ['clearcookies',['clearCookies',['../class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ad656a8df3ad544866cabf6495a374024',1,'Xi::Test::Selenium::WebDriver']]],
   ['click',['click',['../class_xi_1_1_test_1_1_selenium_1_1_web_element.html#af6c8b2ba8c1bef0544c7b7f77892b613',1,'Xi::Test::Selenium::WebElement']]],
   ['closesession',['closeSession',['../class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8f4584632392232b7c6ec9a4d7c77199',1,'Xi::Test::Selenium::WebDriver']]],
+  ['closewebdriver',['closeWebDriver',['../class_xi_1_1_test_1_1_selenium_1_1_p_h_p_unit_1_1_selenium_singleton.html#ae6ffc6d1b4b671026eec0fa6f85bce2e',1,'Xi::Test::Selenium::PHPUnit::SeleniumSingleton']]],
   ['command',['COMMAND',['../class_xi_1_1_test_1_1_selenium_1_1_keys.html#af0c7c47517fbc4a3334c90a0320958c4',1,'Xi::Test::Selenium::Keys']]],
   ['control',['CONTROL',['../class_xi_1_1_test_1_1_selenium_1_1_keys.html#ab04ac6a79a068130496eda3705f7bb1b',1,'Xi::Test::Selenium::Keys']]],
-  ['createwebdriver',['createWebDriver',['../class_xi_1_1_test_1_1_selenium_1_1_p_h_p_unit_1_1_web_driver_injecting_test_decorator.html#ad9af46900e95b0e379a7ebcea1607ab7',1,'Xi::Test::Selenium::PHPUnit::WebDriverInjectingTestDecorator']]],
   ['createwebelement',['createWebElement',['../class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0',1,'Xi::Test::Selenium::HasWebElements\createWebElement()'],['../class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#adfbc4a9948cd43fd28248811674d299b',1,'Xi::Test::Selenium::WebDriver\createWebElement()'],['../class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a994f3c26e0117511d5ffe11a664265e8',1,'Xi::Test::Selenium::WebElement\createWebElement()']]]
 ];

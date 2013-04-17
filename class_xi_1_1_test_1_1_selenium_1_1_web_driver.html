@@ -161,6 +161,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs some JavaScript on the current page.  <a href="#adb9734736537a69469968aa0884fc910"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8f4584632392232b7c6ec9a4d7c77199">closeSession</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">You should call this when you're finished with the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> or else a browser window is left open until Selenium eventually times it out.  <a href="#a8f4584632392232b7c6ec9a4d7c77199"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a1a9f71bbe2616fa438ad70c1f22b60d4">isClosed</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether closeSession has been called.  <a href="#a1a9f71bbe2616fa438ad70c1f22b60d4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ad4cd5cd532fc87a58d46be5a9b0d9884">webElementsToRequest</a> (array $a)</td></tr>
@@ -844,6 +846,30 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
+<a class="anchor" id="a1a9f71bbe2616fa438ad70c1f22b60d4"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::isClosed" ref="a1a9f71bbe2616fa438ad70c1f22b60d4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a1a9f71bbe2616fa438ad70c1f22b60d4">WebDriver::isClosed</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Tells whether closeSession has been called. </p>
+<p>Calling any other function after the session has been closed is likely to causes an error. </p>
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00285">285</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> ($this-&gt;server === null);
+    }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a5e17baeefc7444d77c71bdd2cb4d3d2a"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::makeRelativePostRequest" ref="a5e17baeefc7444d77c71bdd2cb4d3d2a" args="($relPath, $params)" -->
 <div class="memitem">
 <div class="memproto">
@@ -871,7 +897,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00280">280</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00290">290</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>($relPath, $params);
     }
@@ -895,7 +921,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00285">285</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00295">295</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> <span class="keyword">new</span> WebElement($this-&gt;server, $this-&gt;sessionPath, $elementId);
     }
@@ -917,7 +943,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00290">290</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00300">300</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;get($this-&gt;sessionPath . $path);
     }
@@ -949,7 +975,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00295">295</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00305">305</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;post($this-&gt;sessionPath . $path, $params);
     }
@@ -971,7 +997,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00300">300</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00310">310</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;delete($this-&gt;sessionPath . $path);
     }
@@ -992,7 +1018,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00305">305</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00315">315</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> array(
             <span class="stringliteral">&#39;browserName&#39;</span> =&gt; <span class="stringliteral">&#39;firefox&#39;</span>,
@@ -1088,7 +1114,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><b>Selenium</b>      </li>
       <li class="navelem"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html">WebDriver</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 17 2013 10:34:40 for xi-test-selenium by
+    <li class="footer">Generated on Wed Apr 17 2013 13:09:30 for xi-test-selenium by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
