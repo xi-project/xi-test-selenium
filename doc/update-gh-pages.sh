@@ -2,6 +2,8 @@
 cd `dirname "$0"`
 cd ..
 
+rm -Rf doc/api
+
 echo "Running doxygen"
 doxygen
 
