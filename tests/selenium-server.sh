@@ -1,7 +1,7 @@
 #!/bin/sh
 cd `dirname "$0"`
 
-version="2.5.0"
+version="2.32.0"
 filename="selenium-server-standalone-$version.jar"
 path="../external/$filename"
 url="http://selenium.googlecode.com/files/$filename"
