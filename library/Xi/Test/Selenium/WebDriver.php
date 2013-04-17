@@ -277,6 +277,16 @@ class WebDriver extends HasWebElements
         $this->server = null;
     }
 
+    /**
+     * Tells whether closeSession has been called
+     *
+     * Calling any other function after the session has been closed is likely to causes an error.
+     */
+    public function isClosed()
+    {
+        return ($this->server === null);
+    }
+
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->sessionPost($relPath, $params);

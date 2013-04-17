@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpunit bootstrap="bootstrap.php" colors="true">
     <testsuites>
-        <testsuite name="xi-selenium tests">
-            <file>Xi/Test/Selenium/LibraryTestSuite.php</file>
+        <testsuite name="xi-test-selenium tests">
+        	<directory>Xi</directory>
         </testsuite>
     </testsuites>
 </phpunit>

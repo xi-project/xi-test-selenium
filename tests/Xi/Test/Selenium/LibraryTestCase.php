@@ -1,53 +1,25 @@
 <?php
 namespace Xi\Test\Selenium;
-use Xi\Test\Selenium\PHPUnit\WebDriverTest;
+use Xi\Test\Selenium\PHPUnit\WebDriverTestCase;
 
-abstract class LibraryTestCase extends \PHPUnit_Framework_TestCase implements WebDriverTest
+abstract class LibraryTestCase extends WebDriverTestCase
 {
-    /**
-     * @var WebDriver
-     */
-    public $browser; // public for use in PHP 5.3 closures
-
     /**
      * @var string
      */
     protected $testFileBaseUrl;
 
-    public function setUpWebDriver(WebDriver $browser)
-    {
-        $this->browser = $browser;
-    }
-
     public function setUp()
     {
+        parent::setUp();
+
         $this->testFileBaseUrl = 'file://' . PROJECT_ROOT . '/tests/testpages';
 
         $this->browser->visit($this->getTestFileUrl('index.html'));
     }
 
-    public function getTestFileUrl($name)
+    protected function getTestFileUrl($name)
     {
         return $this->testFileBaseUrl . '/' . $name;
-    }
-
-    public function tearDown()
-    {
-        $this->browser->clearCookies();
-
-        // With the current (2.32.0) version of Selenium,
-        // dismissAlert fails very slowly so we won't do the following :(
-        // Hopefully this is fixed in later version of Selenium.
-        /*
-        try {
-            $this->browser->dismissAlert();
-        } catch (SeleniumException $e) {
-            if ($e->getCode() != SeleniumException::NoAlertOpenError) {
-                throw $e;
-            }
-        }
-        */
-
-        $this->browser->visit('about:blank');
     }
 }
