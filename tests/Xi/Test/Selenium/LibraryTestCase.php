@@ -35,7 +35,7 @@ abstract class LibraryTestCase extends \PHPUnit_Framework_TestCase implements We
     {
         $this->browser->clearCookies();
 
-        // With the current (2.5.0) version of Selenium,
+        // With the current (2.32.0) version of Selenium,
         // dismissAlert fails very slowly so we won't do the following :(
         // Hopefully this is fixed in later version of Selenium.
         /*
