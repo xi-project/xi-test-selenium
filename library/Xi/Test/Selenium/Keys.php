@@ -3,9 +3,9 @@ namespace Xi\Test\Selenium;
 
 /**
  * Constants for special key codes for use with WebElement::fillIn().
- * 
+ *
  * See http://code.google.com/p/selenium/wiki/JsonWireProtocol#/session/:sessionId/element/:id/value
- * 
+ *
  * See also e.g. http://www.ltg.ed.ac.uk/~richard/utf-8.html for the UTF-8 conversion
  */
 class Keys

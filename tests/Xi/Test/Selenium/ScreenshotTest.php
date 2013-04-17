@@ -4,7 +4,7 @@ namespace Xi\Test\Selenium;
 class ScreenshotTest extends LibraryTestCase
 {
     private $screenshotDir;
-    
+
     public function setUp()
     {
         parent::setUp();
@@ -22,7 +22,7 @@ class ScreenshotTest extends LibraryTestCase
         $this->assertTrue(file_exists($path));
         $this->assertGreaterThan(100, filesize($path));
     }
-    
+
     /**
      * @test
      */

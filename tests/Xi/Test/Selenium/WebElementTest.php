@@ -7,14 +7,14 @@ class WebElementTest extends LibraryTestCase
      * @var WebElement
      */
     private $body;
-    
+
     public function setUp()
     {
         parent::setUp();
-        
+
         $this->body = $this->browser->find('body');
     }
-    
+
     /**
      * @test
      */
@@ -22,7 +22,7 @@ class WebElementTest extends LibraryTestCase
     {
         $this->assertEquals('body', $this->body->getTagName());
     }
-    
+
     /**
      * @test
      */
@@ -30,7 +30,7 @@ class WebElementTest extends LibraryTestCase
     {
         $this->assertEquals('Lorem ipsum...', $this->browser->find('p#first-paragraph')->getText());
     }
-    
+
     /**
      * @test
      */
@@ -39,7 +39,7 @@ class WebElementTest extends LibraryTestCase
         $this->body->find('#the-button')->click();
         $this->assertEquals('The button was clicked', $this->body->find('#the-result')->getText());
     }
-    
+
     /**
      * @test
      */
@@ -48,7 +48,7 @@ class WebElementTest extends LibraryTestCase
         $this->assertEquals('first-paragraph', $this->body->find('p')->getAttribute('id'));
         $this->assertNull($this->body->getAttribute('foobar'));
     }
-    
+
     /**
      * @test
      */
@@ -58,7 +58,7 @@ class WebElementTest extends LibraryTestCase
         $field->fillIn("hello there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
     }
-    
+
     /**
      * @test
      */
@@ -68,7 +68,7 @@ class WebElementTest extends LibraryTestCase
         $field->fillIn("hellox" . Keys::BACKSPACE . Keys::SPACE . "there");
         $this->assertEquals('hello there', $field->getAttribute('value'));
     }
-    
+
     /**
      * @test
      */
@@ -80,7 +80,7 @@ class WebElementTest extends LibraryTestCase
         $field->clear();
         $this->assertEquals('', $field->getAttribute('value'));
     }
-    
+
     /**
      * @test
      */
@@ -89,20 +89,20 @@ class WebElementTest extends LibraryTestCase
         $radio2 = $this->browser->find('#radio-2');
         $checkbox2 = $this->browser->find('#checkbox-2');
         $option2 = $this->browser->find('#option-2');
-        
+
         $this->assertFalse($radio2->isSelected());
         $this->assertFalse($checkbox2->isSelected());
         $this->assertFalse($option2->isSelected());
-        
+
         $radio2->click();
         $checkbox2->click();
         $option2->click();
-        
+
         $this->assertTrue($radio2->isSelected());
         $this->assertTrue($checkbox2->isSelected());
         $this->assertTrue($option2->isSelected());
     }
-    
+
     /**
      * @test
      */
@@ -115,7 +115,7 @@ class WebElementTest extends LibraryTestCase
         $this->assertFalse($field2->isEnabled());
         $this->assertTrue($field2->isDisabled());
     }
-    
+
     /**
      * @test
      */
@@ -124,5 +124,5 @@ class WebElementTest extends LibraryTestCase
         $this->assertFalse($this->browser->find('#the-button')->isHidden());
         $this->assertTrue($this->browser->find('#hidden-div')->isHidden());
     }
-    
+
 }

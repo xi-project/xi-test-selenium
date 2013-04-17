@@ -27,9 +27,9 @@ class SeleniumException extends \Exception
     const IMENotAvailable = 30;
     const IMEEngineActivationFailed = 31;
     const InvalidSelector = 32;
-    
+
     private static $errorCodes;
-    
+
     public function __construct($message = null, $code = 0, $previous = null)
     {
         $code = (int)$code;
@@ -43,7 +43,7 @@ class SeleniumException extends \Exception
         }
         parent::__construct($message, $code, $previous);
     }
-    
+
     /**
      * Returns whether the error code was NoSuchElement or ElementNotVisible
      * @return boolean
@@ -52,7 +52,7 @@ class SeleniumException extends \Exception
     {
         return in_array($this->getCode(), array(self::NoSuchElement, self::ElementNotVisible));
     }
-    
+
     private static function getErrorCodes()
     {
         if (!self::$errorCodes) {
@@ -95,7 +95,7 @@ EOS;
                 }
             }
         }
-        
+
         return self::$errorCodes;
     }
 }

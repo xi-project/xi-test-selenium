@@ -10,7 +10,7 @@ class WebDriverTest extends LibraryTestCase
     {
         $this->assertEquals($this->getTestFileUrl('index.html'), $this->browser->getUrl());
     }
-    
+
     /**
      * @test
      */
@@ -18,19 +18,19 @@ class WebDriverTest extends LibraryTestCase
     {
         $this->assertEquals('Test page for xi-test-selenium', $this->browser->getPageTitle());
     }
-    
+
     /**
      * @test
      */
     public function canGetThePageSourceCode()
     {
         $source = $this->browser->getPageSourceCode();
-        
+
         $this->assertTrue(strpos($source, '<title>') !== false);
         $this->assertTrue(strpos($source, '<body>') !== false);
         $this->assertTrue(strpos($source, '<!DOCTYPE html>') !== false);
     }
-    
+
     /**
      * @test
      */
@@ -43,7 +43,7 @@ class WebDriverTest extends LibraryTestCase
         $this->browser->forward();
         $this->assertEquals($this->getTestFileUrl('another.html'), $this->browser->getUrl());
     }
-    
+
     /**
      * @test
      */
@@ -52,7 +52,7 @@ class WebDriverTest extends LibraryTestCase
         $this->browser->runJavascript('$("body").append(\'<div id="new-hello">hello</div>\')');
         $this->browser->find('div#new-hello');
     }
-    
+
     /**
      * @test
      */

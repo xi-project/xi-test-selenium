@@ -8,7 +8,7 @@ abstract class HasWebElements // Would rather make this a trait
 {
     /**
      * Finds a (sub)element by a CSS selector or XPath expression.
-     * 
+     *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @return WebElement The matched element. Never null.
@@ -20,10 +20,10 @@ abstract class HasWebElements // Would rather make this a trait
         $response = $this->makeRelativePostRequest('/element', array('using' => $using, 'value' => $matcher));
         return $this->createWebElement($response['ELEMENT']);
     }
-    
+
     /**
      * Tries to find a (sub)element by a CSS selector or XPath expression.
-     * 
+     *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @return WebElement The matched element, or null if not found.
@@ -34,10 +34,10 @@ abstract class HasWebElements // Would rather make this a trait
         $results = $this->findAll($matcher, $format);
         return (isset($results[0])) ? $results[0] : null;
     }
-    
+
     /**
      * Finds a set of (sub)elements by a CSS selector or XPath expression.
-     * 
+     *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @return array<WebElement> The (possibly empty) set of matched elements.
@@ -52,10 +52,10 @@ abstract class HasWebElements // Would rather make this a trait
         }
         return $result;
     }
-    
+
     /**
      * Finds a (sub)element that contains the given text.
-     * 
+     *
      * @param string $text The text to search for.
      * @return WebElement The element that contained the text as a substring.
      * @throws SeleniumException when the text cannot be found
@@ -66,10 +66,10 @@ abstract class HasWebElements // Would rather make this a trait
         $response = $this->makeRelativePostRequest('/element', array('using' => 'xpath', 'value' => $expr));
         return $this->createWebElement($response['ELEMENT']);
     }
-    
+
     /**
      * Finds a (sub)element pointed to by a label tag's for attribute.
-     * 
+     *
      * @param string $labelText The text of the label whose element to search for.
      * @return WebElement The element the label with the given text points to with its `for` attribute.
      * @throws SeleniumException if the label cannot be found or it does not point to a valid element
@@ -86,10 +86,10 @@ abstract class HasWebElements // Would rather make this a trait
         }
         return $this->find('#' . $for);
     }
-    
+
     /**
      * Waits for a (sub)element appear.
-     * 
+     *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
      * @param int|float $timeout The number of seconds to wait at most. Has a default value.
@@ -103,10 +103,10 @@ abstract class HasWebElements // Would rather make this a trait
             return $self->tryFind($matcher, $format);
         }, $timeout, "No element matching $format `$matcher` appeared in $timeout sec");
     }
-    
+
     /**
      * Waits for text to appear in a (sub)element.
-     * 
+     *
      * @param string $text The text to wait for.
      * @param int|float $timeout The number of seconds to wait at most. Has a default value.
      * @return WebElement The element that contained the text. Never null.
@@ -126,15 +126,15 @@ abstract class HasWebElements // Would rather make this a trait
             return null;
         }, $timeout, "Element with text '$text' failed to appear in $timeout sec");
     }
-    
+
     /**
      * Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed.
-     * 
+     *
      * Throws a SeleniumException on timeout. Exceptions from $func pass through.
-     * 
+     *
      * This is used internally to implement the `waitFor*` methods,
      * but can also be used by client code.
-     * 
+     *
      * @param callable $func A callback to invoke.
      * @param int|float $timeout The number of seconds to try for.
      * @param string $timeoutMsg The message of the SeleniumException to throw on timeout.
@@ -150,7 +150,7 @@ abstract class HasWebElements // Would rather make this a trait
             $timePassed = microtime(true) - $startTime;
             $sleepTime = min(1.0, $timePassed / 10.0); // The longer it takes, the less we waste CPU, but never wait for over 1 sec
             usleep($sleepTime * 1000000);
-            
+
             $result = call_user_func($func);
             if ($result !== null) {
                 return $result;
@@ -158,7 +158,7 @@ abstract class HasWebElements // Would rather make this a trait
         } while ($timePassed <= $timeout);
         throw new SeleniumException($timeoutMsg, SeleniumException::Timeout);
     }
-    
+
     private function seleniumFormat($format)
     {
         switch ($format) {
@@ -167,11 +167,11 @@ abstract class HasWebElements // Would rather make this a trait
             default: return $format; // Selenium will throw an exception if it's wrong.
         }
     }
-    
+
     protected abstract function makeRelativePostRequest($relPath, $params);
-    
+
     protected abstract function createWebElement($elementId);
-    
+
     /**
      * Returns the number of seconds that `waitFor*` methods wait for.
      * @return int|float

@@ -3,12 +3,12 @@ namespace Xi\Test\Selenium;
 
 /**
  * A Selenium WebDriver session.
- * 
+ *
  * Tests should call an instance of this to interact with Selenium.
  * See WebDriverInjectingTestDecorator for a way to get a hold of
  * one in your PHPUnit tests. Remeber to call closeSession() when done
  * or a browser window will be left open.
- * 
+ *
  * Subclassing this and adding your own convenience methods is fully supported.
  * See also: WebElement.
  */
@@ -20,30 +20,30 @@ class WebDriver extends HasWebElements
     protected $server;
     protected $options;
     protected $sessionPath;
-    
+
     protected $baseUrl;
-    
+
     /**
      * Constructs a WebDriver to use a given server.
-     * 
+     *
      * The options may include any capabilities that the session opening
      * request of Selenium Server accepts. Most important of these are probably
      * 'browserName' and 'javascriptEnabled'.
-     * 
+     *
      * @param SeleniumServer $server
-     * @param array $options 
+     * @param array $options
      */
     public function __construct(SeleniumServer $server, array $options = array())
     {
         $this->server = $server;
         $this->options = array_merge($this->getDefaultOptions(), $options);
-        
+
         $this->openSession();
     }
-    
+
     /**
      * Attempts to close the session, if possible.
-     * 
+     *
      * Note that this is not called on fatal error,
      * and I'm afraid the garbage collection order when PHP exits might
      * cause this to fail randomly.
@@ -60,7 +60,7 @@ class WebDriver extends HasWebElements
             }
         }
     }
-    
+
     /**
      * Sets the URL prefix to use when calling visit() with a relative path.
      */
@@ -68,7 +68,7 @@ class WebDriver extends HasWebElements
     {
         $this->baseUrl = rtrim($baseUrl, '/');
     }
-    
+
     /**
      * Returns the URL prefix to use when calling visit() with a relative path.
      */
@@ -76,17 +76,17 @@ class WebDriver extends HasWebElements
     {
         return $this->baseUrl;
     }
-    
+
     /**
      * Navigates to the given URL.
-     * 
+     *
      * If the URL is relative, then the baseUrl (if any) is prepended.
      */
     public function visit($url)
     {
         $this->sessionPost('/url', array('url' => $this->filterUrl($url)));
     }
-    
+
     /**
      * Returns the (full) contents of the browser's URL bar.
      * @return string
@@ -95,7 +95,7 @@ class WebDriver extends HasWebElements
     {
         return $this->sessionGet('/url');
     }
-    
+
     /**
      * Returns the page title.
      * @return string
@@ -104,7 +104,7 @@ class WebDriver extends HasWebElements
     {
         return $this->sessionGet('/title');
     }
-    
+
     /**
      * Returns the source code of the current page.
      * @return string
@@ -113,7 +113,7 @@ class WebDriver extends HasWebElements
     {
         return $this->sessionGet('/source');
     }
-    
+
     /**
      * Takes a screenshot of the page.
      * @param $pngFile A path to a PNG file to write the screenshot to.
@@ -134,7 +134,7 @@ class WebDriver extends HasWebElements
         }
         fclose($f);
     }
-    
+
     /**
      * Moves back one step in the browser history.
      */
@@ -142,7 +142,7 @@ class WebDriver extends HasWebElements
     {
         $this->sessionPost('/back');
     }
-    
+
     /**
      * Moves forward one step in the browser history.
      */
@@ -150,7 +150,7 @@ class WebDriver extends HasWebElements
     {
         $this->sessionPost('/forward');
     }
-    
+
     /**
      * Refreshes the current page.
      */
@@ -158,7 +158,7 @@ class WebDriver extends HasWebElements
     {
         $this->sessionPost('/refresh');
     }
-    
+
     /**
      * Returns the alert/confirm/prompt text.
      * @throws SeleniumException if there is no alert/confirm/prompt window.
@@ -167,7 +167,7 @@ class WebDriver extends HasWebElements
     {
         return $this->sessionGet('/alert_text');
     }
-    
+
     /**
      * Accepts an alert/confirm/prompt by pressing OK/Yes.
      * @throws SeleniumException if there is no alert/confirm/prompt window.
@@ -176,7 +176,7 @@ class WebDriver extends HasWebElements
     {
         $this->sessionPost('/accept_alert');
     }
-    
+
     /**
      * Dismisses an alert/confirm/prompt by pressing Cancel/No/[X].
      * @throws SeleniumException if there is no alert/confirm/prompt window.
@@ -185,7 +185,7 @@ class WebDriver extends HasWebElements
     {
         $this->sessionPost('/dismiss_alert');
     }
-    
+
     /**
      * Writes to a JS prompt() and clicks 'Ok'.
      * @throws SeleniumException if there is no prompt() to answer.
@@ -195,7 +195,7 @@ class WebDriver extends HasWebElements
         $this->sessionPost('/alert_text', array('text' => $answer));
         $this->sessionPost('/accept_alert');
     }
-    
+
     /**
      * Deletes all cookies visible to the current page.
      */
@@ -203,10 +203,10 @@ class WebDriver extends HasWebElements
     {
         $this->sessionDelete('/cookie');
     }
-    
+
     /**
      * Runs some JavaScript on the current page.
-     * 
+     *
      * @param string $script JavaScript code.
      * @param array $args Arguments to be made available in the script via the 'arguments' array. May contain WebElement objects.
      * @return The return value of the script, if any. If it contains DOM objects, they are returned as WebElement objects.
@@ -217,7 +217,7 @@ class WebDriver extends HasWebElements
         $response = $this->sessionPost('/execute', array('script' => $script, 'args' => $args));
         return $this->webElementsFromResponse($response);
     }
-    
+
     protected function webElementsToRequest(array $a)
     {
         foreach ($a as $key => $value) {
@@ -229,7 +229,7 @@ class WebDriver extends HasWebElements
         }
         return $a;
     }
-    
+
     protected function webElementsFromResponse($a)
     {
         if (is_array($a)) {
@@ -243,8 +243,8 @@ class WebDriver extends HasWebElements
         }
         return $a;
     }
-    
-    
+
+
     protected function filterUrl($url)
     {
         if ($this->baseUrl && strpos($url, '://') == false) {
@@ -258,7 +258,7 @@ class WebDriver extends HasWebElements
             return $url;
         }
     }
-    
+
     protected function openSession()
     {
         $resp = $this->server->post('/session', array(
@@ -266,7 +266,7 @@ class WebDriver extends HasWebElements
         ));
         $this->sessionPath = rtrim($this->server->getLastRedirectLocation(), '/');
     }
-    
+
     /**
      * You should call this when you're finished with the WebDriver
      * or else a browser window is left open until Selenium eventually times it out.
@@ -276,32 +276,32 @@ class WebDriver extends HasWebElements
         $this->server->delete($this->sessionPath);
         $this->server = null;
     }
-    
+
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->sessionPost($relPath, $params);
     }
-    
+
     protected function createWebElement($elementId)
     {
         return new WebElement($this->server, $this->sessionPath, $elementId);
     }
-    
+
     protected function sessionGet($path)
     {
         return $this->server->get($this->sessionPath . $path);
     }
-    
+
     protected function sessionPost($path, $params = null)
     {
         return $this->server->post($this->sessionPath . $path, $params);
     }
-    
+
     protected function sessionDelete($path)
     {
         return $this->server->delete($this->sessionPath . $path);
     }
-    
+
     protected function getDefaultOptions()
     {
         return array(

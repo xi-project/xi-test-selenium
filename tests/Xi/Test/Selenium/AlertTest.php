@@ -12,7 +12,7 @@ class AlertTest extends LibraryTestCase
         $this->assertEquals("hello", $this->browser->getAlertText());
         $this->browser->dismissAlert();
     }
-    
+
     /**
      * @test
      */
@@ -22,7 +22,7 @@ class AlertTest extends LibraryTestCase
         $this->browser->acceptAlert();
         $this->assertEquals('yes', $this->browser->find('#the-result')->getText());
     }
-    
+
     /**
      * @test
      */
@@ -32,7 +32,7 @@ class AlertTest extends LibraryTestCase
         $this->browser->dismissAlert();
         $this->assertEquals('no', $this->browser->find('#the-result')->getText());
     }
-    
+
     /**
      * @test
      */
@@ -43,7 +43,7 @@ class AlertTest extends LibraryTestCase
         sleep(3);
         $this->assertEquals('xoox', $this->browser->find('#the-result')->getText());
     }
-    
+
     /**
      * @test
      */
@@ -52,7 +52,7 @@ class AlertTest extends LibraryTestCase
         $this->expectNoAlertOpenException();
         $this->browser->getAlertText();
     }
-    
+
     private function expectNoAlertOpenException()
     {
         $this->setExpectedException('\Xi\Test\Selenium\SeleniumException', '', SeleniumException::NoAlertOpenError);

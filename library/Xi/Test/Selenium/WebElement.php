@@ -3,7 +3,7 @@ namespace Xi\Test\Selenium;
 
 /**
  * An element in the HTML document.
- * 
+ *
  * To use your own subclass, replace the protected createWebElement()
  * in a subclass of WebDriver.
  */
@@ -13,7 +13,7 @@ class WebElement extends HasWebElements
     protected $sessionPath;
     protected $elementId;
     protected $elementPath;
-    
+
     public function __construct(SeleniumServer $server, $sessionPath, $id)
     {
         $this->server = $server;
@@ -21,7 +21,7 @@ class WebElement extends HasWebElements
         $this->elementId = (string)$id;
         $this->elementPath = $sessionPath . '/element/' . $id;
     }
-    
+
     /**
      * Returns the opaque ID Selenium has assigned to this element.
      * @return string
@@ -30,7 +30,7 @@ class WebElement extends HasWebElements
     {
         return $this->elementId;
     }
-    
+
     /**
      * Returns the HTML id of the element.
      * @return string
@@ -39,7 +39,7 @@ class WebElement extends HasWebElements
     {
         return $this->getAttribute('id');
     }
-    
+
     /*
      * Returns the name of the tag of the element.
      * @return string
@@ -48,7 +48,7 @@ class WebElement extends HasWebElements
     {
         return $this->elementGet('/name');
     }
-    
+
     /**
      * Returns the text of the element.
      * @return string
@@ -57,7 +57,7 @@ class WebElement extends HasWebElements
     {
         return $this->elementGet('/text');
     }
-    
+
     /**
      * Returns the value of an attribute of the element or null if there is no such attribute.
      * @return string|null
@@ -66,7 +66,7 @@ class WebElement extends HasWebElements
     {
         return $this->elementGet('/attribute/' . $attributeName);
     }
-    
+
     /**
      * Returns whether this (form) element is enabled.
      */
@@ -74,7 +74,7 @@ class WebElement extends HasWebElements
     {
         return $this->elementGet('/enabled');
     }
-    
+
     /**
      * Returns whether this (form) element is disabled.
      */
@@ -82,7 +82,7 @@ class WebElement extends HasWebElements
     {
         return !$this->isEnabled();
     }
-    
+
     /**
      * Returns whether this element is hidden (e.g. by CSS `display: none` or similar).
      */
@@ -90,7 +90,7 @@ class WebElement extends HasWebElements
     {
         return !$this->elementGet('/displayed');
     }
-    
+
     /**
      * Clicks on the element.
      */
@@ -98,10 +98,10 @@ class WebElement extends HasWebElements
     {
         $this->elementPost('/click');
     }
-    
+
     /**
      * Types text to the element.
-     * 
+     *
      * The text may contain special keyboard codes.
      * See the constants in the Keys class.
      */
@@ -112,7 +112,7 @@ class WebElement extends HasWebElements
         }
         $this->elementPost('/value', array('value' => $text));
     }
-    
+
     /**
      * Clears a text(area) input field of all input.
      */
@@ -120,39 +120,39 @@ class WebElement extends HasWebElements
     {
         $this->elementPost('/clear');
     }
-    
+
     /**
      * Tells whether this element (option, checkbox or radio button) is selected.
-     * 
+     *
      * To select an element (even an option), `click()` on it.
-     * 
+     *
      * @return boolean
      */
     public function isSelected()
     {
         return $this->elementGet('/selected');
     }
-    
+
     protected function createWebElement($elementId)
     {
         return new static($this->server, $this->sessionPath, $elementId);
     }
-    
+
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->elementPost($relPath, $params);
     }
-    
+
     protected function elementGet($path)
     {
         return $this->server->get($this->elementPath . $path);
     }
-    
+
     protected function elementPost($path, $params = null)
     {
         return $this->server->post($this->elementPath . $path, $params);
     }
-    
+
     protected function elementDelete($path)
     {
         return $this->server->delete($this->elementPath . $path);

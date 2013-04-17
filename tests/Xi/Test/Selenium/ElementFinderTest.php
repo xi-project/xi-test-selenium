@@ -10,7 +10,7 @@ class ElementFinderTest extends LibraryTestCase
         $func($this, $this->browser);
         $func($this, $this->browser->find('body'));
     }
-    
+
     /**
      * @test
      */
@@ -22,7 +22,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEquals('one', $element->getText());
         });
     }
-    
+
     /**
      * @test
      */
@@ -37,7 +37,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEquals(SeleniumException::NoSuchElement, $e->getCode());
         });
     }
-    
+
     /**
      * @test
      */
@@ -50,7 +50,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertNull($element2);
         });
     }
-    
+
     /**
      * @test
      */
@@ -63,7 +63,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEquals('Lorem ipsum...', $element->getText());
         });
     }
-    
+
     /**
      * @test
      */
@@ -78,7 +78,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEquals(SeleniumException::NoSuchElement, $e->getCode());
         });
     }
-    
+
     /**
      * @test
      */
@@ -94,7 +94,7 @@ class ElementFinderTest extends LibraryTestCase
             }
         });
     }
-    
+
     /**
      * @test
      */
@@ -105,7 +105,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEmpty($elements);
         });
     }
-    
+
     /**
      * @test
      */
@@ -118,7 +118,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertNotNull('disabled-field', $element->getId());
         });
     }
-    
+
     /**
      * @test
      */
@@ -129,7 +129,7 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEquals('one', $result->getText());
         });
     }
-    
+
     /**
      * @test
      */

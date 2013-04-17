@@ -11,7 +11,7 @@ class JavaScriptExecutionTest extends LibraryTestCase
         $result = $this->browser->runJavascript('return ["x", 1, true, false, null]');
         $this->assertEquals(array("x", 1, true, false, null), $result);
     }
-    
+
     /**
      * @test
      */
@@ -20,7 +20,7 @@ class JavaScriptExecutionTest extends LibraryTestCase
         $result = $this->browser->runJavascript('return 1 + arguments[0] + arguments[1]', array(2, 4));
         $this->assertEquals(7, $result);
     }
-    
+
     /**
      * @test
      */
@@ -30,7 +30,7 @@ class JavaScriptExecutionTest extends LibraryTestCase
         $this->browser->runJavascript('$(arguments[0]).text("new text")', array($para));
         $this->assertEquals("new text", $para->getText());
     }
-    
+
     /**
      * @test
      */
