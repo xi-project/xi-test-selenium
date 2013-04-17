@@ -27,7 +27,7 @@ $browser->find('form#login button[type=submit]')->click();
 $browser->screenshot('after-login.png');
 ```
 
-Read about all the cool methods available to you in the **[API documentation](http://doc.beta.bas.fi/xi-test-selenium/api/html/)**.
+Read about all the cool methods available to you in the **[API documentation](http://xi-project.github.io/xi-test-selenium/)**.
 
 See the `tests/` directory of this project for ideas on how to set this up with PHPUnit or similar.
 
