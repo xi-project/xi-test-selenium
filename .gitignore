@@ -6,3 +6,7 @@
 
 # Selenium download
 /external/selenium-*.jar
+
+# Composer downloads
+/vendor
+

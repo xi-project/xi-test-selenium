@@ -1,0 +1,27 @@
+{
+    "name": "xi/test-selenium",
+    "type": "library",
+    "description": "Selenium 2 bindings",
+    "keywords": ["test", "selenium"],
+    "homepage": "http://github.com/xi-project/xi-test-selenium",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Martin Pärtel",
+            "email": "martin.partel@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Xi\\Test\\Selenium": ["library/", "tests/"]
+        }
+    }
+}
