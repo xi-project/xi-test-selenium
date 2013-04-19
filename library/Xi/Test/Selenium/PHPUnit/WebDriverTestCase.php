@@ -27,10 +27,4 @@ abstract class WebDriverTestCase extends \PHPUnit_Framework_TestCase
         $this->browser->visit('about:blank');
         $this->browser->clearCookies();
     }
-
-    public static function tearDownAfterClass()
-    {
-        parent::tearDownAfterClass();
-    }
 }
-
