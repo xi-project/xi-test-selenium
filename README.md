@@ -29,9 +29,14 @@ $browser->find('form#login button[type=submit]')->click();
 $browser->screenshot('after-login.png');
 ```
 
-Read about all the cool methods available to you in the **[API documentation](http://xi-project.github.io/xi-test-selenium/)**.
+**[API documentation](http://xi-project.github.io/xi-test-selenium/)** is available.
 
 With PHPUnit, just extend `\Xi\Test\Selenium\PHPUnit\WebDriverTestCase` and use `$this->browser`.
+
+These scripts may be useful:
+
+- [run-tests.sh](https://github.com/xi-project/xi-test-selenium/blob/master/tests/run-tests.sh)
+- [selenium-server.sh](https://github.com/xi-project/xi-test-selenium/blob/master/tests/selenium-server.sh)
 
 ## Competitors ##
 

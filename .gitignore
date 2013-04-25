@@ -8,6 +8,9 @@
 # Selenium download
 /external/selenium-*.jar
 
+# Selenium logs
+/tests/selenium.log
+
 # Composer downloads
 /vendor
 

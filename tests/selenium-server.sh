@@ -12,5 +12,4 @@ if [ ! -f "$path" ]; then
     curl -# -o "$path" "$url"
 fi
 
-java -jar "$path"
-
+exec java -jar "$path"
