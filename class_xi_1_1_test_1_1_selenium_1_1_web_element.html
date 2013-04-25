@@ -318,9 +318,15 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns the value of an attribute of the element or null if there is no such attribute. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$attributeName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string|null </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00065">65</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00066">66</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/attribute/&#39;</span> . $attributeName);
     }
@@ -343,7 +349,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns whether this (form) element is enabled. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00073">73</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00074">74</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/enabled&#39;</span>);
     }
@@ -366,7 +372,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns whether this (form) element is disabled. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00081">81</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00082">82</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> !$this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#aeb4e158c9e2f8c5cd1776eb2bd6056da" title="Returns whether this (form) element is enabled.">isEnabled</a>();
     }
@@ -390,7 +396,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns whether this element is hidden (e.g. </p>
 <p>by CSS `display: none` or similar). </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00089">89</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00090">90</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> !$this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/displayed&#39;</span>);
     }
@@ -413,7 +419,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Clicks on the element. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00097">97</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00098">98</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a>(<span class="stringliteral">&#39;/click&#39;</span>);
     }
@@ -438,7 +444,7 @@ Protected Attributes</h2></td></tr>
 <p>Types text to the element. </p>
 <p>The text may contain special keyboard codes. See the constants in the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_keys.html" title="Constants for special key codes for use with WebElement::fillIn().">Keys</a> class. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00108">108</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00109">109</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> (!is_array($text)) {
             $text = array((<span class="keywordtype">string</span>)$text);
@@ -464,7 +470,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Clears a text(area) input field of all input. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00119">119</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00120">120</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a>(<span class="stringliteral">&#39;/clear&#39;</span>);
     }
@@ -489,7 +495,7 @@ Protected Attributes</h2></td></tr>
 <p>To select an element (even an option), `click()` on it.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00131">131</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00132">132</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/selected&#39;</span>);
     }
@@ -513,7 +519,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00136">136</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00137">137</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keyword">static</span>($this-&gt;server, $this-&gt;sessionPath, <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#abbc33302d54cacac5678d4974b68a86f">$elementId</a>);
     }
@@ -547,7 +553,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00141">141</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00142">142</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a>($relPath, $params);
     }
@@ -569,7 +575,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00146">146</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00147">147</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;get($this-&gt;elementPath . $path);
     }
@@ -601,7 +607,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00151">151</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00152">152</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;post($this-&gt;elementPath . $path, $params);
     }
@@ -623,7 +629,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00156">156</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00157">157</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;delete($this-&gt;elementPath . $path);
     }
@@ -714,7 +720,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><b>Selenium</b>      </li>
       <li class="navelem"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html">WebElement</a>      </li>
 
-    <li class="footer">Generated on Thu Apr 25 2013 13:50:37 for xi-test-selenium by
+    <li class="footer">Generated on Thu Apr 25 2013 16:09:09 for xi-test-selenium by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

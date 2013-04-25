@@ -21,6 +21,7 @@ var class_xi_1_1_test_1_1_selenium_1_1_web_driver =
     [ "webElementsToRequest", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ad4cd5cd532fc87a58d46be5a9b0d9884", null ],
     [ "webElementsFromResponse", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4de6fd6a8c40b87c14d6321242e3a28c", null ],
     [ "filterUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afad85cf06491f9c69e58017708c8d0db", null ],
+    [ "isAbsoluteUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#af958874771bc0dc92f8c3b50af6abaaa", null ],
     [ "openSession", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a94946948ecda3359ff54c5cfd392bde9", null ],
     [ "closeSession", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8f4584632392232b7c6ec9a4d7c77199", null ],
     [ "isClosed", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a1a9f71bbe2616fa438ad70c1f22b60d4", null ],
