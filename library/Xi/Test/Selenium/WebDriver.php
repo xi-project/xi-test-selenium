@@ -56,17 +56,23 @@ class WebDriver extends HasWebElements
             try {
                 $this->closeSession();
             } catch (Exception $e) {
-                echo "(failed to close Selenium session)";
+                echo "(failed to close Selenium session)\n";
             }
         }
     }
 
     /**
      * Sets the URL prefix to use when calling visit() with a relative path.
+     *
+     * @param string|null $baseUrl
      */
     public function setBaseUrl($baseUrl)
     {
-        $this->baseUrl = rtrim($baseUrl, '/');
+        if ($baseUrl !== null) {
+            $this->baseUrl = rtrim($baseUrl, '/');
+        } else {
+            $this->baseUrl = null;
+        }
     }
 
     /**
@@ -247,15 +253,25 @@ class WebDriver extends HasWebElements
 
     protected function filterUrl($url)
     {
-        if ($this->baseUrl && strpos($url, '://') == false) {
+        if ($this->baseUrl && !$this->isAbsoluteUrl($url)) {
             if ($url[0] == '/') {
                 return $this->baseUrl . $url;
             } else {
                 return $this->baseUrl . '/' . $url;
             }
-            return $this->baseUrl . $url;
         } else {
             return $url;
+        }
+    }
+
+    protected function isAbsoluteUrl($url)
+    {
+        $colon = strpos($url, ':');
+        $slash = strpos($url, '/');
+        if ($colon !== false && $slash !== false) {
+            return $slash === 0 || $colon < $slash;
+        } else {
+            return $colon !== false;
         }
     }
 

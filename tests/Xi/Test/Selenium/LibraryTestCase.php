@@ -7,13 +7,19 @@ abstract class LibraryTestCase extends WebDriverTestCase
     /**
      * @var string
      */
+    protected $testFileBasePath;
+
+    /**
+     * @var string
+     */
     protected $testFileBaseUrl;
 
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 
-        $this->testFileBaseUrl = 'file://' . PROJECT_ROOT . '/tests/testpages';
+        $this->testFileBasePath =  PROJECT_ROOT . '/tests/testpages';
+        $this->testFileBaseUrl = 'file://' . $this->testFileBasePath;
 
         $this->browser->visit($this->getTestFileUrl('index.html'));
     }
