@@ -1,7 +1,9 @@
 #!/bin/bash
 cd `dirname "$0"`
 
-if [ "$1" != '-n' ]; then
+if [ "$1" = '-n' ]; then
+    shift
+else
     ./selenium-server.sh > selenium.log 2>&1 &
     SELENIUM_PID=$!
     echo "Started Selenium server, pid = $SELENIUM_PID"
@@ -13,7 +15,7 @@ if [ "$1" != '-n' ]; then
     echo
 fi
 
-../vendor/bin/phpunit
+../vendor/bin/phpunit $@
 
 if [ -n "$SELENIUM_PID" ]; then
     echo "Shutting down Selenium server"
