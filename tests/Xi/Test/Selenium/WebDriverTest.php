@@ -60,6 +60,7 @@ class WebDriverTest extends LibraryTestCase
     {
         $this->browser->runJavascript('$("body").append(\'<div id="new-hello">hello</div>\')');
         $this->browser->find('div#new-hello');
+        $this->assertNotNull($this->browser->tryFind('div#new-hello'));
         $this->browser->refresh();
         $this->assertNull($this->browser->tryFind('div#new-hello'));
     }
