@@ -24,7 +24,9 @@ abstract class WebDriverTestCase extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         parent::tearDown();
-        $this->browser->visit('about:blank');
-        $this->browser->clearCookies();
+        if ($this->browser) { // In case setUp failed
+            $this->browser->visit('about:blank');
+            $this->browser->clearCookies();
+        }
     }
 }
