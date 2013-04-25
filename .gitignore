@@ -1,8 +1,9 @@
 # IDE stuff
 /nbproject
-.buildpath
-.project
-.settings
+/.buildpath
+/.project
+/.settings
+/.idea
 
 # Selenium download
 /external/selenium-*.jar
