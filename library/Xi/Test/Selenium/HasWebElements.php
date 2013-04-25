@@ -138,7 +138,7 @@ abstract class HasWebElements // Would rather make this a trait
      * @param callable $func A callback to invoke.
      * @param int|float $timeout The number of seconds to try for.
      * @param string $timeoutMsg The message of the SeleniumException to throw on timeout.
-     * @return The return value of `$func`
+     * @return mixed The return value of `$func`
      * @throws SeleniumException if `$func` only returns nulls and the timeout elapses.
      * @throws Exception if `$func` throws it.
      */

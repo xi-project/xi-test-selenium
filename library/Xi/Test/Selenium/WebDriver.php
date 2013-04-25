@@ -116,7 +116,7 @@ class WebDriver extends HasWebElements
 
     /**
      * Takes a screenshot of the page.
-     * @param $pngFile A path to a PNG file to write the screenshot to.
+     * @param string $pngFile A path to a PNG file to write the screenshot to.
      */
     public function screenshot($pngFile)
     {
@@ -128,7 +128,7 @@ class WebDriver extends HasWebElements
         try {
             stream_filter_append($f, 'convert.base64-decode');
             fwrite($f, $base64Data);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             fclose($f);
             throw $e;
         }
@@ -209,7 +209,7 @@ class WebDriver extends HasWebElements
      *
      * @param string $script JavaScript code.
      * @param array $args Arguments to be made available in the script via the 'arguments' array. May contain WebElement objects.
-     * @return The return value of the script, if any. If it contains DOM objects, they are returned as WebElement objects.
+     * @return WebElement|mixed The return value of the script, if any. If it contains DOM objects, they are returned as WebElement objects.
      */
     public function runJavascript($script, array $args = array())
     {
