@@ -125,4 +125,15 @@ class WebElementTest extends LibraryTestCase
         $this->assertTrue($this->browser->find('#hidden-div')->isHidden());
     }
 
+    /**
+     * @test
+     */
+    public function canFindAndFillInMultipleElementsByLabel()
+    {
+        $this->browser->fillInByLabels(array(
+            'Here is a select' => 'Option 1',
+            'Here is a text field' => 'trol'
+        ));
+    }
+
 }

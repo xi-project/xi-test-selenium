@@ -88,6 +88,20 @@ abstract class HasWebElements // Would rather make this a trait
     }
 
     /**
+     * Given an array, finds elements whose labels correspond to the keys and fills in the values.
+     *
+     * This makes the common case of filling in large forms more convenient.
+     *
+     * @param array $labelsToValues An array where keys are valid for findByLabel and values are valid for fillIn().
+     */
+    public function fillInByLabels(array $labelsToValues)
+    {
+        foreach ($labelsToValues as $key => $value) {
+            $this->findByLabel($key)->fillIn($value);
+        }
+    }
+
+    /**
      * Waits for a (sub)element appear.
      *
      * @param string $matcher The matcher, format depending on $format.
