@@ -131,9 +131,23 @@ class WebElementTest extends LibraryTestCase
     public function canFindAndFillInMultipleElementsByLabel()
     {
         $this->browser->fillInByLabels(array(
-            'Here is a select' => 'Option 1',
+            'Here is a select' => 'Option 2',
             'Here is a text field' => 'trol'
         ));
+        $this->assertTrue($this->browser->find('#option-2')->isSelected());
+        $this->assertFalse($this->browser->find('#option-1')->isSelected());
     }
 
+    /**
+     * @test
+     * @expectedException \Xi\Test\Selenium\SeleniumException
+     * @expectedExceptionMessage Failed to fill in 'This field does not exist' with 'trol'
+     */
+    public function givesNiceErrorMessageWhenFailingToFillInMultipleElementsByLabel()
+    {
+        $this->browser->fillInByLabels(array(
+            'Here is a select' => 'Option 2',
+            'This field does not exist' => 'trol'
+        ));
+    }
 }

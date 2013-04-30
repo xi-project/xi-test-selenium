@@ -93,11 +93,16 @@ abstract class HasWebElements // Would rather make this a trait
      * This makes the common case of filling in large forms more convenient.
      *
      * @param array $labelsToValues An array where keys are valid for findByLabel and values are valid for fillIn().
+     * @throws SeleniumException if some label cannot be found or it does not point to a valid element
      */
     public function fillInByLabels(array $labelsToValues)
     {
         foreach ($labelsToValues as $key => $value) {
-            $this->findByLabel($key)->fillIn($value);
+            try {
+                $this->findByLabel($key)->fillIn($value);
+            } catch (SeleniumException $e) {
+                throw new SeleniumException("Failed to fill in '$key' with '$value'", $e->getCode(), $e);
+            }
         }
     }
 

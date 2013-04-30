@@ -133,7 +133,7 @@ class ElementFinderTest extends LibraryTestCase
     /**
      * @test
      */
-    public function canMultipleElementsByXPath()
+    public function canFindMultipleElementsByXPath()
     {
         $this->foreachContainer(function($self, $container) {
             $result = $container->findAll('//ul/li', 'xpath');
