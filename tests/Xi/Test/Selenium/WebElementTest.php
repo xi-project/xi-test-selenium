@@ -150,4 +150,27 @@ class WebElementTest extends LibraryTestCase
             'This field does not exist' => 'trol'
         ));
     }
+
+    /**
+     * @test
+     */
+    public function canGiveItsParentElement()
+    {
+        $this->assertEquals('ul', $this->browser->find('li')->getParent()->getTagName());
+        $this->assertEquals('section', $this->browser->find('#first-paragraph')->getParent()->getTagName());
+    }
+
+    /**
+     * @test
+     */
+    public function canGiveItsAllOfItsAncestorElements()
+    {
+        $ancestors = $this->browser->find('#first-paragraph')->getAncestors();
+
+        $tags = array();
+        foreach ($ancestors as $a) {
+            $tags[] = $a->getTagName();
+        }
+        $this->assertEquals(array('section', 'body', 'html'), $tags);
+    }
 }

@@ -143,6 +143,35 @@ class WebElement extends HasWebElements
         return $this->elementGet('/selected');
     }
 
+    /**
+     * Returns the parent element, if any.
+     *
+     * @return WebElement|null
+     */
+    public function getParent()
+    {
+        return $this->tryFind('..', 'xpath');
+    }
+
+    /**
+     * Returns all ancestor nodes of this node, deepest i.e. closest first.
+     *
+     * @return WebElement[]
+     */
+    public function getAncestors()
+    {
+        $result = array();
+        $p = $this;
+        // We test against the tag name because get an error if we try to select
+        // the document object (i.e. the thing above <html>).
+        // This is a kludge that assumes an HTML document. A better xpath-based solution is no doubt possible.
+        while ($p->getTagName() != 'html') {
+            $p = $p->getParent();
+            $result[] = $p;
+        }
+        return $result;
+    }
+
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->elementPost($relPath, $params);
