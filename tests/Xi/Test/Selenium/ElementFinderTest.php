@@ -82,6 +82,16 @@ class ElementFinderTest extends LibraryTestCase
     /**
      * @test
      */
+    public function doesNotFindAnElementByTextIfTheTextIsInterruptedByTags()
+    {
+        $this->browser->findByText('dolor');
+        $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
+        $this->browser->findByText('dolor sit');
+    }
+
+    /**
+     * @test
+     */
     public function canFindASetOfElementsOnThePageByCssSelectors()
     {
         $this->foreachContainer(function($self, $container) {
@@ -142,5 +152,25 @@ class ElementFinderTest extends LibraryTestCase
             $self->assertEquals('two', $result[1]->getText());
             $self->assertEquals('three', $result[2]->getText());
         });
+    }
+
+    /**
+     * @test
+     */
+    public function anElementCannotFindItselfByCss()
+    {
+        $this->assertEmpty($this->browser->find('body')->findAll('body'));
+    }
+
+    /**
+     * @test
+     */
+    public function anElementCanFindItselfByUsingFindByText()
+    {
+        $lipsum = 'Lorem ipsum...';
+        $p = $this->browser->findByText($lipsum);
+        $this->assertEquals('first-paragraph', $p->getId());
+        $this->assertEquals('first-paragraph', $p->findByText($lipsum)->getId());
+        $this->assertEquals('first-paragraph', $p->findByText($lipsum)->findByText($lipsum)->getId());
     }
 }

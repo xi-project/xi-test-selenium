@@ -7,7 +7,7 @@ namespace Xi\Test\Selenium;
 abstract class HasWebElements // Would rather make this a trait
 {
     /**
-     * Finds a (sub)element by a CSS selector or XPath expression.
+     * Finds a subelement by a CSS selector or XPath expression.
      *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
@@ -16,13 +16,11 @@ abstract class HasWebElements // Would rather make this a trait
      */
     public function find($matcher, $format = 'css')
     {
-        $using = $this->seleniumFormat($format);
-        $response = $this->makeRelativePostRequest('/element', array('using' => $using, 'value' => $matcher));
-        return $this->createWebElement($response['ELEMENT']);
+        return $this->findImpl('one', $matcher, $format);
     }
 
     /**
-     * Tries to find a (sub)element by a CSS selector or XPath expression.
+     * Finds a subelement by a CSS selector or XPath expression, returns null if not found.
      *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
@@ -31,30 +29,27 @@ abstract class HasWebElements // Would rather make this a trait
      */
     public function tryFind($matcher, $format = 'css')
     {
-        $results = $this->findAll($matcher, $format);
-        return (isset($results[0])) ? $results[0] : null;
+        return $this->findImpl('tryOne', $matcher, $format);
     }
 
     /**
-     * Finds a set of (sub)elements by a CSS selector or XPath expression.
+     * Finds a set of subelements by a CSS selector or XPath expression.
      *
      * @param string $matcher The matcher, format depending on $format.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
-     * @return array<WebElement> The (possibly empty) set of matched elements.
+     * @return WebElement[] The (possibly empty) set of matched elements.
      */
     public function findAll($matcher, $format = 'css')
     {
-        $using = $this->seleniumFormat($format);
-        $response = $this->makeRelativePostRequest('/elements', array('using' => $using, 'value' => $matcher));
-        $result = array();
-        foreach ($response as $responseElement) {
-            $result[] = $this->createWebElement($responseElement['ELEMENT']);
-        }
-        return $result;
+        return $this->findImpl('all', $matcher, $format);
     }
 
     /**
-     * Finds a (sub)element that contains the given text.
+     * Finds a (sub)element that immediately contains the given text.
+     *
+     * Note that, unlike the selector-based find methods, this method may return the current element.
+     *
+     * It only finds text that is not interrupted by tags. This limitation may be removed in a future version.
      *
      * @param string $text The text to search for.
      * @return WebElement The element that contained the text as a substring.
@@ -62,13 +57,47 @@ abstract class HasWebElements // Would rather make this a trait
      */
     public function findByText($text)
     {
-        $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
-        $response = $this->makeRelativePostRequest('/element', array('using' => 'xpath', 'value' => $expr));
-        return $this->createWebElement($response['ELEMENT']);
+        return $this->findByTextImpl('one', $text);
     }
 
     /**
-     * Finds a (sub)element pointed to by a label tag's for attribute.
+     * Finds all subelements that immediately contain the given text.
+     *
+     * Note that, unlike the selector-based find methods, this method may return the current element.
+     *
+     * It only finds text that is not interrupted by tags. This limitation may be removed in a future version.
+     *
+     * @param string $text The text to search for.
+     * @return WebElement[] The elements that contained the text as a substring.
+     */
+    public function findAllByText($text)
+    {
+        return $this->findByTextImpl('all', $text);
+    }
+
+    /**
+     * Finds a (sub)element that immediately contains the given text, returns null if not found.
+     *
+     * Note that, unlike the selector-based find methods, this method may return the current element.
+     *
+     * It only finds text that is not interrupted by tags. This limitation may be removed in a future version.
+     *
+     * @param string $text The text to search for.
+     * @return WebElement|null The element that contained the text as a substring, or null if not found.
+     */
+    public function tryFindByText($text)
+    {
+        return $this->findByTextImpl('tryOne', $text);
+    }
+
+    protected function findByTextImpl($mode, $text)
+    {
+        $expr = '//*[contains(text(),\'' . addslashes($text) . '\')]';
+        return $this->findImpl($mode, $expr, 'xpath');
+    }
+
+    /**
+     * Finds a subelement pointed to by a label tag's for attribute.
      *
      * @param string $labelText The text of the label whose element to search for.
      * @return WebElement The element the label with the given text points to with its `for` attribute.
@@ -107,77 +136,99 @@ abstract class HasWebElements // Would rather make this a trait
     }
 
     /**
-     * Waits for a (sub)element appear.
+     * Waits for a subelement appear for an extended period of time.
+     *
+     * By default, all elements are waited for for a short while. See WebDriver::setImplicitWait().
      *
      * @param string $matcher The matcher, format depending on $format.
+     * @param int|float $timeout The number of seconds to wait at most.
      * @param string $format Either 'css' or 'xpath'. Default: 'css'.
-     * @param int|float $timeout The number of seconds to wait at most. Has a default value.
      * @return WebElement The matched element. Never null.
      * @throws SeleniumException if an error occurred or no element matched
      */
-    public function waitForElement($matcher, $format = 'css', $timeout = null)
+    public function waitForElement($matcher, $timeout, $format = 'css')
     {
         $self = $this;
-        return $this->pollForResult(function() use ($self, $matcher, $format) {
-            return $self->tryFind($matcher, $format);
+        return $this->withImplicitWait(function() use ($self, $matcher, $format) {
+            return $self->find($matcher, $format);
         }, $timeout, "No element matching $format `$matcher` appeared in $timeout sec");
     }
 
     /**
-     * Waits for text to appear in a (sub)element.
+     * Waits for text to appear in a subelement.
      *
-     * This is the default way to check that text appears on a page.
+     * By default, all elements are waited for for a short while. See WebDriver::setImplicitWait().
      *
      * @param string $text The text to wait for.
      * @param int|float $timeout The number of seconds to wait at most. Has a default value.
      * @return WebElement The element that contained the text. Never null.
      * @throws SeleniumException if an error occurred or the timeout elapsed.
      */
-    public function waitForText($text, $timeout = null)
+    public function waitForText($text, $timeout)
     {
         $self = $this;
-        return $this->pollForResult(function() use ($self, $text) {
-            try {
-                return $self->findByText($text);
-            } catch (SeleniumException $e) {
-                if (!$e->isDueToElementMissingOrInvisible()) {
-                    throw $e;
-                }
-            }
-            return null;
+        return $this->withImplicitWait(function() use ($self, $text) {
+            return $self->findByText($text);
         }, $timeout, "Element with text '$text' failed to appear in $timeout sec");
     }
 
     /**
-     * Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed.
+     * Sets an implicit wait of $timeout, calls $func, then restores the previous implicit wait.
      *
      * Throws a SeleniumException on timeout. Exceptions from $func pass through.
      *
      * This is used internally to implement the `waitFor*` methods,
      * but can also be used by client code.
      *
+     * By default, all elements are waited for for a short while. See WebDriver::setImplicitWait().
+     *
      * @param callable $func A callback to invoke.
-     * @param int|float $timeout The number of seconds to try for.
-     * @param string $timeoutMsg The message of the SeleniumException to throw on timeout.
-     * @return mixed The return value of `$func`
-     * @throws SeleniumException if `$func` only returns nulls and the timeout elapses.
-     * @throws Exception if `$func` throws it.
+     * @param int|float $timeout The number of seconds to set the implicit wait to while $func executes.
+     * @return mixed The return value of $func
+     * @throws SeleniumException if the timeout elapses or $func throws it.
+     * @throws \Exception if $func throws it.
      */
-    public function pollForResult($func, $timeout = null, $timeoutMsg = 'timeout')
+    public function withImplicitWait($func, $timeout = null)
     {
-        $timeout = $timeout ?: $this->getDefaultWaitTimeout();
-        $startTime = microtime(true);
-        do {
-            $timePassed = microtime(true) - $startTime;
-            $sleepTime = min(1.0, $timePassed / 10.0); // The longer it takes, the less we waste CPU, but never wait for over 1 sec
-            usleep($sleepTime * 1000000);
+        $oldImplicitWait = $this->getSession()->getImplicitWait();
+        $this->getSession()->setImplicitWait($timeout);
+        try {
+            $ret = call_user_func($func);
+        } catch (\Exception $e) {
+            $this->getSession()->setImplicitWait($oldImplicitWait);
+            throw $e;
+        }
+        $this->getSession()->setImplicitWait($oldImplicitWait);
+        return $ret;
+    }
 
-            $result = call_user_func($func);
-            if ($result !== null) {
-                return $result;
+    protected function findImpl($mode, $expr, $format)
+    {
+        assert(in_array($mode, array('all', 'one', 'tryOne')));
+        $fetchAll = ($mode === 'all' || $mode === 'tryOne');
+
+        $url = $fetchAll ? '/elements' : '/element';
+        $using = $this->seleniumFormat($format);
+        $response = $this->makeRelativePostRequest($url, array('using' => $using, 'value' => $expr));
+
+        if ($mode === 'all') {
+            $result = array();
+            foreach ($response as $responseElement) {
+                $result[] = $this->createWebElement($responseElement['ELEMENT']);
             }
-        } while ($timePassed <= $timeout);
-        throw new SeleniumException($timeoutMsg, SeleniumException::Timeout);
+            return $result;
+        } elseif ($mode === 'one') {
+            return $this->createWebElement($response['ELEMENT']);
+        } elseif ($mode === 'tryOne') {
+            $first = array_shift($response);
+            if ($first !== null) {
+                return $this->createWebElement($first['ELEMENT']);
+            } else {
+                return null;
+            }
+        } else {
+            throw new \Exception("Internal error: findImpl called with incorrect \$mode: $mode.");
+        }
     }
 
     private function seleniumFormat($format)
@@ -189,16 +240,12 @@ abstract class HasWebElements // Would rather make this a trait
         }
     }
 
+    /**
+     * @return WebDriver
+     */
+    protected abstract function getSession();
+
     protected abstract function makeRelativePostRequest($relPath, $params);
 
     protected abstract function createWebElement($elementId);
-
-    /**
-     * Returns the number of seconds that `waitFor*` methods wait for.
-     * @return int|float
-     */
-    public function getDefaultWaitTimeout()
-    {
-        return 5;
-    }
 }

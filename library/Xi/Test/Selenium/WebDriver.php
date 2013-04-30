@@ -14,6 +14,8 @@ namespace Xi\Test\Selenium;
  */
 class WebDriver extends HasWebElements
 {
+    const DEFAULT_IMPLICIT_WAIT = 5;
+
     /**
      * @var SeleniumServer
      */
@@ -22,6 +24,8 @@ class WebDriver extends HasWebElements
     protected $sessionPath;
 
     protected $baseUrl;
+
+    protected $implicitWait;
 
     /**
      * Constructs a WebDriver to use a given server.
@@ -39,6 +43,7 @@ class WebDriver extends HasWebElements
         $this->options = array_merge($this->getDefaultOptions(), $options);
 
         $this->openSession();
+        $this->setImplicitWait(static::DEFAULT_IMPLICIT_WAIT);
     }
 
     /**
@@ -62,6 +67,16 @@ class WebDriver extends HasWebElements
     }
 
     /**
+     * Returns the SeleniumServer object.
+     *
+     * @return SeleniumServer
+     */
+    public final function getServer()
+    {
+        return $this->server;
+    }
+
+    /**
      * Sets the URL prefix to use when calling visit() with a relative path.
      *
      * @param string|null $baseUrl
@@ -81,6 +96,30 @@ class WebDriver extends HasWebElements
     public final function getBaseUrl()
     {
         return $this->baseUrl;
+    }
+
+    /**
+     * Returns the number of seconds an element is waited for when trying to find it.
+     *
+     * @return int|float The amount of time to wait in seconds.
+     */
+    public final function getImplicitWait()
+    {
+        return $this->implicitWait;
+    }
+
+    /**
+     * Sets the number of seconds an element is waited for when trying to find it.
+     *
+     * @param int|float $value The amount of time to wait in seconds. Decimals are allowed.
+     */
+    public function setImplicitWait($value)
+    {
+        if (!is_int($value)) {
+            $value = floatval($value);
+        }
+        $this->implicitWait = $value;
+        $this->sessionPost('/timeouts/implicit_wait', array('ms' => (int)($value * 1000)));
     }
 
     /**
@@ -303,6 +342,11 @@ class WebDriver extends HasWebElements
         return ($this->server === null);
     }
 
+    protected function getSession()
+    {
+        return $this;
+    }
+
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->sessionPost($relPath, $params);
@@ -310,7 +354,7 @@ class WebDriver extends HasWebElements
 
     protected function createWebElement($elementId)
     {
-        return new WebElement($this->server, $this->sessionPath, $elementId);
+        return new WebElement($this->getSession(), $this->sessionPath, $elementId);
     }
 
     protected function sessionGet($path)

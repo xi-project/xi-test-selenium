@@ -7,7 +7,7 @@
 </head>
 <body>
     <section>
-        <button id="simbutton">Simulate 2 sec download</button>
+        <button id="simbutton">Simulate 3 sec download</button>
         <div id="result"></div>
         
         <script type="text/javascript">
@@ -17,7 +17,7 @@
                 setTimeout(function() {
                     $('#result').text('do' + 'ne'); // avoid the 'script' tag being found ^_^
                     $('#result').after('<div id="newdiv">this element was "downloaded"</div>');
-                }, 2000);
+                }, 3000);
             });
         });
         //-->

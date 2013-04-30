@@ -9,14 +9,14 @@ namespace Xi\Test\Selenium;
  */
 class WebElement extends HasWebElements
 {
-    protected $server;
+    protected $session;
     protected $sessionPath;
     protected $elementId;
     protected $elementPath;
 
-    public function __construct(SeleniumServer $server, $sessionPath, $id)
+    public function __construct(WebDriver $session, $sessionPath, $id)
     {
-        $this->server = $server;
+        $this->session = $session;
         $this->sessionPath = $sessionPath;
         $this->elementId = (string)$id;
         $this->elementPath = $sessionPath . '/element/' . $id;
@@ -29,6 +29,15 @@ class WebElement extends HasWebElements
     public function getSeleniumId()
     {
         return $this->elementId;
+    }
+
+    /**
+     * Returns the WebDriver instance that this element resides in.
+     * @return WebDriver
+     */
+    public function getSession()
+    {
+        return $this->session;
     }
 
     /**
@@ -134,28 +143,28 @@ class WebElement extends HasWebElements
         return $this->elementGet('/selected');
     }
 
-    protected function createWebElement($elementId)
-    {
-        return new static($this->server, $this->sessionPath, $elementId);
-    }
-
     protected function makeRelativePostRequest($relPath, $params)
     {
         return $this->elementPost($relPath, $params);
     }
 
+    protected function createWebElement($elementId)
+    {
+        return new static($this->session, $this->sessionPath, $elementId);
+    }
+
     protected function elementGet($path)
     {
-        return $this->server->get($this->elementPath . $path);
+        return $this->session->getServer()->get($this->elementPath . $path);
     }
 
     protected function elementPost($path, $params = null)
     {
-        return $this->server->post($this->elementPath . $path, $params);
+        return $this->session->getServer()->post($this->elementPath . $path, $params);
     }
 
     protected function elementDelete($path)
     {
-        return $this->server->delete($this->elementPath . $path);
+        return $this->session->getServer()->delete($this->elementPath . $path);
     }
 }

@@ -9,6 +9,7 @@ class AsyncTest extends LibraryTestCase
     public function setUp()
     {
         parent::setUp();
+        $this->browser->setImplicitWait(0.5);
         $this->browser->visit($this->testFileBaseUrl . '/async.html');
     }
 
@@ -21,7 +22,7 @@ class AsyncTest extends LibraryTestCase
 
         $button->click();
 
-        $result = $this->browser->waitForElement("#newdiv");
+        $result = $this->browser->waitForElement("#newdiv", 7);
         $this->assertEquals('div', $result->getTagName());
         $this->assertEquals('this element was "downloaded"', $result->getText());
     }
@@ -32,7 +33,16 @@ class AsyncTest extends LibraryTestCase
     public function throwsAnExceptionIfTheMatchingElementDoesntAppear()
     {
         $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
-        $this->browser->waitForElement('.asdasd', 'css', 2);
+        $this->browser->waitForElement('.asdasd', 7);
+    }
+
+    /**
+     * @test
+     */
+    public function throwsAnExceptionIfTheMatchingElementDoesntAppearInTime()
+    {
+        $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
+        $this->browser->waitForElement('#newdiv', 2);
     }
 
     /**
@@ -46,7 +56,7 @@ class AsyncTest extends LibraryTestCase
         $this->assertEmpty($resultBefore->getText());
         $button->click();
 
-        $resultAfter = $this->browser->waitForText('don'); // Partial text should suffice
+        $resultAfter = $this->browser->waitForText('don', 7); // Partial text should suffice
         $this->assertEquals('done', $resultAfter->getText());
         $this->assertEquals('done', $resultBefore->getText());
         $this->assertEquals('done', $this->browser->find('#result')->getText());
@@ -58,6 +68,6 @@ class AsyncTest extends LibraryTestCase
     public function throwsAnExceptionIfThePartialTextDoesntAppear()
     {
         $this->setExpectedException('Xi\Test\Selenium\SeleniumException');
-        $this->browser->waitForText('asdasd', 'css', 2);
+        $this->browser->waitForText('asdasd', 1);
     }
 }
