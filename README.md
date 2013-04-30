@@ -26,6 +26,7 @@ $browser->visit('/index');
 $browser->findByLabel('Username')->fillIn('john');
 $browser->findByLabel('Password')->fillIn('shepard');
 $browser->find('form#login button[type=submit]')->click();
+$browser->waitForText('Welcome john');
 $browser->screenshot('after-login.png');
 ```
 

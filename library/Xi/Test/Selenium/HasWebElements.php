@@ -121,6 +121,8 @@ abstract class HasWebElements // Would rather make this a trait
     /**
      * Waits for text to appear in a (sub)element.
      *
+     * This is the default way to check that text appears on a page.
+     *
      * @param string $text The text to wait for.
      * @param int|float $timeout The number of seconds to wait at most. Has a default value.
      * @return WebElement The element that contained the text. Never null.
