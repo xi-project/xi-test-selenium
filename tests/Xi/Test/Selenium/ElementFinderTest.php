@@ -125,7 +125,7 @@ class ElementFinderTest extends LibraryTestCase
     public function canFindSingleElementsByXPath()
     {
         $this->foreachContainer(function($self, $container) {
-            $result = $self->browser->find('//ul/li[1]', 'xpath');
+            $result = $container->find('//ul/li[1]', 'xpath');
             $self->assertEquals('one', $result->getText());
         });
     }
@@ -136,7 +136,7 @@ class ElementFinderTest extends LibraryTestCase
     public function canMultipleElementsByXPath()
     {
         $this->foreachContainer(function($self, $container) {
-            $result = $self->browser->findAll('//ul/li', 'xpath');
+            $result = $container->findAll('//ul/li', 'xpath');
             $self->assertEquals(3, count($result));
             $self->assertEquals('one', $result[0]->getText());
             $self->assertEquals('two', $result[1]->getText());
