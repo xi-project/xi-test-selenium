@@ -1,6 +1,21 @@
 #!/bin/bash
 cd `dirname "$0"`
 
+SIGNALS="HUP KILL INT ABRT STOP QUIT SEGV TERM"
+
+cleanup() {
+    trap - $SIGNALS
+
+    if [ -n "$SELENIUM_PID" ]; then
+        echo "Shutting down Selenium server"
+        kill $SELENIUM_PID
+    fi
+
+    exit
+}
+
+trap cleanup $SIGNALS
+
 if [ "$1" = '-n' ]; then
     shift
 else
@@ -17,7 +32,4 @@ fi
 
 ../vendor/bin/phpunit $@
 
-if [ -n "$SELENIUM_PID" ]; then
-    echo "Shutting down Selenium server"
-    kill $SELENIUM_PID
-fi
+cleanup
