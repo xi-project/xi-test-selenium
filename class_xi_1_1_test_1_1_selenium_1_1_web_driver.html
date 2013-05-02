@@ -98,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
@@ -127,10 +128,16 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> to use a given server.  <a href="#ab5ad32027c40d7e39671b8ee59420b95"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a6ffef9cc13d8d40b47724b79c19ed4e8">__destruct</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to close the session, if possible.  <a href="#a6ffef9cc13d8d40b47724b79c19ed4e8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a13aaf23001b3339234f2f6b7ecb3e45d">getServer</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_selenium_server.html" title="Manages a connection to a Selenium server.">SeleniumServer</a> object.  <a href="#a13aaf23001b3339234f2f6b7ecb3e45d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afe61a91a1813b79137e02f6dfd02d3cc">setBaseUrl</a> ($baseUrl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the URL prefix to use when calling <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8cd1a08e54695bfdd2e609937f3fd047" title="Navigates to the given URL.">visit()</a> with a relative path.  <a href="#afe61a91a1813b79137e02f6dfd02d3cc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afbae3967df5318131277d4903a0004cd">getBaseUrl</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the URL prefix to use when calling <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8cd1a08e54695bfdd2e609937f3fd047" title="Navigates to the given URL.">visit()</a> with a relative path.  <a href="#afbae3967df5318131277d4903a0004cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a607e6a111b3d3cad4ebb87186a949f40">getImplicitWait</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of seconds an element is waited for when trying to find it.  <a href="#a607e6a111b3d3cad4ebb87186a949f40"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58">setImplicitWait</a> ($value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of seconds an element is waited for when trying to find it.  <a href="#aadadad66480261b0547cb17f7c8a8b58"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8cd1a08e54695bfdd2e609937f3fd047">visit</a> ($url)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Navigates to the given URL.  <a href="#a8cd1a08e54695bfdd2e609937f3fd047"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a5e95abf40e181809dc55480da991e46d">getUrl</a> ()</td></tr>
@@ -163,6 +170,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">You should call this when you're finished with the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> or else a browser window is left open until Selenium eventually times it out.  <a href="#a8f4584632392232b7c6ec9a4d7c77199"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a1a9f71bbe2616fa438ad70c1f22b60d4">isClosed</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether closeSession has been called.  <a href="#a1a9f71bbe2616fa438ad70c1f22b60d4"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a075c54f1607a49c25aa315677be742f9">DEFAULT_IMPLICIT_WAIT</a> = 5</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ad4cd5cd532fc87a58d46be5a9b0d9884">webElementsToRequest</a> (array $a)</td></tr>
@@ -170,6 +180,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afad85cf06491f9c69e58017708c8d0db">filterUrl</a> ($url)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#af958874771bc0dc92f8c3b50af6abaaa">isAbsoluteUrl</a> ($url)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a94946948ecda3359ff54c5cfd392bde9">openSession</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ace7d72d261601a979cd5e741bb9fa21a">getSession</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a5e17baeefc7444d77c71bdd2cb4d3d2a">makeRelativePostRequest</a> ($relPath, $params)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#adfbc4a9948cd43fd28248811674d299b">createWebElement</a> ($elementId)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a42e10cf7f5439e15c0e460a6e8a99da7">sessionGet</a> ($path)</td></tr>
@@ -182,6 +193,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#adab861bbdbf992c6298bb7937878685e">$options</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a741686716652266d88c9662db6a04053">$sessionPath</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeac9390aab8c338a44e575f0481608eb">$baseUrl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a3b3928aca579f8ef8a3636d710470af5">$implicitWait</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A Selenium <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> session. </p>
@@ -225,12 +237,13 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00036">36</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00040">40</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;server = <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a781629315516a15f869cbac61d55fed5">$server</a>;
         $this-&gt;options = array_merge($this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeb5da699ca8be530d4e8e0b749013052">getDefaultOptions</a>(), <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#adab861bbdbf992c6298bb7937878685e">$options</a>);
 
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a94946948ecda3359ff54c5cfd392bde9">openSession</a>();
+        $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58" title="Sets the number of seconds an element is waited for when trying to find it.">setImplicitWait</a>(static::DEFAULT_IMPLICIT_WAIT);
     }
 </pre></div>
 </div>
@@ -252,7 +265,7 @@ Protected Attributes</h2></td></tr>
 <p>Attempts to close the session, if possible. </p>
 <p>Note that this is not called on fatal error, and I'm afraid the garbage collection order when PHP exits might cause this to fail randomly. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00051">51</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00056">56</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> ($this-&gt;server) {
             echo <span class="stringliteral">&quot;Warning: The Selenium session was not explicitly closed!\n&quot;</span>;
@@ -268,6 +281,30 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a13aaf23001b3339234f2f6b7ecb3e45d"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::getServer" ref="a13aaf23001b3339234f2f6b7ecb3e45d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a13aaf23001b3339234f2f6b7ecb3e45d">WebDriver::getServer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_selenium_server.html" title="Manages a connection to a Selenium server.">SeleniumServer</a> object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_selenium_server.html" title="Manages a connection to a Selenium server.">SeleniumServer</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00074">74</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this-&gt;server;
+    }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="afe61a91a1813b79137e02f6dfd02d3cc"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::setBaseUrl" ref="afe61a91a1813b79137e02f6dfd02d3cc" args="($baseUrl)" -->
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +328,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00069">69</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00084">84</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> (<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeac9390aab8c338a44e575f0481608eb">$baseUrl</a> !== null) {
             $this-&gt;baseUrl = rtrim(<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeac9390aab8c338a44e575f0481608eb">$baseUrl</a>, <span class="charliteral">&#39;/&#39;</span>);
@@ -318,9 +355,67 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns the URL prefix to use when calling <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8cd1a08e54695bfdd2e609937f3fd047" title="Navigates to the given URL.">visit()</a> with a relative path. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00081">81</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00096">96</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;baseUrl;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a607e6a111b3d3cad4ebb87186a949f40"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::getImplicitWait" ref="a607e6a111b3d3cad4ebb87186a949f40" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a607e6a111b3d3cad4ebb87186a949f40">WebDriver::getImplicitWait</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of seconds an element is waited for when trying to find it. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>int|float The amount of time to wait in seconds. </dd></dl>
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00106">106</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this-&gt;implicitWait;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aadadad66480261b0547cb17f7c8a8b58"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::setImplicitWait" ref="aadadad66480261b0547cb17f7c8a8b58" args="($value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58">WebDriver::setImplicitWait</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the number of seconds an element is waited for when trying to find it. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int&#160;|&#160;float</td><td class="paramname">$value</td><td>The amount of time to wait in seconds. Decimals are allowed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00116">116</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">if</span> (!is_int($value)) {
+            $value = floatval($value);
+        }
+        $this-&gt;implicitWait = $value;
+        $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/timeouts/implicit_wait&#39;</span>, array(<span class="stringliteral">&#39;ms&#39;</span> =&gt; (<span class="keywordtype">int</span>)($value * 1000)));
     }
 </pre></div>
 </div>
@@ -343,7 +438,7 @@ Protected Attributes</h2></td></tr>
 <p>Navigates to the given URL. </p>
 <p>If the URL is relative, then the baseUrl (if any) is prepended. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00091">91</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00130">130</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/url&#39;</span>, array(<span class="stringliteral">&#39;url&#39;</span> =&gt; $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afad85cf06491f9c69e58017708c8d0db">filterUrl</a>($url)));
     }
@@ -367,7 +462,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the (full) contents of the browser's URL bar. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00100">100</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00139">139</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a42e10cf7f5439e15c0e460a6e8a99da7">sessionGet</a>(<span class="stringliteral">&#39;/url&#39;</span>);
     }
@@ -391,7 +486,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the page title. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00109">109</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00148">148</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a42e10cf7f5439e15c0e460a6e8a99da7">sessionGet</a>(<span class="stringliteral">&#39;/title&#39;</span>);
     }
@@ -415,7 +510,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the source code of the current page. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00118">118</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00157">157</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a42e10cf7f5439e15c0e460a6e8a99da7">sessionGet</a>(<span class="stringliteral">&#39;/source&#39;</span>);
     }
@@ -445,7 +540,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00127">127</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00166">166</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> (strtolower(pathinfo($pngFile, PATHINFO_EXTENSION)) !== <span class="stringliteral">&#39;png&#39;</span>) {
             <span class="keywordflow">throw</span> <span class="keyword">new</span> SeleniumException(<span class="stringliteral">&quot;Can only take PNG screenshots. This doesn&#39;t seem like a path to a PNG: $pngFile&quot;</span>);
@@ -480,7 +575,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Moves back one step in the browser history. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00147">147</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00186">186</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/back&#39;</span>);
     }
@@ -503,7 +598,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Moves forward one step in the browser history. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00155">155</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00194">194</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/forward&#39;</span>);
     }
@@ -526,7 +621,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Refreshes the current page. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00163">163</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00202">202</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/refresh&#39;</span>);
     }
@@ -555,7 +650,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00172">172</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00211">211</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a42e10cf7f5439e15c0e460a6e8a99da7">sessionGet</a>(<span class="stringliteral">&#39;/alert_text&#39;</span>);
     }
@@ -584,7 +679,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00181">181</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00220">220</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/accept_alert&#39;</span>);
     }
@@ -613,7 +708,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00190">190</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00229">229</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/dismiss_alert&#39;</span>);
     }
@@ -643,7 +738,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00199">199</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00238">238</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/alert_text&#39;</span>, array(<span class="stringliteral">&#39;text&#39;</span> =&gt; $answer));
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/accept_alert&#39;</span>);
@@ -667,7 +762,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Deletes all cookies visible to the current page. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00208">208</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00247">247</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a68a85899d05c998045a3069d9e33904b">sessionDelete</a>(<span class="stringliteral">&#39;/cookie&#39;</span>);
     }
@@ -709,7 +804,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>WebElement|mixed The return value of the script, if any. If it contains DOM objects, they are returned as <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html" title="An element in the HTML document.">WebElement</a> objects. </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00220">220</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00259">259</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $args = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ad4cd5cd532fc87a58d46be5a9b0d9884">webElementsToRequest</a>($args);
         $response = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>(<span class="stringliteral">&#39;/execute&#39;</span>, array(<span class="stringliteral">&#39;script&#39;</span> =&gt; $script, <span class="stringliteral">&#39;args&#39;</span> =&gt; $args));
@@ -733,7 +828,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00227">227</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00266">266</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">foreach</span> ($a as $key =&gt; $value) {
             <span class="keywordflow">if</span> (is_array($value)) {
@@ -762,7 +857,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00239">239</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00278">278</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> (is_array($a)) {
             <span class="keywordflow">if</span> (isset($a[<span class="stringliteral">&#39;ELEMENT&#39;</span>])) {
@@ -793,7 +888,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00254">254</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00293">293</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> ($this-&gt;baseUrl &amp;&amp; !$this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#af958874771bc0dc92f8c3b50af6abaaa">isAbsoluteUrl</a>($url)) {
             <span class="keywordflow">if</span> ($url[0] == <span class="charliteral">&#39;/&#39;</span>) {
@@ -823,7 +918,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00267">267</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00306">306</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $colon = strpos($url, <span class="charliteral">&#39;:&#39;</span>);
         $slash = strpos($url, <span class="charliteral">&#39;/&#39;</span>);
@@ -850,7 +945,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00278">278</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00317">317</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $resp = $this-&gt;server-&gt;post(<span class="stringliteral">&#39;/session&#39;</span>, array(
             <span class="stringliteral">&#39;desiredCapabilities&#39;</span> =&gt; $this-&gt;options
@@ -876,7 +971,7 @@ Protected Attributes</h2></td></tr>
 
 <p>You should call this when you're finished with the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> or else a browser window is left open until Selenium eventually times it out. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00290">290</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00329">329</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;server-&gt;delete($this-&gt;sessionPath);
         $this-&gt;server = null;
@@ -901,9 +996,33 @@ Protected Attributes</h2></td></tr>
 <p>Tells whether closeSession has been called. </p>
 <p>Calling any other function after the session has been closed is likely to causes an error. </p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00301">301</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00340">340</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> ($this-&gt;server === null);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ace7d72d261601a979cd5e741bb9fa21a"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::getSession" ref="ace7d72d261601a979cd5e741bb9fa21a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ace7d72d261601a979cd5e741bb9fa21a">WebDriver::getSession</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">Xi\Test\Selenium\HasWebElements</a>.</p>
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00345">345</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this;
     }
 </pre></div>
 </div>
@@ -935,7 +1054,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00306">306</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00350">350</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd">sessionPost</a>($relPath, $params);
     }
@@ -959,9 +1078,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00311">311</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00355">355</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        <span class="keywordflow">return</span> <span class="keyword">new</span> WebElement($this-&gt;server, $this-&gt;sessionPath, $elementId);
+        <span class="keywordflow">return</span> <span class="keyword">new</span> WebElement($this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ace7d72d261601a979cd5e741bb9fa21a">getSession</a>(), $this-&gt;sessionPath, $elementId);
     }
 </pre></div>
 </div>
@@ -981,7 +1100,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00316">316</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00360">360</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;get($this-&gt;sessionPath . $path);
     }
@@ -1013,7 +1132,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00321">321</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00365">365</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;post($this-&gt;sessionPath . $path, $params);
     }
@@ -1035,7 +1154,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00326">326</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00370">370</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;server-&gt;delete($this-&gt;sessionPath . $path);
     }
@@ -1056,7 +1175,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00331">331</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00375">375</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> array(
             <span class="stringliteral">&#39;browserName&#39;</span> =&gt; <span class="stringliteral">&#39;firefox&#39;</span>,
@@ -1069,6 +1188,21 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a075c54f1607a49c25aa315677be742f9"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::DEFAULT_IMPLICIT_WAIT" ref="a075c54f1607a49c25aa315677be742f9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Xi::Test::Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a075c54f1607a49c25aa315677be742f9">WebDriver::DEFAULT_IMPLICIT_WAIT</a> = 5</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00017">17</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a781629315516a15f869cbac61d55fed5"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::$server" ref="a781629315516a15f869cbac61d55fed5" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1080,7 +1214,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00020">20</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00022">22</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 
 </div>
 </div>
@@ -1095,7 +1229,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00021">21</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00023">23</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 
 </div>
 </div>
@@ -1110,7 +1244,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00022">22</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00024">24</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 
 </div>
 </div>
@@ -1125,7 +1259,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00024">24</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00026">26</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b3928aca579f8ef8a3636d710470af5"></a><!-- doxytag: member="Xi::Test::Selenium::WebDriver::$implicitWait" ref="a3b3928aca579f8ef8a3636d710470af5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi::Test::Selenium\WebDriver::$implicitWait<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_web_driver_8php_source.html#l00028">28</a> of file <a class="el" href="_web_driver_8php_source.html">WebDriver.php</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1301,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><b>Selenium</b>      </li>
       <li class="navelem"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html">WebDriver</a>      </li>
 
-    <li class="footer">Generated on Thu Apr 25 2013 16:09:09 for xi-test-selenium by
+    <li class="footer">Generated on Thu May 2 2013 10:01:02 for xi-test-selenium by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -123,9 +123,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a17ab3a1b0142cc323fe5acf1bd0585f5">__construct</a> (<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_selenium_server.html">SeleniumServer</a> $server, $sessionPath, $id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a5f5cd3e63e53b8649c7a86cb2efeb0b9">__construct</a> (<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html">WebDriver</a> $session, $sessionPath, $id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a32e974ca897a3b6e567183a70bd937ac">getSeleniumId</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the opaque ID Selenium has assigned to this element.  <a href="#a32e974ca897a3b6e567183a70bd937ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a2dc0ed4276d2ae624a43f69b2c652ac2">getSession</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> instance that this element resides in.  <a href="#a2dc0ed4276d2ae624a43f69b2c652ac2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#aa631d5619816e67a071fd5e2caf73c90">getId</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the HTML id of the element.  <a href="#aa631d5619816e67a071fd5e2caf73c90"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#aeb5e8c193dd0aeb7eb1d3139767b067a">getTagName</a> ()</td></tr>
@@ -147,16 +149,22 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears a text(area) input field of all input.  <a href="#aed669be9dc6746ddfa64c8c5020134fe"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#ad928572c1df4d9e1daed31f980eee80c">isSelected</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells whether this element (option, checkbox or radio button) is selected.  <a href="#ad928572c1df4d9e1daed31f980eee80c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#abdd1ed98fe1062a3382ebd7c53bcc48a">getParent</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the parent element, if any.  <a href="#abdd1ed98fe1062a3382ebd7c53bcc48a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#ade7a483e86076cc0ea1ec9c9f2e4789d">getAncestors</a> ($predicate=null)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all ancestor elements of this element, deepest i.e.  <a href="#ade7a483e86076cc0ea1ec9c9f2e4789d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a9744fb2cf2f01a27a207cdca149603db">getAncestorTags</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the tag names of all ancestor elements of this element, deepest i.e.  <a href="#a9744fb2cf2f01a27a207cdca149603db"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a994f3c26e0117511d5ffe11a664265e8">createWebElement</a> ($elementId)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a57a87a759d5dbf5f250267a5f3c7668f">makeRelativePostRequest</a> ($relPath, $params)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a994f3c26e0117511d5ffe11a664265e8">createWebElement</a> ($elementId)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a> ($path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a> ($path, $params=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a53c80ed47d85dadaba904f4cff5b2406">elementDelete</a> ($path)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#aafa7a22da660b2759b8ca8a5c33fc554">$server</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a51db4e914beae45dfc2abd48e8197c6c">$session</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a45673abeaaac9ee7ad731442849e66b1">$sessionPath</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#abbc33302d54cacac5678d4974b68a86f">$elementId</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#afffa5e42b241d166bd8112289f3dc797">$elementPath</a></td></tr>
@@ -167,15 +175,15 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_web_element_8php_source.html#l00010">10</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a17ab3a1b0142cc323fe5acf1bd0585f5"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::__construct" ref="a17ab3a1b0142cc323fe5acf1bd0585f5" args="(SeleniumServer $server, $sessionPath, $id)" -->
+<a class="anchor" id="a5f5cd3e63e53b8649c7a86cb2efeb0b9"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::__construct" ref="a5f5cd3e63e53b8649c7a86cb2efeb0b9" args="(WebDriver $session, $sessionPath, $id)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a17ab3a1b0142cc323fe5acf1bd0585f5">WebElement::__construct</a> </td>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a5f5cd3e63e53b8649c7a86cb2efeb0b9">WebElement::__construct</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_selenium_server.html">SeleniumServer</a> $&#160;</td>
-          <td class="paramname"><em>server</em>, </td>
+          <td class="paramtype"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html">WebDriver</a> $&#160;</td>
+          <td class="paramname"><em>session</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -200,7 +208,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_web_element_8php_source.html#l00017">17</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        $this-&gt;server = <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#aafa7a22da660b2759b8ca8a5c33fc554">$server</a>;
+        $this-&gt;session = <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a51db4e914beae45dfc2abd48e8197c6c">$session</a>;
         $this-&gt;sessionPath = <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a45673abeaaac9ee7ad731442849e66b1">$sessionPath</a>;
         $this-&gt;elementId = (string)$id;
         $this-&gt;elementPath = <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a45673abeaaac9ee7ad731442849e66b1">$sessionPath</a> . <span class="stringliteral">&#39;/element/&#39;</span> . $id;
@@ -233,6 +241,32 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
+<a class="anchor" id="a2dc0ed4276d2ae624a43f69b2c652ac2"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::getSession" ref="a2dc0ed4276d2ae624a43f69b2c652ac2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a2dc0ed4276d2ae624a43f69b2c652ac2">WebElement::getSession</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> instance that this element resides in. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">Xi\Test\Selenium\HasWebElements</a>.</p>
+
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00038">38</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this-&gt;session;
+    }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="aa631d5619816e67a071fd5e2caf73c90"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::getId" ref="aa631d5619816e67a071fd5e2caf73c90" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +284,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the HTML id of the element. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00038">38</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00047">47</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a94282d8046113abef596b1076eba8832" title="Returns the value of an attribute of the element or null if there is no such attribute.">getAttribute</a>(<span class="stringliteral">&#39;id&#39;</span>);
     }
@@ -271,7 +305,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00047">47</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00056">56</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/name&#39;</span>);
     }
@@ -295,7 +329,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns the text of the element. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00056">56</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00065">65</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/text&#39;</span>);
     }
@@ -326,7 +360,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string|null </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00066">66</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00075">75</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/attribute/&#39;</span> . $attributeName);
     }
@@ -349,7 +383,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns whether this (form) element is enabled. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00074">74</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00083">83</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/enabled&#39;</span>);
     }
@@ -372,7 +406,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns whether this (form) element is disabled. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00082">82</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00091">91</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> !$this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#aeb4e158c9e2f8c5cd1776eb2bd6056da" title="Returns whether this (form) element is enabled.">isEnabled</a>();
     }
@@ -396,7 +430,7 @@ Protected Attributes</h2></td></tr>
 <p>Returns whether this element is hidden (e.g. </p>
 <p>by CSS `display: none` or similar). </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00090">90</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00099">99</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> !$this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/displayed&#39;</span>);
     }
@@ -419,7 +453,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Clicks on the element. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00098">98</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00107">107</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a>(<span class="stringliteral">&#39;/click&#39;</span>);
     }
@@ -444,7 +478,7 @@ Protected Attributes</h2></td></tr>
 <p>Types text to the element. </p>
 <p>The text may contain special keyboard codes. See the constants in the <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_keys.html" title="Constants for special key codes for use with WebElement::fillIn().">Keys</a> class. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00109">109</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00118">118</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">if</span> (!is_array($text)) {
             $text = array((<span class="keywordtype">string</span>)$text);
@@ -470,7 +504,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Clears a text(area) input field of all input. </p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00120">120</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00129">129</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a>(<span class="stringliteral">&#39;/clear&#39;</span>);
     }
@@ -495,33 +529,105 @@ Protected Attributes</h2></td></tr>
 <p>To select an element (even an option), `click()` on it.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>boolean </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00132">132</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00141">141</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a48c9a6768efbe9a94e68122fab97f3a4">elementGet</a>(<span class="stringliteral">&#39;/selected&#39;</span>);
     }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a994f3c26e0117511d5ffe11a664265e8"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::createWebElement" ref="a994f3c26e0117511d5ffe11a664265e8" args="($elementId)" -->
+<a class="anchor" id="abdd1ed98fe1062a3382ebd7c53bcc48a"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::getParent" ref="abdd1ed98fe1062a3382ebd7c53bcc48a" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a994f3c26e0117511d5ffe11a664265e8">WebElement::createWebElement</a> </td>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#abdd1ed98fe1062a3382ebd7c53bcc48a">WebElement::getParent</a> </td>
           <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>elementId</em></td><td>)</td>
-          <td><code> [protected]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">Xi\Test\Selenium\HasWebElements</a>.</p>
+<p>Returns the parent element, if any. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>WebElement|null </dd></dl>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00137">137</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00151">151</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keyword">static</span>($this-&gt;server, $this-&gt;sessionPath, <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#abbc33302d54cacac5678d4974b68a86f">$elementId</a>);
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a02f4c6ed2b978bef974a4c283bb854af" title="Finds a subelement by a CSS selector or XPath expression, returns null if not found.">tryFind</a>(<span class="stringliteral">&#39;..&#39;</span>, <span class="stringliteral">&#39;xpath&#39;</span>);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ade7a483e86076cc0ea1ec9c9f2e4789d"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::getAncestors" ref="ade7a483e86076cc0ea1ec9c9f2e4789d" args="($predicate=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#ade7a483e86076cc0ea1ec9c9f2e4789d">WebElement::getAncestors</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>predicate</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns all ancestor elements of this element, deepest i.e. </p>
+<p>closest first.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">callable&#160;|&#160;null</td><td class="paramname">$predicate</td><td>An optional filter predicate function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html" title="An element in the HTML document.">WebElement</a>[] </dd></dl>
+
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00162">162</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        $result = array();
+        $p = $this;
+        <span class="comment">// We test against the tag name because get an error if we try to select</span>
+        <span class="comment">// the document object (i.e. the thing above &lt;html&gt;).</span>
+        <span class="comment">// This is a kludge that assumes an HTML document. A better xpath-based solution is no doubt possible.</span>
+        <span class="keywordflow">while</span> ($p-&gt;getTagName() != <span class="stringliteral">&#39;html&#39;</span>) {
+            $p = $p-&gt;getParent();
+            <span class="keywordflow">if</span> (!$predicate || call_user_func($predicate, $p)) {
+                $result[] = $p;
+            }
+        }
+        <span class="keywordflow">return</span> $result;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9744fb2cf2f01a27a207cdca149603db"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::getAncestorTags" ref="a9744fb2cf2f01a27a207cdca149603db" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a9744fb2cf2f01a27a207cdca149603db">WebElement::getAncestorTags</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the tag names of all ancestor elements of this element, deepest i.e. </p>
+<p>closest first.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string[] </dd></dl>
+
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00183">183</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        $result = array();
+        <span class="keywordflow">foreach</span> ($this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#ade7a483e86076cc0ea1ec9c9f2e4789d" title="Returns all ancestor elements of this element, deepest i.e.">getAncestors</a>() as $ancestor) {
+            $result[] = $ancestor-&gt;getTagName();
+        }
+        <span class="keywordflow">return</span> $result;
     }
 </pre></div>
 </div>
@@ -553,9 +659,33 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">Xi\Test\Selenium\HasWebElements</a>.</p>
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00142">142</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00192">192</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a8fd2c771d483c55d2e289fb5ff7476a4">elementPost</a>($relPath, $params);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a994f3c26e0117511d5ffe11a664265e8"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::createWebElement" ref="a994f3c26e0117511d5ffe11a664265e8" args="($elementId)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a994f3c26e0117511d5ffe11a664265e8">WebElement::createWebElement</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>elementId</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">Xi\Test\Selenium\HasWebElements</a>.</p>
+
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00197">197</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keyword">static</span>($this-&gt;session, $this-&gt;sessionPath, <a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#abbc33302d54cacac5678d4974b68a86f">$elementId</a>);
     }
 </pre></div>
 </div>
@@ -575,9 +705,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00147">147</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00202">202</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        <span class="keywordflow">return</span> $this-&gt;server-&gt;get($this-&gt;elementPath . $path);
+        <span class="keywordflow">return</span> $this-&gt;session-&gt;getServer()-&gt;get($this-&gt;elementPath . $path);
     }
 </pre></div>
 </div>
@@ -607,9 +737,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00152">152</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00207">207</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        <span class="keywordflow">return</span> $this-&gt;server-&gt;post($this-&gt;elementPath . $path, $params);
+        <span class="keywordflow">return</span> $this-&gt;session-&gt;getServer()-&gt;post($this-&gt;elementPath . $path, $params);
     }
 </pre></div>
 </div>
@@ -629,20 +759,20 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00157">157</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
+<p>Definition at line <a class="el" href="_web_element_8php_source.html#l00212">212</a> of file <a class="el" href="_web_element_8php_source.html">WebElement.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        <span class="keywordflow">return</span> $this-&gt;server-&gt;delete($this-&gt;elementPath . $path);
+        <span class="keywordflow">return</span> $this-&gt;session-&gt;getServer()-&gt;delete($this-&gt;elementPath . $path);
     }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="aafa7a22da660b2759b8ca8a5c33fc554"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::$server" ref="aafa7a22da660b2759b8ca8a5c33fc554" args="" -->
+<a class="anchor" id="a51db4e914beae45dfc2abd48e8197c6c"></a><!-- doxytag: member="Xi::Test::Selenium::WebElement::$session" ref="a51db4e914beae45dfc2abd48e8197c6c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Xi::Test::Selenium\WebElement::$server<code> [protected]</code></td>
+          <td class="memname">Xi::Test::Selenium\WebElement::$session<code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -720,7 +850,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><b>Selenium</b>      </li>
       <li class="navelem"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html">WebElement</a>      </li>
 
-    <li class="footer">Generated on Thu Apr 25 2013 16:09:09 for xi-test-selenium by
+    <li class="footer">Generated on Thu May 2 2013 10:01:02 for xi-test-selenium by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

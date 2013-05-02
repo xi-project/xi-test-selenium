@@ -124,25 +124,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a671b87f0e7bb8fd14e6cf0355d16a6da">find</a> ($matcher, $format= 'css')</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a (sub)element by a CSS selector or XPath expression.  <a href="#a671b87f0e7bb8fd14e6cf0355d16a6da"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a subelement by a CSS selector or XPath expression.  <a href="#a671b87f0e7bb8fd14e6cf0355d16a6da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a02f4c6ed2b978bef974a4c283bb854af">tryFind</a> ($matcher, $format= 'css')</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to find a (sub)element by a CSS selector or XPath expression.  <a href="#a02f4c6ed2b978bef974a4c283bb854af"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a subelement by a CSS selector or XPath expression, returns null if not found.  <a href="#a02f4c6ed2b978bef974a4c283bb854af"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a548bccadf63e4a7078e36f1e64f1c9f1">findAll</a> ($matcher, $format= 'css')</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a set of (sub)elements by a CSS selector or XPath expression.  <a href="#a548bccadf63e4a7078e36f1e64f1c9f1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a set of subelements by a CSS selector or XPath expression.  <a href="#a548bccadf63e4a7078e36f1e64f1c9f1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6092b7e651d48f7078a038cfc4ea2bcc">findByText</a> ($text)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a (sub)element that contains the given text.  <a href="#a6092b7e651d48f7078a038cfc4ea2bcc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a (sub)element that immediately contains the given text.  <a href="#a6092b7e651d48f7078a038cfc4ea2bcc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9a99edd8472794277cbc51bb065b95e4">findAllByText</a> ($text)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds all subelements that immediately contain the given text.  <a href="#a9a99edd8472794277cbc51bb065b95e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a5faaf524015d9f171765aba5ef683420">tryFindByText</a> ($text)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a (sub)element that immediately contains the given text, returns null if not found.  <a href="#a5faaf524015d9f171765aba5ef683420"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#aea5609a46756f45c763eecd27f5b177c">findByLabel</a> ($labelText)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a (sub)element pointed to by a label tag's for attribute.  <a href="#aea5609a46756f45c763eecd27f5b177c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ad535fb8939691761556f96af17e55cf3">waitForElement</a> ($matcher, $format= 'css', $timeout=null)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for a (sub)element appear.  <a href="#ad535fb8939691761556f96af17e55cf3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a126fc2d9e9af64541718c5b1d61dd060">waitForText</a> ($text, $timeout=null)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for text to appear in a (sub)element.  <a href="#a126fc2d9e9af64541718c5b1d61dd060"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac9833a3c46abbe9bf700277688b9b92c">pollForResult</a> ($func, $timeout=null, $timeoutMsg= 'timeout')</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed.  <a href="#ac9833a3c46abbe9bf700277688b9b92c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a8a6e4a18ec60aaf0557053875dcb2a09">getDefaultWaitTimeout</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of seconds that `waitFor*` methods wait for.  <a href="#a8a6e4a18ec60aaf0557053875dcb2a09"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a subelement pointed to by a label tag's for attribute.  <a href="#aea5609a46756f45c763eecd27f5b177c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a95a5580b1fdd6e8bc0d6a43bb9000cff">fillInByLabels</a> (array $labelsToValues)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an array, finds elements whose labels correspond to the keys and fills in the values.  <a href="#a95a5580b1fdd6e8bc0d6a43bb9000cff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a42d6f8d5dbdef1c1f45a7ed7aa054c2e">findTableRowWithText</a> ($text, $noHeaderAndFooter=true)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a 'tr' element that contains a subelement whose text is $text.  <a href="#a42d6f8d5dbdef1c1f45a7ed7aa054c2e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a88815880e83458f187d31b581bdeffef">tryFindTableRowWithText</a> ($text, $noHeaderAndFooter=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6cb348dee40c6c169445df86d3a8a567">findAllTableRowsWithText</a> ($text, $noHeaderAndFooter=true)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds all 'tr' elements that contain a subelement whose text is $text.  <a href="#a6cb348dee40c6c169445df86d3a8a567"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6707d9c239c19b49aceded24614ce5b1">waitForElement</a> ($matcher, $timeout, $format= 'css')</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for a subelement appear for an extended period of time.  <a href="#a6707d9c239c19b49aceded24614ce5b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#adbb7df55cf131ad2e488ece5fb6fd6b2">waitForText</a> ($text, $timeout)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for text to appear in a subelement.  <a href="#adbb7df55cf131ad2e488ece5fb6fd6b2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac5cd8416b31b26e594ab7bc7d7e25c58">withImplicitWait</a> ($func, $timeout=null)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an implicit wait of $timeout, calls $func, then restores the previous implicit wait.  <a href="#ac5cd8416b31b26e594ab7bc7d7e25c58"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9e0668360b75b100789d57318267b29c">findByTextImpl</a> ($mode, $text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a535a34d2f460a454c965ffe1e1ce0c46">findImpl</a> ($mode, $expr, $format)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">getSession</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">makeRelativePostRequest</a> ($relPath, $params)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">createWebElement</a> ($elementId)</td></tr>
 </table>
@@ -176,7 +188,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Finds a (sub)element by a CSS selector or XPath expression. </p>
+<p>Finds a subelement by a CSS selector or XPath expression. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$matcher</td><td>The matcher, format depending on $format. </td></tr>
@@ -194,9 +206,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00017">17</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        $using = $this-&gt;seleniumFormat($format);
-        $response = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">makeRelativePostRequest</a>(<span class="stringliteral">&#39;/element&#39;</span>, array(<span class="stringliteral">&#39;using&#39;</span> =&gt; $using, <span class="stringliteral">&#39;value&#39;</span> =&gt; $matcher));
-        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">createWebElement</a>($response[<span class="stringliteral">&#39;ELEMENT&#39;</span>]);
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a535a34d2f460a454c965ffe1e1ce0c46">findImpl</a>(<span class="stringliteral">&#39;one&#39;</span>, $matcher, $format);
     }
 </pre></div>
 </div>
@@ -226,7 +236,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Tries to find a (sub)element by a CSS selector or XPath expression. </p>
+<p>Finds a subelement by a CSS selector or XPath expression, returns null if not found. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$matcher</td><td>The matcher, format depending on $format. </td></tr>
@@ -242,10 +252,9 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00032">32</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00030">30</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        $results = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a548bccadf63e4a7078e36f1e64f1c9f1" title="Finds a set of (sub)elements by a CSS selector or XPath expression.">findAll</a>($matcher, $format);
-        <span class="keywordflow">return</span> (isset($results[0])) ? $results[0] : null;
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a535a34d2f460a454c965ffe1e1ce0c46">findImpl</a>(<span class="stringliteral">&#39;tryOne&#39;</span>, $matcher, $format);
     }
 </pre></div>
 </div>
@@ -275,7 +284,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Finds a set of (sub)elements by a CSS selector or XPath expression. </p>
+<p>Finds a set of subelements by a CSS selector or XPath expression. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$matcher</td><td>The matcher, format depending on $format. </td></tr>
@@ -283,17 +292,11 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>array&lt;WebElement&gt; The (possibly empty) set of matched elements. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html" title="An element in the HTML document.">WebElement</a>[] The (possibly empty) set of matched elements. </dd></dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00045">45</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00042">42</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        $using = $this-&gt;seleniumFormat($format);
-        $response = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">makeRelativePostRequest</a>(<span class="stringliteral">&#39;/elements&#39;</span>, array(<span class="stringliteral">&#39;using&#39;</span> =&gt; $using, <span class="stringliteral">&#39;value&#39;</span> =&gt; $matcher));
-        $result = array();
-        <span class="keywordflow">foreach</span> ($response as $responseElement) {
-            $result[] = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">createWebElement</a>($responseElement[<span class="stringliteral">&#39;ELEMENT&#39;</span>]);
-        }
-        <span class="keywordflow">return</span> $result;
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a535a34d2f460a454c965ffe1e1ce0c46">findImpl</a>(<span class="stringliteral">&#39;all&#39;</span>, $matcher, $format);
     }
 </pre></div>
 </div>
@@ -313,7 +316,9 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Finds a (sub)element that contains the given text. </p>
+<p>Finds a (sub)element that immediately contains the given text. </p>
+<p>Note that, unlike the selector-based find methods, this method may return the current element.</p>
+<p>It only finds text that is not interrupted by tags. This limitation may be removed in a future version.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$text</td><td>The text to search for. </td></tr>
@@ -328,11 +333,108 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00063">63</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00058">58</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9e0668360b75b100789d57318267b29c">findByTextImpl</a>(<span class="stringliteral">&#39;one&#39;</span>, $text);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9a99edd8472794277cbc51bb065b95e4"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::findAllByText" ref="a9a99edd8472794277cbc51bb065b95e4" args="($text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9a99edd8472794277cbc51bb065b95e4">HasWebElements::findAllByText</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds all subelements that immediately contain the given text. </p>
+<p>Note that, unlike the selector-based find methods, this method may return the current element.</p>
+<p>It only finds text that is not interrupted by tags. This limitation may be removed in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td>The text to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html" title="An element in the HTML document.">WebElement</a>[] The elements that contained the text as a substring. </dd></dl>
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00073">73</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9e0668360b75b100789d57318267b29c">findByTextImpl</a>(<span class="stringliteral">&#39;all&#39;</span>, $text);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5faaf524015d9f171765aba5ef683420"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::tryFindByText" ref="a5faaf524015d9f171765aba5ef683420" args="($text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a5faaf524015d9f171765aba5ef683420">HasWebElements::tryFindByText</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds a (sub)element that immediately contains the given text, returns null if not found. </p>
+<p>Note that, unlike the selector-based find methods, this method may return the current element.</p>
+<p>It only finds text that is not interrupted by tags. This limitation may be removed in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td>The text to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>WebElement|null The element that contained the text as a substring, or null if not found. </dd></dl>
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00088">88</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9e0668360b75b100789d57318267b29c">findByTextImpl</a>(<span class="stringliteral">&#39;tryOne&#39;</span>, $text);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9e0668360b75b100789d57318267b29c"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::findByTextImpl" ref="a9e0668360b75b100789d57318267b29c" args="($mode, $text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9e0668360b75b100789d57318267b29c">HasWebElements::findByTextImpl</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00093">93</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $expr = <span class="stringliteral">&#39;//*[contains(text(),\&#39;&#39;</span> . addslashes($text) . <span class="charliteral">&#39;\&#39;</span>)]<span class="stringliteral">&#39;;</span>
-<span class="stringliteral">        $response = $this-&gt;makeRelativePostRequest(&#39;</span>/element<span class="stringliteral">&#39;, array(&#39;</span><span class="keyword">using</span><span class="stringliteral">&#39; =&gt; &#39;</span>xpath<span class="stringliteral">&#39;, &#39;</span>value<span class="stringliteral">&#39; =&gt; $expr));</span>
-<span class="stringliteral">        return $this-&gt;createWebElement($response[&#39;</span>ELEMENT<span class="stringliteral">&#39;]);</span>
+<span class="stringliteral">        return $this-&gt;findImpl($mode, $expr, &#39;</span>xpath<span class="stringliteral">&#39;);</span>
 <span class="stringliteral">    }</span>
 </pre></div>
 </div>
@@ -352,7 +454,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Finds a (sub)element pointed to by a label tag's for attribute. </p>
+<p>Finds a subelement pointed to by a label tag's for attribute. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$labelText</td><td>The text of the label whose element to search for. </td></tr>
@@ -367,9 +469,9 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00077">77</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00106">106</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        $element = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6092b7e651d48f7078a038cfc4ea2bcc" title="Finds a (sub)element that contains the given text.">findByText</a>($labelText);
+        $element = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6092b7e651d48f7078a038cfc4ea2bcc" title="Finds a (sub)element that immediately contains the given text.">findByText</a>($labelText);
         <span class="keywordflow">if</span> ($element-&gt;getTagName() != <span class="stringliteral">&#39;label&#39;</span>) {
             <span class="keywordflow">throw</span> <span class="keyword">new</span> SeleniumException(<span class="stringliteral">&quot;Tag with text &#39;$labelText&#39; was not a label but a &quot;</span> . $element-&gt;getTagName());
         }
@@ -377,32 +479,69 @@ Protected Member Functions</h2></td></tr>
         <span class="keywordflow">if</span> (empty($for)) {
             <span class="keywordflow">throw</span> <span class="keyword">new</span> SeleniumException(<span class="stringliteral">&quot;Label with text &#39;$labelText&#39; has no for attribute&quot;</span>);
         }
-        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a671b87f0e7bb8fd14e6cf0355d16a6da" title="Finds a (sub)element by a CSS selector or XPath expression.">find</a>(<span class="charliteral">&#39;#&#39;</span> . $for);
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a671b87f0e7bb8fd14e6cf0355d16a6da" title="Finds a subelement by a CSS selector or XPath expression.">find</a>(<span class="charliteral">&#39;#&#39;</span> . $for);
     }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ad535fb8939691761556f96af17e55cf3"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::waitForElement" ref="ad535fb8939691761556f96af17e55cf3" args="($matcher, $format= 'css', $timeout=null)" -->
+<a class="anchor" id="a95a5580b1fdd6e8bc0d6a43bb9000cff"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::fillInByLabels" ref="a95a5580b1fdd6e8bc0d6a43bb9000cff" args="(array $labelsToValues)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ad535fb8939691761556f96af17e55cf3">HasWebElements::waitForElement</a> </td>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a95a5580b1fdd6e8bc0d6a43bb9000cff">HasWebElements::fillInByLabels</a> </td>
+          <td>(</td>
+          <td class="paramtype">array $&#160;</td>
+          <td class="paramname"><em>labelsToValues</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Given an array, finds elements whose labels correspond to the keys and fills in the values. </p>
+<p>This makes the common case of filling in large forms more convenient.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$labelsToValues</td><td>An array where keys are valid for findByLabel and values are valid for fillIn(). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">SeleniumException</td><td>if some label cannot be found or it does not point to a valid element </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00127">127</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">foreach</span> ($labelsToValues as $key =&gt; $value) {
+            <span class="keywordflow">try</span> {
+                $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#aea5609a46756f45c763eecd27f5b177c" title="Finds a subelement pointed to by a label tag&#39;s for attribute.">findByLabel</a>($key)-&gt;fillIn($value);
+            } <span class="keywordflow">catch</span> (SeleniumException $e) {
+                <span class="keywordflow">throw</span> <span class="keyword">new</span> SeleniumException(<span class="stringliteral">&quot;Failed to fill in &#39;$key&#39; with &#39;$value&#39;&quot;</span>, $e-&gt;getCode(), $e);
+            }
+        }
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a42d6f8d5dbdef1c1f45a7ed7aa054c2e"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::findTableRowWithText" ref="a42d6f8d5dbdef1c1f45a7ed7aa054c2e" args="($text, $noHeaderAndFooter=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a42d6f8d5dbdef1c1f45a7ed7aa054c2e">HasWebElements::findTableRowWithText</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>matcher</em>, </td>
+          <td class="paramname"><em>text</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>format</em> = <code>'css'</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>noHeaderAndFooter</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -413,12 +552,179 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Waits for a (sub)element appear. </p>
+<p>Finds a 'tr' element that contains a subelement whose text is $text. </p>
+<p>It only finds text that is not interrupted by tags. This limitation may be removed in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$text</td><td>The text to search for. </td></tr>
+    <tr><td class="paramtype">boolean</td><td class="paramname">$noHeaderAndFooter</td><td>Whether to ignore rows in thead and tfoot (tbody is still optional). Defaults to true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html" title="An element in the HTML document.">WebElement</a> </dd></dl>
+<dl class="exception"><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">SeleniumException</td><td>if such a row cannot be found </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00149">149</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        $results = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6cb348dee40c6c169445df86d3a8a567" title="Finds all &#39;tr&#39; elements that contain a subelement whose text is $text.">findAllTableRowsWithText</a>($text, $noHeaderAndFooter);
+        <span class="keywordflow">if</span> (!empty($results)) {
+            <span class="keywordflow">return</span> array_shift($results);
+        } <span class="keywordflow">else</span> {
+            <span class="keywordflow">throw</span> <span class="keyword">new</span> SeleniumException(<span class="stringliteral">&quot;Failed to find a table row with the given text&quot;</span>);
+        }
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a88815880e83458f187d31b581bdeffef"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::tryFindTableRowWithText" ref="a88815880e83458f187d31b581bdeffef" args="($text, $noHeaderAndFooter=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a88815880e83458f187d31b581bdeffef">HasWebElements::tryFindTableRowWithText</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>noHeaderAndFooter</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00159">159</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        $results = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6cb348dee40c6c169445df86d3a8a567" title="Finds all &#39;tr&#39; elements that contain a subelement whose text is $text.">findAllTableRowsWithText</a>($text, $noHeaderAndFooter);
+        <span class="keywordflow">if</span> (!empty($results)) {
+            <span class="keywordflow">return</span> array_shift($results);
+        } <span class="keywordflow">else</span> {
+            <span class="keywordflow">return</span> null;
+        }
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6cb348dee40c6c169445df86d3a8a567"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::findAllTableRowsWithText" ref="a6cb348dee40c6c169445df86d3a8a567" args="($text, $noHeaderAndFooter=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6cb348dee40c6c169445df86d3a8a567">HasWebElements::findAllTableRowsWithText</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>noHeaderAndFooter</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds all 'tr' elements that contain a subelement whose text is $text. </p>
+<p>It only finds text that is not interrupted by tags. This limitation may be removed in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$text</td><td>The text to search for. </td></tr>
+    <tr><td class="paramtype">boolean</td><td class="paramname">$noHeaderAndFooter</td><td>Whether to ignore rows in thead and tfoot (tbody is still optional). Defaults to true. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html" title="An element in the HTML document.">WebElement</a>[] </dd></dl>
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00179">179</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        $results = array();
+        <span class="keywordflow">foreach</span> ($this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a9a99edd8472794277cbc51bb065b95e4" title="Finds all subelements that immediately contain the given text.">findAllByText</a>($text) as $elemWithText) {
+            $ancestor = null;
+
+            $ancestors = $elemWithText-&gt;getAncestors();
+            <span class="keywordflow">while</span> (!empty($ancestors)) {
+                $ancestor = array_shift($ancestors);
+                <span class="keywordflow">if</span> ($ancestor-&gt;getTagName() == <span class="stringliteral">&#39;tr&#39;</span>) {
+                    <span class="keywordflow">break</span>;
+                } <span class="keywordflow">else</span> {
+                    $ancestor = null;
+                }
+            }
+
+            <span class="keywordflow">if</span> ($ancestor) {
+                <span class="keywordflow">if</span> ($noHeaderAndFooter) {
+                    $tags = $ancestor-&gt;getAncestorTags();
+                    $ok = !in_array(<span class="stringliteral">&#39;thead&#39;</span>, $tags) &amp;&amp; !in_array(<span class="stringliteral">&#39;tfoot&#39;</span>, $tags);
+                } <span class="keywordflow">else</span> {
+                    $ok = <span class="keyword">true</span>;
+                }
+                <span class="keywordflow">if</span> ($ok) {
+                    $results[] = $ancestor;
+                }
+            }
+        }
+        <span class="keywordflow">return</span> $results;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6707d9c239c19b49aceded24614ce5b1"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::waitForElement" ref="a6707d9c239c19b49aceded24614ce5b1" args="($matcher, $timeout, $format= 'css')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a6707d9c239c19b49aceded24614ce5b1">HasWebElements::waitForElement</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>matcher</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>format</em> = <code>'css'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Waits for a subelement appear for an extended period of time. </p>
+<p>By default, all elements are waited for for a short while. See <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58" title="Sets the number of seconds an element is waited for when trying to find it.">WebDriver::setImplicitWait()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$matcher</td><td>The matcher, format depending on $format. </td></tr>
+    <tr><td class="paramtype">int&#160;|&#160;float</td><td class="paramname">$timeout</td><td>The number of seconds to wait at most. </td></tr>
     <tr><td class="paramtype">string</td><td class="paramname">$format</td><td>Either 'css' or 'xpath'. Default: 'css'. </td></tr>
-    <tr><td class="paramtype">int&#160;|&#160;float</td><td class="paramname">$timeout</td><td>The number of seconds to wait at most. Has a default value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -430,22 +736,22 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00099">99</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00221">221</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $self = $this;
-        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac9833a3c46abbe9bf700277688b9b92c" title="Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed...">pollForResult</a>(<span class="keyword">function</span>() use ($self, $matcher, $format) {
-            <span class="keywordflow">return</span> $self-&gt;tryFind($matcher, $format);
-        }, $timeout, <span class="stringliteral">&quot;No element matching $format `$matcher` appeared in $timeout sec&quot;</span>);
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac5cd8416b31b26e594ab7bc7d7e25c58" title="Sets an implicit wait of $timeout, calls $func, then restores the previous implicit wait...">withImplicitWait</a>(<span class="keyword">function</span>() use ($self, $matcher, $format) {
+            <span class="keywordflow">return</span> $self-&gt;find($matcher, $format);
+        }, $timeout);
     }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a126fc2d9e9af64541718c5b1d61dd060"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::waitForText" ref="a126fc2d9e9af64541718c5b1d61dd060" args="($text, $timeout=null)" -->
+<a class="anchor" id="adbb7df55cf131ad2e488ece5fb6fd6b2"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::waitForText" ref="adbb7df55cf131ad2e488ece5fb6fd6b2" args="($text, $timeout)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a126fc2d9e9af64541718c5b1d61dd060">HasWebElements::waitForText</a> </td>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#adbb7df55cf131ad2e488ece5fb6fd6b2">HasWebElements::waitForText</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>text</em>, </td>
@@ -454,7 +760,7 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -465,7 +771,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Waits for text to appear in a (sub)element. </p>
+<p>Waits for text to appear in a subelement. </p>
+<p>By default, all elements are waited for for a short while. See <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58" title="Sets the number of seconds an element is waited for when trying to find it.">WebDriver::setImplicitWait()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$text</td><td>The text to wait for. </td></tr>
@@ -481,29 +788,22 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00115">115</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00239">239</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
         $self = $this;
-        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac9833a3c46abbe9bf700277688b9b92c" title="Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed...">pollForResult</a>(<span class="keyword">function</span>() use ($self, $text) {
-            <span class="keywordflow">try</span> {
-                <span class="keywordflow">return</span> $self-&gt;findByText($text);
-            } <span class="keywordflow">catch</span> (SeleniumException $e) {
-                <span class="keywordflow">if</span> (!$e-&gt;isDueToElementMissingOrInvisible()) {
-                    <span class="keywordflow">throw</span> $e;
-                }
-            }
-            <span class="keywordflow">return</span> null;
-        }, $timeout, <span class="stringliteral">&quot;Element with text &#39;$text&#39; failed to appear in $timeout sec&quot;</span>);
+        <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac5cd8416b31b26e594ab7bc7d7e25c58" title="Sets an implicit wait of $timeout, calls $func, then restores the previous implicit wait...">withImplicitWait</a>(<span class="keyword">function</span>() use ($self, $text) {
+            <span class="keywordflow">return</span> $self-&gt;findByText($text);
+        }, $timeout);
     }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ac9833a3c46abbe9bf700277688b9b92c"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::pollForResult" ref="ac9833a3c46abbe9bf700277688b9b92c" args="($func, $timeout=null, $timeoutMsg= 'timeout')" -->
+<a class="anchor" id="ac5cd8416b31b26e594ab7bc7d7e25c58"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::withImplicitWait" ref="ac5cd8416b31b26e594ab7bc7d7e25c58" args="($func, $timeout=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac9833a3c46abbe9bf700277688b9b92c">HasWebElements::pollForResult</a> </td>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ac5cd8416b31b26e594ab7bc7d7e25c58">HasWebElements::withImplicitWait</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>func</em>, </td>
@@ -512,13 +812,7 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>timeout</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>timeoutMsg</em> = <code>'timeout'</code>&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -529,43 +823,121 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Calls `$func` repeatedly until it returns a non-null value or `$timeout` seconds have elapsed. </p>
+<p>Sets an implicit wait of $timeout, calls $func, then restores the previous implicit wait. </p>
 <p>Throws a SeleniumException on timeout. Exceptions from $func pass through.</p>
 <p>This is used internally to implement the `waitFor*` methods, but can also be used by client code.</p>
+<p>By default, all elements are waited for for a short while. See <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58" title="Sets the number of seconds an element is waited for when trying to find it.">WebDriver::setImplicitWait()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">callable</td><td class="paramname">$func</td><td>A callback to invoke. </td></tr>
-    <tr><td class="paramtype">int&#160;|&#160;float</td><td class="paramname">$timeout</td><td>The number of seconds to try for. </td></tr>
-    <tr><td class="paramtype">string</td><td class="paramname">$timeoutMsg</td><td>The message of the SeleniumException to throw on timeout. </td></tr>
+    <tr><td class="paramtype">int&#160;|&#160;float</td><td class="paramname">$timeout</td><td>The number of seconds to set the implicit wait to while $func executes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>mixed The return value of `$func` </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed The return value of $func </dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">SeleniumException</td><td>if `$func` only returns nulls and the timeout elapses. </td></tr>
-    <tr><td class="paramname">Exception</td><td>if `$func` throws it. </td></tr>
+    <tr><td class="paramname">SeleniumException</td><td>if the timeout elapses or $func throws it. </td></tr>
+    <tr><td class="paramname">\Exception</td><td>if $func throws it. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00145">145</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00263">263</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
 <div class="fragment"><pre class="fragment">    {
-        $timeout = $timeout ?: $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a8a6e4a18ec60aaf0557053875dcb2a09" title="Returns the number of seconds that `waitFor*` methods wait for.">getDefaultWaitTimeout</a>();
-        $startTime = microtime(<span class="keyword">true</span>);
-        <span class="keywordflow">do</span> {
-            $timePassed = microtime(<span class="keyword">true</span>) - $startTime;
-            $sleepTime = min(1.0, $timePassed / 10.0); <span class="comment">// The longer it takes, the less we waste CPU, but never wait for over 1 sec</span>
-            usleep($sleepTime * 1000000);
-
-            $result = call_user_func($func);
-            <span class="keywordflow">if</span> ($result !== null) {
-                <span class="keywordflow">return</span> $result;
-            }
-        } <span class="keywordflow">while</span> ($timePassed &lt;= $timeout);
-        <span class="keywordflow">throw</span> <span class="keyword">new</span> SeleniumException($timeoutMsg, SeleniumException::Timeout);
+        $oldImplicitWait = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">getSession</a>()-&gt;getImplicitWait();
+        $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">getSession</a>()-&gt;setImplicitWait($timeout);
+        <span class="keywordflow">try</span> {
+            $ret = call_user_func($func);
+        } <span class="keywordflow">catch</span> (\Exception $e) {
+            $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">getSession</a>()-&gt;setImplicitWait($oldImplicitWait);
+            <span class="keywordflow">throw</span> $e;
+        }
+        $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">getSession</a>()-&gt;setImplicitWait($oldImplicitWait);
+        <span class="keywordflow">return</span> $ret;
     }
 </pre></div>
+</div>
+</div>
+<a class="anchor" id="a535a34d2f460a454c965ffe1e1ce0c46"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::findImpl" ref="a535a34d2f460a454c965ffe1e1ce0c46" args="($mode, $expr, $format)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a535a34d2f460a454c965ffe1e1ce0c46">HasWebElements::findImpl</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>expr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>format</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00277">277</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        assert(in_array($mode, array(<span class="stringliteral">&#39;all&#39;</span>, <span class="stringliteral">&#39;one&#39;</span>, <span class="stringliteral">&#39;tryOne&#39;</span>)));
+        $fetchAll = ($mode === <span class="stringliteral">&#39;all&#39;</span> || $mode === <span class="stringliteral">&#39;tryOne&#39;</span>);
+
+        $url = $fetchAll ? <span class="stringliteral">&#39;/elements&#39;</span> : <span class="stringliteral">&#39;/element&#39;</span>;
+        $using = $this-&gt;seleniumFormat($format);
+        $response = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#ae2fc7b3e18b597ecd3c2426f93d4b7e0">makeRelativePostRequest</a>($url, array(<span class="stringliteral">&#39;using&#39;</span> =&gt; $using, <span class="stringliteral">&#39;value&#39;</span> =&gt; $expr));
+
+        <span class="keywordflow">if</span> ($mode === <span class="stringliteral">&#39;all&#39;</span>) {
+            $result = array();
+            <span class="keywordflow">foreach</span> ($response as $responseElement) {
+                $result[] = $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">createWebElement</a>($responseElement[<span class="stringliteral">&#39;ELEMENT&#39;</span>]);
+            }
+            <span class="keywordflow">return</span> $result;
+        } elseif ($mode === <span class="stringliteral">&#39;one&#39;</span>) {
+            <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">createWebElement</a>($response[<span class="stringliteral">&#39;ELEMENT&#39;</span>]);
+        } elseif ($mode === <span class="stringliteral">&#39;tryOne&#39;</span>) {
+            $first = array_shift($response);
+            <span class="keywordflow">if</span> ($first !== null) {
+                <span class="keywordflow">return</span> $this-&gt;<a class="code" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#af21c1b7bcd4e1bca681d2c2828a67cf0">createWebElement</a>($first[<span class="stringliteral">&#39;ELEMENT&#39;</span>]);
+            } <span class="keywordflow">else</span> {
+                <span class="keywordflow">return</span> null;
+            }
+        } <span class="keywordflow">else</span> {
+            <span class="keywordflow">throw</span> new \Exception(<span class="stringliteral">&quot;Internal error: findImpl called with incorrect \$mode: $mode.&quot;</span>);
+        }
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a60b8361f5179c1acb4102cf5bb800c4d"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::getSession" ref="a60b8361f5179c1acb4102cf5bb800c4d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a60b8361f5179c1acb4102cf5bb800c4d">HasWebElements::getSession</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [abstract, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html" title="A Selenium WebDriver session.">WebDriver</a> </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ace7d72d261601a979cd5e741bb9fa21a">Xi\Test\Selenium\WebDriver</a>, and <a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_web_element.html#a2dc0ed4276d2ae624a43f69b2c652ac2">Xi\Test\Selenium\WebElement</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae2fc7b3e18b597ecd3c2426f93d4b7e0"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::makeRelativePostRequest" ref="ae2fc7b3e18b597ecd3c2426f93d4b7e0" args="($relPath, $params)" -->
@@ -616,30 +988,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8a6e4a18ec60aaf0557053875dcb2a09"></a><!-- doxytag: member="Xi::Test::Selenium::HasWebElements::getDefaultWaitTimeout" ref="a8a6e4a18ec60aaf0557053875dcb2a09" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Xi\Test\Selenium\<a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html#a8a6e4a18ec60aaf0557053875dcb2a09">HasWebElements::getDefaultWaitTimeout</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Returns the number of seconds that `waitFor*` methods wait for. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>int|float </dd></dl>
-
-<p>Definition at line <a class="el" href="_has_web_elements_8php_source.html#l00179">179</a> of file <a class="el" href="_has_web_elements_8php_source.html">HasWebElements.php</a>.</p>
-<div class="fragment"><pre class="fragment">    {
-        <span class="keywordflow">return</span> 5;
-    }
-</pre></div>
-</div>
-</div>
 </div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -663,7 +1011,7 @@ Protected Member Functions</h2></td></tr>
       <li class="navelem"><b>Selenium</b>      </li>
       <li class="navelem"><a class="el" href="class_xi_1_1_test_1_1_selenium_1_1_has_web_elements.html">HasWebElements</a>      </li>
 
-    <li class="footer">Generated on Thu Apr 25 2013 16:09:09 for xi-test-selenium by
+    <li class="footer">Generated on Thu May 2 2013 10:01:02 for xi-test-selenium by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

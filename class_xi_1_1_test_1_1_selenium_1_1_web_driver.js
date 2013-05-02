@@ -2,8 +2,11 @@ var class_xi_1_1_test_1_1_selenium_1_1_web_driver =
 [
     [ "__construct", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ab5ad32027c40d7e39671b8ee59420b95", null ],
     [ "__destruct", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a6ffef9cc13d8d40b47724b79c19ed4e8", null ],
+    [ "getServer", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a13aaf23001b3339234f2f6b7ecb3e45d", null ],
     [ "setBaseUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afe61a91a1813b79137e02f6dfd02d3cc", null ],
     [ "getBaseUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#afbae3967df5318131277d4903a0004cd", null ],
+    [ "getImplicitWait", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a607e6a111b3d3cad4ebb87186a949f40", null ],
+    [ "setImplicitWait", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aadadad66480261b0547cb17f7c8a8b58", null ],
     [ "visit", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8cd1a08e54695bfdd2e609937f3fd047", null ],
     [ "getUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a5e95abf40e181809dc55480da991e46d", null ],
     [ "getPageTitle", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a598d1d920003b004625d25372a3ca331", null ],
@@ -25,14 +28,17 @@ var class_xi_1_1_test_1_1_selenium_1_1_web_driver =
     [ "openSession", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a94946948ecda3359ff54c5cfd392bde9", null ],
     [ "closeSession", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a8f4584632392232b7c6ec9a4d7c77199", null ],
     [ "isClosed", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a1a9f71bbe2616fa438ad70c1f22b60d4", null ],
+    [ "getSession", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#ace7d72d261601a979cd5e741bb9fa21a", null ],
     [ "makeRelativePostRequest", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a5e17baeefc7444d77c71bdd2cb4d3d2a", null ],
     [ "createWebElement", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#adfbc4a9948cd43fd28248811674d299b", null ],
     [ "sessionGet", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a42e10cf7f5439e15c0e460a6e8a99da7", null ],
     [ "sessionPost", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a4c8349a8d5b2b70ccb0ba7d30ad52fbd", null ],
     [ "sessionDelete", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a68a85899d05c998045a3069d9e33904b", null ],
     [ "getDefaultOptions", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeb5da699ca8be530d4e8e0b749013052", null ],
+    [ "DEFAULT_IMPLICIT_WAIT", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a075c54f1607a49c25aa315677be742f9", null ],
     [ "$server", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a781629315516a15f869cbac61d55fed5", null ],
     [ "$options", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#adab861bbdbf992c6298bb7937878685e", null ],
     [ "$sessionPath", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a741686716652266d88c9662db6a04053", null ],
-    [ "$baseUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeac9390aab8c338a44e575f0481608eb", null ]
+    [ "$baseUrl", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#aeac9390aab8c338a44e575f0481608eb", null ],
+    [ "$implicitWait", "class_xi_1_1_test_1_1_selenium_1_1_web_driver.html#a3b3928aca579f8ef8a3636d710470af5", null ]
 ];
