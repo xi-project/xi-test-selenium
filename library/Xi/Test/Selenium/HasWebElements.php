@@ -151,7 +151,7 @@ abstract class HasWebElements // Would rather make this a trait
         $self = $this;
         return $this->withImplicitWait(function() use ($self, $matcher, $format) {
             return $self->find($matcher, $format);
-        }, $timeout, "No element matching $format `$matcher` appeared in $timeout sec");
+        }, $timeout);
     }
 
     /**
@@ -169,7 +169,7 @@ abstract class HasWebElements // Would rather make this a trait
         $self = $this;
         return $this->withImplicitWait(function() use ($self, $text) {
             return $self->findByText($text);
-        }, $timeout, "Element with text '$text' failed to appear in $timeout sec");
+        }, $timeout);
     }
 
     /**
