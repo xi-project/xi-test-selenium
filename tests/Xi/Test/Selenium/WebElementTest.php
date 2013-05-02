@@ -163,7 +163,7 @@ class WebElementTest extends LibraryTestCase
     /**
      * @test
      */
-    public function canGiveItsAllOfItsAncestorElements()
+    public function canGiveAllOfItsAncestorElements()
     {
         $ancestors = $this->browser->find('#first-paragraph')->getAncestors();
 
@@ -172,5 +172,30 @@ class WebElementTest extends LibraryTestCase
             $tags[] = $a->getTagName();
         }
         $this->assertEquals(array('section', 'body', 'html'), $tags);
+    }
+
+    /**
+     * @test
+     */
+    public function canGiveAllOfItsAncestorTags()
+    {
+        $tags = $this->browser->find('#first-paragraph')->getAncestorTags();
+        $this->assertEquals(array('section', 'body', 'html'), $tags);
+    }
+
+    /**
+     * @test
+     */
+    public function canGiveItsAncestorElementsFilteredBySomePredicate()
+    {
+        $ancestors = $this->browser->find('#first-paragraph')->getAncestors(function (WebElement $el) {
+            return $el->getTagName() != 'body';
+        });
+
+        $tags = array();
+        foreach ($ancestors as $a) {
+            $tags[] = $a->getTagName();
+        }
+        $this->assertEquals(array('section', 'html'), $tags);
     }
 }

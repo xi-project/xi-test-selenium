@@ -154,11 +154,12 @@ class WebElement extends HasWebElements
     }
 
     /**
-     * Returns all ancestor nodes of this node, deepest i.e. closest first.
+     * Returns all ancestor elements of this element, deepest i.e. closest first.
      *
+     * @param callable|null $predicate An optional filter predicate function.
      * @return WebElement[]
      */
-    public function getAncestors()
+    public function getAncestors($predicate = null)
     {
         $result = array();
         $p = $this;
@@ -167,7 +168,23 @@ class WebElement extends HasWebElements
         // This is a kludge that assumes an HTML document. A better xpath-based solution is no doubt possible.
         while ($p->getTagName() != 'html') {
             $p = $p->getParent();
-            $result[] = $p;
+            if (!$predicate || call_user_func($predicate, $p)) {
+                $result[] = $p;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * Returns the tag names of all ancestor elements of this element, deepest i.e. closest first.
+     *
+     * @return string[]
+     */
+    public function getAncestorTags()
+    {
+        $result = array();
+        foreach ($this->getAncestors() as $ancestor) {
+            $result[] = $ancestor->getTagName();
         }
         return $result;
     }
