@@ -62,6 +62,17 @@ class WebElementTest extends LibraryTestCase
     /**
      * @test
      */
+    public function fillInMethodOverwritesPreviousValue()
+    {
+        $field = $this->body->find('#the-field');
+        $field->fillIn("hello");
+        $field->fillIn("there");
+        $this->assertEquals('there', $field->getAttribute('value'));
+    }
+
+    /**
+     * @test
+     */
     public function canReceiveSpecialKeysAmongInput()
     {
         $field = $this->body->find('#the-field');

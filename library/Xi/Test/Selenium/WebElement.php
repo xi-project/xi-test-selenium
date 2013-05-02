@@ -115,8 +115,11 @@ class WebElement extends HasWebElements
      * The text may contain special keyboard codes.
      * See the constants in the Keys class.
      */
-    public function fillIn($text)
+    public function fillIn($text, $clearFirst = true)
     {
+        if ($clearFirst) {
+            $this->clear();
+        }
         if (!is_array($text)) {
             $text = array((string)$text);
         }
