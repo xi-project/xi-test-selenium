@@ -173,4 +173,60 @@ class ElementFinderTest extends LibraryTestCase
         $this->assertEquals('first-paragraph', $p->findByText($lipsum)->getId());
         $this->assertEquals('first-paragraph', $p->findByText($lipsum)->findByText($lipsum)->getId());
     }
+
+    /**
+     * @test
+     */
+    public function canFindTableRowsWithAGivenTextInATableWithAHeader()
+    {
+        $row = $this->browser->findTableRowWithText('t1r2c2');
+        $texts = array_map(function ($r) { return $r->getText(); }, $row->findAll('td'));
+        $this->assertEquals(array('t1r2c1', 't1r2c2'), $texts);
+    }
+
+    /**
+     * @test
+     */
+    public function ignoresTHeadAndTFootByDefaultWhenFindingTableRows()
+    {
+        $this->assertEmpty($this->browser->findAllTableRowsWithText('title1'));
+    }
+
+    /**
+     * @test
+     */
+    public function canBeMadeToNotIgnoreTHeadAndTFootByDefaultWhenFindingTableRows()
+    {
+        $this->assertNotEmpty($this->browser->findAllTableRowsWithText('title1', false));
+    }
+
+    /**
+     * @test
+     */
+    public function canFindTableRowsWithAGivenTextInATableWithoutAHeader()
+    {
+        $row = $this->browser->findTableRowWithText('t2r2c2');
+        $texts = array_map(function ($r) { return $r->getText(); }, $row->findAll('td'));
+        $this->assertEquals(array('t2r2c1', 't2r2c2'), $texts);
+    }
+
+    /**
+     * @test
+     */
+    public function findTableRowWithTextThrowsIfRowNotFound()
+    {
+        $this->setExpectedException(
+            'Xi\Test\Selenium\SeleniumException',
+            "Failed to find a table row with the given text"
+        );
+        $this->browser->findTableRowWithText('Lorem ipsum...');
+    }
+
+    /**
+     * @test
+     */
+    public function tryFindTableRowWithTextReturnsNullIfRowNotFound()
+    {
+        $this->assertNull($this->browser->tryFindTableRowWithText('Lorem ipsum...'));
+    }
 }

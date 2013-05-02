@@ -136,6 +136,78 @@ abstract class HasWebElements // Would rather make this a trait
     }
 
     /**
+     * Finds a 'tr' element that contains a subelement whose text is $text.
+     *
+     * It only finds text that is not interrupted by tags. This limitation may be removed in a future version.
+     *
+     * @param array $text The text to search for.
+     * @param boolean $noHeaderAndFooter Whether to ignore rows in thead and tfoot
+     *                                   (tbody is still optional). Defaults to true.
+     * @return WebElement
+     * @throws SeleniumException if such a row cannot be found
+     */
+    public function findTableRowWithText($text, $noHeaderAndFooter = true)
+    {
+        $results = $this->findAllTableRowsWithText($text, $noHeaderAndFooter);
+        if (!empty($results)) {
+            return array_shift($results);
+        } else {
+            throw new SeleniumException("Failed to find a table row with the given text");
+        }
+    }
+
+    public function tryFindTableRowWithText($text, $noHeaderAndFooter = true)
+    {
+        $results = $this->findAllTableRowsWithText($text, $noHeaderAndFooter);
+        if (!empty($results)) {
+            return array_shift($results);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Finds all 'tr' elements that contain a subelement whose text is $text.
+     *
+     * It only finds text that is not interrupted by tags. This limitation may be removed in a future version.
+     *
+     * @param array $text The text to search for.
+     * @param boolean $noHeaderAndFooter Whether to ignore rows in thead and tfoot
+     *                                   (tbody is still optional). Defaults to true.
+     * @return WebElement[]
+     */
+    public function findAllTableRowsWithText($text, $noHeaderAndFooter = true)
+    {
+        $results = array();
+        foreach ($this->findAllByText($text) as $elemWithText) {
+            $ancestor = null;
+
+            $ancestors = $elemWithText->getAncestors();
+            while (!empty($ancestors)) {
+                $ancestor = array_shift($ancestors);
+                if ($ancestor->getTagName() == 'tr') {
+                    break;
+                } else {
+                    $ancestor = null;
+                }
+            }
+
+            if ($ancestor) {
+                if ($noHeaderAndFooter) {
+                    $tags = $ancestor->getAncestorTags();
+                    $ok = !in_array('thead', $tags) && !in_array('tfoot', $tags);
+                } else {
+                    $ok = true;
+                }
+                if ($ok) {
+                    $results[] = $ancestor;
+                }
+            }
+        }
+        return $results;
+    }
+
+    /**
      * Waits for a subelement appear for an extended period of time.
      *
      * By default, all elements are waited for for a short while. See WebDriver::setImplicitWait().
